@@ -1,3 +1,34 @@
+/*
+Write a generalised C function to traverse all the nodes in a binary tree.
+The tree is composed using the following structures:
+
+struct link;
+struct link
+{
+   struct link *pA;
+   struct link *pB;
+};
+
+struct item
+{
+   struct link link;
+   uint8_t c;
+};
+
+tmp= list_entry(pos, struct kool_list, list);
+
+A given tree will consist entirely of "struct item".
+Your function should apply a supplied callback function to each node visited.
+Write a C program to do the following:
+
+-- print each value of c found
+-- add up all values of c found
+-- count the occurrences of each value of c found
+
+Code this in a way which allows both the visitor and the callback functions
+to be reentrant.
+
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

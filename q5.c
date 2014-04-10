@@ -1,4 +1,25 @@
 /*
+Define a macro that can be used to simplify the following block.
+Show the simplified solution.
+
+int init_cfg(void)   
+{
+   return (  send_req_cfg(ODU_MESSAGE_CFG_RFBAND, &rf_band, sizeof(rf_band)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_UPPERLOWERBAND, &upper_lower, sizeof(upper_lower)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_TRSPACING, &spacing, sizeof(spacing)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_TXPOWERMIN, &tx_power_min, sizeof(tx_power_min)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_TXPOWERMAX, &tx_power_max, sizeof(tx_power_max)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_RXFREQMIN, &rx_freq_min, sizeof(rx_freq_min)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_RXFREQMAX, &rx_freq_max, sizeof(rx_freq_max)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_TXFREQMIN, &tx_freq_min, sizeof(tx_freq_min)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_TXFREQMAX, &tx_freq_max, sizeof(tx_freq_max)) == 0
+          && send_req_cfg(ODU_MESSAGE_CFG_SERIAL, &serial, sizeof(serial)) == 0
+          );
+}
+*/
+
+
+/*
 	simpler form of the macro can be as below
 */
 

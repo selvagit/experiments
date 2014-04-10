@@ -1,34 +1,34 @@
 #include <iostream>
 
 
-class RMASysSrvAgent {
+class test_static {
     public:
         /*
          * Singleton instance getter.
          */
-        static RMASysSrvAgent* instance();
+        static test_static* instance();
 
     private:
-        static RMASysSrvAgent* _instance;
+        static test_static* _instance;
 
 };
 
 
 
-RMASysSrvAgent* RMASysSrvAgent::_instance = 0;
+test_static* test_static::_instance = 0;
 
-RMASysSrvAgent* RMASysSrvAgent::instance()
+test_static* test_static::instance()
 {
     if(0 == _instance)
     {
-        _instance = new RMASysSrvAgent;
+        _instance = new test_static;
     }
     return _instance;
 }
 
 int main ( void)
 {
-    RMASysSrvAgent* test = RMASysSrvAgent::instance();
+    test_static* test = test_static::instance();
 
     delete test;
 

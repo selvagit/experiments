@@ -1,3 +1,14 @@
+/*
+Write a short C program which prints out all of the subsets
+of the numbers in the range 1..23 which add up to 23.
+Subsets should be printed one per line with a single space
+between each number. Each subset should be free of duplicates.
+   
+One of the subsets might look like this:
+
+1 2 4 16
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
