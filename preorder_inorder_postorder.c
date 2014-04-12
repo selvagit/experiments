@@ -92,7 +92,7 @@ void node_add( struct link *new , struct link *curr)
 
 	tmp_new_item  = list_entry (new,struct item,link);
 
-	if ( tmp_curr_item->c < tmp_new_item->c )
+	if ( tmp_curr_item->c > tmp_new_item->c )
 	{
 		if ( tmp_curr_item->link.pA == &tmp_curr_item->link )
 		{
@@ -136,7 +136,7 @@ void sum(int c , int *output)
 }
 
 
-void walk_tree ( struct link *curr, 
+void walk_tree_pre_order ( struct link *curr, 
                 void ( *func_ptr )(int c, int *outout ),
                 int *output)
 {
@@ -158,64 +158,119 @@ void walk_tree ( struct link *curr,
         func_ptr( tmp_curr_item->c, output); 
         if ( &tmp_curr_item->link != tmp_curr_item->link.pA)
         {
-            walk_tree(tmp_curr_item->link.pA,func_ptr,output);
+            walk_tree_pre_order(tmp_curr_item->link.pA,func_ptr,output);
         }
 
         if ( &tmp_curr_item->link != tmp_curr_item->link.pB)
         {
-            walk_tree(tmp_curr_item->link.pB,func_ptr,output);
+            walk_tree_pre_order(tmp_curr_item->link.pB,func_ptr,output);
         }
     } 
 		return ;
 }
+
+void walk_tree_in_order ( struct link *curr, 
+                void ( *func_ptr )(int c, int *outout ),
+                int *output)
+{
+		if( (curr == NULL)
+				|| ( func_ptr == NULL)
+				|| ( output == NULL ))
+		{
+			return ;
+		}
+
+    struct item *tmp_curr_item = list_entry (curr,struct item, link);
+
+    if (tmp_curr_item->link.pA == tmp_curr_item->link.pB  )
+    {
+       func_ptr( tmp_curr_item->c, output); 
+    }
+    else
+    {
+        if ( &tmp_curr_item->link != tmp_curr_item->link.pA)
+        {
+            walk_tree_in_order(tmp_curr_item->link.pA,func_ptr,output);
+        }
+
+        func_ptr( tmp_curr_item->c, output); 
+
+        if ( &tmp_curr_item->link != tmp_curr_item->link.pB)
+        {
+            walk_tree_in_order(tmp_curr_item->link.pB,func_ptr,output);
+        }
+    } 
+		return ;
+}
+
+void walk_tree_post_order ( struct link *curr, 
+                void ( *func_ptr )(int c, int *outout ),
+                int *output)
+{
+		if( (curr == NULL)
+				|| ( func_ptr == NULL)
+				|| ( output == NULL ))
+		{
+			return ;
+		}
+
+    struct item *tmp_curr_item = list_entry (curr,struct item, link);
+
+    if (tmp_curr_item->link.pA == tmp_curr_item->link.pB  )
+    {
+       func_ptr( tmp_curr_item->c, output); 
+    }
+    else
+    {
+        if ( &tmp_curr_item->link != tmp_curr_item->link.pA)
+        {
+            walk_tree_post_order(tmp_curr_item->link.pA,func_ptr,output);
+        }
+
+        if ( &tmp_curr_item->link != tmp_curr_item->link.pB)
+        {
+            walk_tree_post_order(tmp_curr_item->link.pB,func_ptr,output);
+        }
+
+        func_ptr( tmp_curr_item->c, output); 
+    } 
+		return ;
+}
+
 
 int main ( int argc , char *argv[] )
 {
     struct item head;
     struct item *temp ;
 
+		#define NO_OF_NODES (11)
+
+		int inp_ary[NO_OF_NODES] = {18,5,10,6,11,22,20,1,4,13,29};
+
     INIT_LIST_NODE(&head.link);
-    head.c = 8;
+    head.c = inp_ary[0];
 
-    temp = (struct item *)malloc (sizeof (struct item ));
-    if (temp != NULL)
-    {
-        INIT_LIST_NODE(&temp->link);
-        temp->c = 5;
-        node_add(&temp->link,&head.link);
-    }
-
-
-    temp = (struct item *)malloc (sizeof (struct item ));
-    if (temp != NULL)
-    {
-        INIT_LIST_NODE(&temp->link);
-        temp->c = 10;
-        node_add(&temp->link,&head.link);
-    }
-
-    temp = (struct item *)malloc (sizeof (struct item ));
-    if (temp != NULL)
-    {
-        INIT_LIST_NODE(&temp->link);
-        temp->c = 6;
-        node_add(&temp->link,&head.link);
-    }
-
-
-    temp = (struct item *)malloc (sizeof (struct item ));
-    if (temp != NULL)
-    {
-        INIT_LIST_NODE(&temp->link);
-        temp->c = 11;
-        node_add(&temp->link,&head.link);
-    }
+		for ( int i = 1 ; i < NO_OF_NODES ; i++ )
+		{
+			temp = (struct item *)malloc (sizeof (struct item ));
+			if (temp != NULL)
+			{
+				INIT_LIST_NODE(&temp->link);
+				temp->c = inp_ary[i];
+				node_add(&temp->link,&head.link);
+			}
+		}
 
     int output=0; 
-    walk_tree(&head.link,print,&output);
 
-    walk_tree(&head.link,sum,&output);
-    printf ("sum = %d", output);
-    
+		printf("\npre_order \n");
+    walk_tree_pre_order(&head.link,print,&output);
+
+		printf("\nin_order \n");
+    walk_tree_in_order(&head.link,print,&output);
+		
+		printf("\npost_order \n");
+    walk_tree_post_order(&head.link,print,&output);
+
     return 0;
 }

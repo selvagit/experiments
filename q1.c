@@ -100,13 +100,16 @@ int test1 (int set_sum, struct sub_set *sub_set_current)
 
 int main(int argc, char *argv[])
 {
-    struct sub_set curr_set;
-    memset(&curr_set,0,sizeof(curr_set));
+	if( argc > 1 )
+	{
+		struct sub_set curr_set;
+		memset(&curr_set,0,sizeof(curr_set));
 
-    if( atoi(argv[1]) > 0)
-    {
-        test1 (atoi(argv[1]),&curr_set);
-    }
+		if( atoi(argv[1]) > 0)
+		{
+			test1 (atoi(argv[1]),&curr_set);
+		}
+	}
 
-    return 0;
+	return 0;
 }
