@@ -13,31 +13,47 @@
 
 
 #include <iostream>
+#include <string>
 #include <dirent.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
-void traverse_dir(char *dir_name)
+void traverse_dir(std::string &parent_dir_name)
 {
     DIR *dir = NULL;
     struct dirent *entry = NULL;
     struct stat info;
-    
-    if ((dir = opendir(dir_name)) == NULL){
-        std::cout << " dir open error " << dir_name << std::endl;
+
+    if ((dir = opendir(parent_dir_name.c_str())) == NULL){
+        std::cout << " dir open error " << parent_dir_name << std::endl;
     } else {
-        entry = readdir(dir);
-        while(entry != NULL){
-            std::cout << "<->" << entry->d_name << std::endl;
-            entry = readdir(dir);
+        while((entry = readdir(dir))!=NULL){
+            if(stat(entry->d_name,&info) == 0){
+                if(S_ISDIR(info.st_mode)){
+                    std::string dir_name = parent_dir_name;
+                    //dir_name = dir_name + "/";
+                    std::cout << "Dir:" << dir_name << std::endl;
+                }else{
+                    std::cout << "File:" << entry->d_name << std::endl;
+                }
+            }
         }
     }
+    closedir(dir);
     return ;
 }
 
-int main ( int argv , char * arg[])
+int main ( int argc , char *argv[])
 {
-    traverse_dir("./"); 
+    std::string dir_name;
+    if(argc>1){
+        dir_name.assign(argv[1]);
+        traverse_dir(dir_name); 
+    }else{
+        std::cout << "enter a dir path, going for current dir"<< std::endl;
+        dir_name.assign("./");
+        traverse_dir(dir_name); 
+    }
     return 0;
 }
 
