@@ -10,3 +10,40 @@
 // 5) use different search algorithm to search 
 // 6) use arguement list option library to add command line option 
 // 7) OpenMPI / OpenCL can used for scaling 
+
+
+#include <iostream>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+void traverse_dir(char *dir_name)
+{
+    DIR *dir = NULL;
+    struct dirent *entry = NULL;
+    struct stat info;
+    
+    if ((dir = opendir(dir_name)) == NULL){
+        std::cout << " dir open error " << dir_name << std::endl;
+    } else {
+        entry = readdir(dir);
+        while(entry != NULL){
+            std::cout << "<->" << entry->d_name << std::endl;
+            entry = readdir(dir);
+        }
+    }
+    return ;
+}
+
+int main ( int argv , char * arg[])
+{
+    traverse_dir("./"); 
+    return 0;
+}
+
+
+
+
+
+
+
