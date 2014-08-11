@@ -46,7 +46,7 @@ void * handler (void *ptr)
 
   sem_post(&mutex);
 
-  //pthread_exit(0);
+  pthread_exit(0);
 
   return NULL;
 }
