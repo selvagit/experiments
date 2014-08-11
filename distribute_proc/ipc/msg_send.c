@@ -48,3 +48,8 @@ int main (int argv, char *argc[])
 
     return 0;
 }
+
+
+/* ipcs to view the message memory created
+ * ipcrm to remove the message memory created 
+ */
