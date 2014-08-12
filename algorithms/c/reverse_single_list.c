@@ -42,6 +42,17 @@ struct node *reverse_list(struct node *cur, struct node **head )
     return cur;
 }
 
+void clean_list(struct node *cur)
+{
+    struct node* temp ;
+
+    while(cur != NULL){
+       temp = cur->next;
+       free(cur);
+       cur = temp;
+    }
+}
+
 void print_lst( struct list *lst)
 {
     struct node *temp = lst->head;
@@ -64,11 +75,18 @@ int main(int argv, char *argc[])
     add_node(4,&sng_lst);
     add_node(5,&sng_lst);
 
+    printf("Before reversing the list\n");
     print_lst(&sng_lst);
 
-    reverse_list(sng_lst.head,&sng_lst.head);
+    struct node *cur = NULL;
+    cur = reverse_list(sng_lst.head,&sng_lst.head);
+    cur->next = NULL;
 
+    printf("After reversing the list\n");
     print_lst(&sng_lst);
+
+    clean_list(sng_lst.head);
+
     return 0;
 }
 
