@@ -84,7 +84,7 @@ void clean_list(struct list *cur)
     }
 }
 
-struct list * find_multiple(int a,int set_size)
+struct list * find_multiple(int set_size, void *elements, int (*check)(void *elements,int i) )
 {
     struct list *lst = malloc(sizeof(struct list));
     if(lst == NULL){
@@ -94,8 +94,8 @@ struct list * find_multiple(int a,int set_size)
         lst->head=NULL;
         lst->tail=NULL;
         int i = 0;
-        for ( i = a ; i < set_size ; i++){
-              if ( (i % a) == 0){
+        for ( i = 1; i < set_size; i++){
+              if ( check(elements,i) == 0){
                     add_node(i, lst);
               }
         }
@@ -120,6 +120,18 @@ int sum_list(struct node *lst)
 }
 
 
+int compare_ele(void *ele, int i)
+{
+    int *elements = (int*)ele;
+
+    if ( ((i % elements[0]) == 0)
+            || ((i % elements[1]) == 0) ){
+          return 0;
+    }
+
+    return 1;
+}
+
 int main ( int argc , char *argv[])
 {
     if (argc < 2){
@@ -128,20 +140,19 @@ int main ( int argc , char *argv[])
 
     int set_size = atoi(argv[1]);
     printf("Set size = %d\n",set_size); 
+    
+    int elements[] = {3,5};
 
-    struct list *mp_3 = find_multiple(3,set_size);
-    struct list *mp_5 = find_multiple(5,set_size);
+    struct list *mp = find_multiple(set_size, (void *)elements,compare_ele);
 
-    printf("Printing the nodes of multiple of 3\n");
-    print_node(mp_3->head);
+    printf("Printing the nodes\n");
+    print_node(mp->head);
 
-    printf("Printing the nodes of multiple of 5\n");
-    print_node(mp_5->head);
+    int sum = sum_list(mp->head);
 
-    int sum_3 = sum_list(mp_3->head);
-    int sum_5 = sum_list(mp_5->head);
+    printf("Summ of the elements %d\n",sum);
 
-    printf("Summ of the elements %d\n",sum_3 + sum_5);
+    clean_list(mp);
 
     return 0;
 }
