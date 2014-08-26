@@ -1,7 +1,7 @@
 /*
  * If we my_list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
  * Find the sum of all the multiples of 3 or 5 below 1000.
- i*/
+ */
 
 #include <iostream>
 
@@ -16,7 +16,7 @@ class my_list {
 
       node *_head;
       node *_tail;
-
+      int _total_nodes;
     public:
 
      my_list();
@@ -25,6 +25,7 @@ class my_list {
      int  add_node(int a); // inset node to the end of the list
      int  delete_node(int a); // find the node and delete
      int  sum_all_nodes(void);
+     int  total_nodes(void);
      void print_nodes(void);
 };
 
@@ -56,6 +57,7 @@ int my_list::add_node(int a){
             _tail->element = a;
             _tail->next = NULL;
       }
+      _total_nodes++;
       return 0;
 }
 
@@ -73,6 +75,7 @@ int my_list::delete_node(int a){
                         inter = temp->next;
                         delete temp;
                   }
+                  _total_nodes--;
                   break;
             }
             inter = temp;
@@ -92,6 +95,10 @@ void my_list::print_nodes(void){
       }
 }
 
+int my_list::total_nodes(void){
+      return _total_nodes;
+}
+
 int my_list::sum_all_nodes(void){
       int sum = 0;
       node *temp = _head;
@@ -101,6 +108,24 @@ int my_list::sum_all_nodes(void){
       }
       return sum;
 }
+
+class find_msum : public my_list {
+
+    private :
+        int sum ;
+        int _mul_1;
+        int _mul_2;
+
+    public :
+        find_msum(int multiple_1, int multiple_2): 
+            _mul_1(multiple_1), _mul_2(multiple_2)
+      {
+
+      }
+      
+};
+
+
 
 int main(int argv , char *argc[])
 {
@@ -113,4 +138,11 @@ int main(int argv , char *argc[])
     single_lst.add_node(6);
 
     single_lst.print_nodes();
+    std::cout << " Total nodes " << single_lst.total_nodes() << std::endl;
+
+    find_msum test(3,5);
+    std::cout << "Total nodes" << test.total_nodes() << std::endl;
+
+    return 0;
 }
+
