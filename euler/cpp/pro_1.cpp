@@ -24,7 +24,8 @@ class my_list {
 
      int  add_node(int a); // inset node to the end of the list
      int  delete_node(int a); // find the node and delete
-     int  sum_all_nodes();
+     int  sum_all_nodes(void);
+     void print_nodes(void);
 };
 
 
@@ -48,9 +49,11 @@ int my_list::add_node(int a){
       if ( _head == NULL){
             _head = new node;
             _tail = _head;
+            _tail->element = a;
       }else{
             _tail->next = new node;
             _tail = _tail->next;
+            _tail->element = a;
             _tail->next = NULL;
       }
       return 0;
@@ -79,7 +82,17 @@ int my_list::delete_node(int a){
       return 0;
 }
 
-int my_list::sum_all_nodes(){
+void my_list::print_nodes(void){
+
+      node *temp = _head;
+
+      while(temp != NULL){
+            std::cout << temp->element << std::endl ;
+            temp = temp->next;
+      }
+}
+
+int my_list::sum_all_nodes(void){
       int sum = 0;
       node *temp = _head;
       while(temp != NULL){
@@ -92,9 +105,12 @@ int my_list::sum_all_nodes(){
 int main(int argv , char *argc[])
 {
     my_list single_lst;
+
     single_lst.add_node(3);
     single_lst.add_node(5);
     single_lst.add_node(1);
     single_lst.add_node(3);
     single_lst.add_node(6);
+
+    single_lst.print_nodes();
 }
