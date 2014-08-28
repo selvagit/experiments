@@ -4,11 +4,17 @@
  */
 
 #include <iostream>
-
+#include <cstdlib>
 
 class my_list {
 
     private:
+
+    public:
+
+     my_list();
+     ~my_list();
+
       struct node{
             int element;
             struct node *next;
@@ -17,16 +23,15 @@ class my_list {
       node *_head;
       node *_tail;
       int _total_nodes;
-    public:
-
-     my_list();
-     ~my_list();
 
      int  add_node(int a); // inset node to the end of the list
      int  delete_node(int a); // find the node and delete
      int  sum_all_nodes(void);
      int  total_nodes(void);
      void print_nodes(void);
+     void *get_head_node(void);
+
+     //friend class find_msum;
 };
 
 
@@ -99,6 +104,10 @@ int my_list::total_nodes(void){
       return _total_nodes;
 }
 
+void *my_list::get_head_node(void){
+      return _head;
+}
+
 int my_list::sum_all_nodes(void){
       int sum = 0;
       node *temp = _head;
@@ -112,7 +121,7 @@ int my_list::sum_all_nodes(void){
 class find_msum : public my_list {
 
     private :
-        int sum ;
+        int _sum ;
         int _mul_1;
         int _mul_2;
 
@@ -122,7 +131,18 @@ class find_msum : public my_list {
       {
 
       }
-      
+
+        int mul_sum(my_list &lst){
+              node *temp_node = (node *)lst.get_head_node(); 
+              while(temp_node != NULL){
+                    if ((temp_node->element % _mul_1 == 0)
+                            ||(temp_node->element % _mul_2 == 0)){
+                          _sum += temp_node->element;
+                    }
+                    temp_node = temp_node->next;
+              }
+              return _sum;
+        }
 };
 
 
@@ -131,17 +151,22 @@ int main(int argv , char *argc[])
 {
     my_list single_lst;
 
-    single_lst.add_node(3);
-    single_lst.add_node(5);
-    single_lst.add_node(1);
-    single_lst.add_node(3);
-    single_lst.add_node(6);
+    if (argv < 2){
+          std::cout << "Please give no of elements to be used " << std::endl;
+        return -1;
+    }
+
+    int number_of_elements = atoi(argc[1]);
+
+    for ( int i = 1 ; i <  number_of_elements ; i++){
+        single_lst.add_node(i);
+    }
 
     single_lst.print_nodes();
-    std::cout << " Total nodes " << single_lst.total_nodes() << std::endl;
+    std::cout << "Total nodes = " << single_lst.total_nodes() << std::endl;
 
     find_msum test(3,5);
-    std::cout << "Total nodes" << test.total_nodes() << std::endl;
+    std::cout << "Sum of multiple nodes = " << test.mul_sum(single_lst) << std::endl;
 
     return 0;
 }
