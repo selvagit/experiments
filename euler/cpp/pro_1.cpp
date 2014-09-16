@@ -129,14 +129,14 @@ class find_msum : public my_list {
         find_msum(int multiple_1, int multiple_2): 
             _mul_1(multiple_1), _mul_2(multiple_2)
       {
-
+        _sum = 0;
       }
 
         int mul_sum(my_list &lst){
               node *temp_node = (node *)lst.get_head_node(); 
               while(temp_node != NULL){
-                    if ((temp_node->element % _mul_1 == 0)
-                            ||(temp_node->element % _mul_2 == 0)){
+                    if (((temp_node->element % _mul_1) == 0)
+                            ||((temp_node->element % _mul_2) == 0)){
                           _sum += temp_node->element;
                     }
                     temp_node = temp_node->next;
@@ -162,8 +162,8 @@ int main(int argv , char *argc[])
         single_lst.add_node(i);
     }
 
-    single_lst.print_nodes();
-    std::cout << "Total nodes = " << single_lst.total_nodes() << std::endl;
+    //single_lst.print_nodes();
+    //std::cout << "Total nodes = " << single_lst.total_nodes() << std::endl;
 
     find_msum test(3,5);
     std::cout << "Sum of multiple nodes = " << test.mul_sum(single_lst) << std::endl;
