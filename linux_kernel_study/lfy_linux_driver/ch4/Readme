@@ -1,0 +1,2 @@
+After using the mknod to create a file under /dev/, use "rm"
+to remove the files 
