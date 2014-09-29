@@ -5,63 +5,66 @@
 #include <algorithm>
 #include <cassert>
 
-using namespace std;
+int main() 
+{
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
 
+    unsigned int num_of_rocks = 0;
 
-int main() {
+    std::cout << "Enter the number of rocks " << std::endl; 
+    std::cin >> num_of_rocks;
 
-      /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    std::string *test = new std::string[num_of_rocks];
+    assert(test != NULL);
 
-      int num_of_rocks = 0;
+    for (unsigned int i = 0; i < num_of_rocks; i++){
+        std::cout << "enter the string of rock -> " << i << std::endl;
+        std::cin  >> test[i];
+    }
 
-      std::cout << "Enter the number of rocks " << endl; 
-      std::cin >> num_of_rocks;
+    unsigned int i,j,k;
 
-      std::string *test = new std::string[num_of_rocks];
-      assert(test != NULL);
-
-      for ( int i = 0; i < num_of_rocks; i++){
-            std::cout << "enter the string of rock -> " << i << endl;
-            std::cin  >> test[i];
-      }
-
-      int i,j,k = 0;
-
-       for ( i = 0 ; i < num_of_rocks; i++){
-             for( j = 0; j < test[i].length(); j++ ){
-                   for( k = j+1; k < test[i].length(); k++ ){
-                         if(test[i][j] == test[i][k]){
-                               test[i].erase(test[i].begin()+k);
-                         }
-                   }
-             }
-       }
-
-      std::string alpha_set = "abcdefghijklmnopqrstuvwxyz";
-      int *gem_count = new int[alpha_set.length()];      
-
-      for (int i = 0 ; i < num_of_rocks; i++){
-            for ( int j = 0; j < test[i].length(); j++ ){
-                  for ( int k = 0 ; k < alpha_set.length(); k++ ){
-                        if ( test[i][j] == alpha_set[k] ){
-                              gem_count[k]++;
-                        }
-                  }
+    /* find the duplicate entries and remove them */
+    for ( i = 0 ; i < num_of_rocks; i++){
+        for( j = 0; j < test[i].length(); j++ ){
+            for( k = j+1; k < test[i].length(); k++ ){
+                if(test[i][j] == test[i][k]){
+                    test[i].erase(test[i].begin()+k);
+                    k--;
+                }
             }
-      }
+        }
+    }
 
-      int num_of_gems = 0;
-      for ( int i = 0; i < alpha_set.length(); i++ ) {
-            if( gem_count[i] == num_of_rocks){
-                  std::cout << alpha_set[i] << endl;
-                  num_of_gems++;
+    //for ( i = 0 ; i < num_of_rocks ; i++){
+    //    std::cout << test[i] << std::endl;
+    //}
+
+    std::string alpha_set = "abcdefghijklmnopqrstuvwxyz";
+    unsigned int *gem_count = new unsigned int[alpha_set.length()];      
+
+    for (unsigned int i = 0 ; i < num_of_rocks; i++){
+        for (unsigned int j = 0; j < test[i].length(); j++ ){
+            for (unsigned int k = 0 ; k < alpha_set.length(); k++ ){
+                if ( test[i][j] == alpha_set[k] ){
+                    gem_count[k]++;
+                }
             }
-      }
+        }
+    }
 
-      std::cout << num_of_gems << endl;
+    int num_of_gems = 0;
+    for (unsigned int i = 0; i < alpha_set.length(); i++ ) {
+        if( gem_count[i] == num_of_rocks){
+            //std::cout << alpha_set[i] << std::endl;
+            num_of_gems++;
+        }
+    }
 
-      delete[] gem_count;
-      delete[] test;
+    std::cout << "number of gems = " << num_of_gems << std::endl;
 
-      return 0;
+    delete[] gem_count;
+    delete[] test;
+
+    return 0;
 }
