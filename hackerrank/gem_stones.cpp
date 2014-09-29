@@ -11,19 +11,13 @@ int main()
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
 
     unsigned int num_of_rocks = 0;
-    std::ifstream in("test.txt");
-    std::string line;
-    std::getline(in,line);
-
-    num_of_rocks = std::atoi(line.c_str());
+    std::cin >> num_of_rocks;
 
     std::string *test = new std::string[num_of_rocks];
     assert(test != NULL);
 
     for (unsigned int i = 0; i < num_of_rocks; i++){
-        //std::cout << "enter the string of rock -> " << i << std::endl;
-        //std::cin  >> test[i];
-        std::getline(in,test[i]);
+        std::cin >> test[i];
     }
 
     unsigned int i,j,k;
