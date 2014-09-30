@@ -4,22 +4,20 @@
 #include <iostream>
 #include <algorithm>
 #include <cassert>
+#include <fstream>
 
 int main() 
 {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
 
     unsigned int num_of_rocks = 0;
-
-    std::cout << "Enter the number of rocks " << std::endl; 
     std::cin >> num_of_rocks;
 
     std::string *test = new std::string[num_of_rocks];
     assert(test != NULL);
 
     for (unsigned int i = 0; i < num_of_rocks; i++){
-        std::cout << "enter the string of rock -> " << i << std::endl;
-        std::cin  >> test[i];
+        std::cin >> test[i];
     }
 
     unsigned int i,j,k;
@@ -61,7 +59,8 @@ int main()
         }
     }
 
-    std::cout << "number of gems = " << num_of_gems << std::endl;
+    //std::cout << "number of gems = " << num_of_gems << std::endl;
+    std::cout << num_of_gems << std::endl;
 
     delete[] gem_count;
     delete[] test;
