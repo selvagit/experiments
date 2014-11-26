@@ -15,14 +15,23 @@ int main() {
     
     vector <int> set_list ;
     
-    for ( int i=0; i < set_number; i++ ){
+    for (int i=0; i < set_number; i++){
         int temp;
         cin >> temp;
         set_list.push_back(temp);
     }
     
-    for ( int i =0; i < set_number; i++ ){
-        cout << (long long int)(1<<set_list[i])-1 << endl;
+    for (int j =0 ; j < set_number; j++) {
+        int p = set_list[j];
+    
+        long long int temp = 1;
+        for ( int i =0; i < p; i++ ){
+            temp = temp << 1;
+            if (temp >= 100000)
+                temp = temp - 100000;
+        }
+
+        cout << temp-1 << endl;
     }
     
     return 0;
