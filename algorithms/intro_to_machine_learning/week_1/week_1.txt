@@ -1,0 +1,23 @@
+
+
+1) intput + output = program /model 
+
+2) learning -> 
+	ability to improve behaviour based on experience 
+
+3) machine learninA
+	learning from data
+	builds model
+	model can be used for decision making  
+
+4) formal definition
+	a program is said to learn from experience E from Task T with performance measure P and improves E
+
+5) choose
+	traning experience
+	target function ( expect output)
+	representation of the target function
+	learning algorithm to infer the target function
+
+
+
