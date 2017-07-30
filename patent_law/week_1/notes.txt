@@ -1,0 +1,73 @@
+
+a) 
+
+1) ipr -> creation of mind
+2) patents, copyrights, trademarks, industrial desing, geographical
+3) ipr as a group of rights
+	creative labour
+	confer exclusivity to right holder
+	not know how much % of product in patent, not apparent
+4) patent enforcment
+5) norms are made international level and push down to domestic level
+6) 1911 british, 1970 - patent act (removed product protect for medicines)
+7) 20 years of exclusive right
+8) Territorial right 
+9) PCT,TRIP(WTO) and paris treaty
+10) amended across the years bougth the compliance according to the TRIP
+
+b) What can be patent?
+
+1) can be only be granted in field of tech (2.1.j)
+2) statutory exceptions (ss.3 & 4) (nuclear patents cannot be applied)
+
+c) Understanding patents act  
+
+1) Time line of patent, Ta -> time of application Te -> Time of expiry,
+life of patent (Te - Ta) (20 years)
+2) 3-6 years for grant ( SS 1 to 81) in patent office patent prosecution
+3) 7-20 remaining year (SS 82 to 160 ) in grant, enforcement, opposition (rules 25.1) 
+4) act are passed by parliment, rules are made by central government
+5) act are writtern in board rules, rules are specific
+6) fifth schecdule for fees, 1st schedule for internla fees, second schedule for form, third schedule is form of patent, fourth schedule for scale of cost
+7) "manual" does not binding on the patent office
+
+d) Preliminary section
+
+1) all the section are discussed 
+
+e) Patent rules , 2016
+
+1) definition of startup 2(fb)
+	existance of less than 5 years from incorporation
+	turnover in 5 years should be less than 25 crores
+	innovation development and commercialization of new products
+	should not be reconstructed/split of existing buissness
+	form 28 filling for start up, provide evidence 	
+2) advantage of startup
+	treated at par with individual, fees lower 1600(person), 4000(small entity) 	
+	expeited an examination
+	other comanies files an internal patent with india as patent authority(ieea) for expieted	
+	Address of service, furnish email address(client) & mobile number(agent)
+3) leaving and serving documents [R.6]
+	courier service : removed 
+	only through india post
+	for electronic filling digitale authencitation is must
+	petition for condonation is for 6 months
+	refunding is possible [R.7(4)]
+	on withdrawal refunding is possible [R.7(4A), F.29]
+4) biological material ---- ? [R.13(8)]
+5) Amenedation to specification [R.16]
+6) deletion R.20
+7) examination of application R.24B(3)
+8) hearing through video conferencing [R.28(6)] , ad
+9) disqualification for inclusion in roll of scientific advisors [R.103A], unsound mind, unsolvent, moral
+10) power of attorney [R.135(1)] , submarine patent
+
+f) easy way to navigate rules 
+
+a) color coding for act 
+b) cross referencing
+
+
+
+
