@@ -1,4 +1,5 @@
 
+video-1
 
 1) intput + output = program /model 
 
@@ -20,4 +21,89 @@
 	learning algorithm to infer the target function
 
 
+
+video-2
+
+
+1) different types of machine learning
+	supervised learning , had labelled data
+	unsupervised learning , has not lablled data
+	re-inforcement learning , agent acting in enviroment , action based on reward
+	unsupervised learning
+
+2) supervise learning
+	different features X1 , X2 --- Xn
+	corresponding ouput Y1,Y2--Yn
+	output can be discrete value or continuous valued
+		discrete value are classification problem (yes,no)
+		continuous values are regression problem (price of a used car)
+	
+
+video-3
+
+1) Hypothesis space and inductive bias
+	inductive learning / prediction 
+	classification, regression, probaility estimation 
+	not a well defined problem is inductive problem if not it is detection problem
+	hypothesis space is set of all possible model (h E H)
+	terminology
+		example
+		traning data, set of examples
+		instance spacei (X), set of all possible objects described by feature
+		concept c (c is subset of X) 
+		target function f (f.x->y)
+	restrict hypothesis bt defining bias
+		constraints (strong condition)
+		preferences (weak condition )
+
+	why set is discussed as subset while the hypothesis is discussed as part of the hypothesis not a subset ? set is colleciton of points, which hypothesis is a single function  
+
+	number of possible boolean function is pow(2,pow(2,n)) ? how is this possible , number of ossible subset of instance 
+	number of possible instance pow(2,n)
+
+	hypothesis language 
+		is the algorithm useod
+		reflect the inductive bias 
+	hyposthesis error
+		bias error, wrong constrains  
+		variance error , because of smaller set 
+		over fitting and underfitting
+
+video-4
+
+1) evaluating the performacne of learning system
+	Experimental evaluation
+		error
+		accuracy
+		precision
+	Absolute error = (sum(abs(h(x)-y))/n 
+		good for regression problem
+	sum of square error = sum ( square (h(x) -y))/n 
+		good for regression problem
+	Number of misclassification = (sum ( delta ( h(x),y)))/n
+		delta(x) can be set of {0,1}
+
+	confustion matrix
+		diagnol elements is where the hyposthesis and true class match
+		more that 2 class is possible
+		
+		pos	Neg
+	pos	TP	FP
+	
+	neg	FN	TN
+
+
+	Accuracy = (TP + TN) / (P+N)
+	precision = TP/(TP+FP)
+	recall = TP/P
+
+	Sample error ---- ?
+	True error --- ?
+	
+	Orignial set = training + validation + testing
+
+	k-fold cross validation 
+		split into k subset 
+		k round of learning
+		find the avergage of all the rounds
 
