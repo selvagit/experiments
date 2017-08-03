@@ -107,3 +107,7 @@ video-4
 		k round of learning
 		find the avergage of all the rounds
 
+
+video-5
+
+1)   

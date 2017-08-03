@@ -1,0 +1,64 @@
+
+1) lecutre 1
+
+a) function definition
+	should be defined in the top
+	statements later
+
+b) division always produced float
+
+c) "//" quotient operator 9//5 -> 1 
+
+d) 'name' can be assigned different value, type changes based on the assingment
+
+e) or is inclusive or 
+
+f) logical operator and , or & not
+
+e) types define what operation are allowed
+
+
+2) lecture 2
+
+a) typr string, str, a sequence of character
+
+b) single quote can include double quote , double quote can include single quote 
+
+c) \ can be used to mention that the ' is not string boundary
+
+d) empty string is returned when wrong range is given
+
+e) for beyond range only string available in printed
+
+f) part of the string cannot be changed, instead use slices and concatenation
+
+g) string are immutable 
+
+3) lecture 3
+
+a) lists need not have uniform type , different type are present in a single string 
+
+b) in string single position and single value returns strings 
+	in list single position returns value while slice returns list
+
+c) immutable values, we can assume that assingment make a fresh copy , string
+
+d) for mutuable values , assignment does not make afresh copy
+
+list = [1,1]
+list1 = list
+list[1] = 2
+
+now list1 is [1,2]
+
+e) use slice to create a copy of the list   
+
+f) "is" operator is used to check the list name points to the same list  
+
+g) "+" will create a new list 
+
+4) lecture 4  
+
+
+
+ 
