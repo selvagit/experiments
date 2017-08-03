@@ -61,4 +61,16 @@ g) "+" will create a new list
 
 
 
- 
+5) lecture 5
+
+a) immutable object cannot be changes inside the function    
+	scalar value passed is a immutable variable , strange did not knew it so far
+
+b) python script is read from top to bottom  
+
+
+6) lecture 6
+
+a) What you say and how you say it 
+	algorithm 
+	form of writing 
