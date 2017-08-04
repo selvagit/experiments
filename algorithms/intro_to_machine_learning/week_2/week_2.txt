@@ -1,0 +1,36 @@
+
+1) mod02lec05.webm
+
+a) linear regression
+	supervised learning problem
+	continuos domain
+	error - sum of squares
+	
+b) Regression model
+	1 feature
+		simple
+			linear
+			non-liner
+	2+ feautre
+		multiple
+			linear
+			non-linear
+
+c) y = a0 + a1x1 + e
+	where 
+		a0 -> y intercept
+		a1 -> slope 
+		e  -> error (mean is 0)
+
+d) E(Y|X) = a0 + a1x0
+	least square line
+	errors are idependent
+	errors are normally distributed
+
+e) sum((yi - (a0 + a1x1))^2) 
+
+d) get the known partial derivaion equatio
+
+dervie equation and check
+
+
