@@ -1,0 +1,87 @@
+
+1) nvcr_lec06
+
+a) lamp desing
+
+b) http://creativeminds.org/tools/tools_all.htm
+
+c) battery charger 
+	usb, micro usb cable for charging
+	
+d) sketching
+	gif animation
+	sketching by hand
+		each layer contains one object
+	exploded view
+		for engineering
+		detailed view
+		isometric drawing
+		cut view
+
+2) nvcr_lec07
+
+a) pnematic 
+	fixed 
+	extrution
+	nipple for lubracation
+b) agriculture
+	taken from user manual
+	all part are number
+
+c) farmer
+	thermo farming / electronic farming
+	
+www.honkiat.com/blog/basic-guidlines-to-product-sketching/
+
+anton ruckman courses, how to draw product desing sketching 
+
+d) sketch types
+	ideation, concept
+	explanatory, define function
+	persuasive, final 
+		exaggerate to bring best of the design
+
+3) nvcr_lec08
+
+a) one child one ligth 
+	handle 
+	integrated solar panel
+	can stand on most surface			
+   philip lamp
+	curved handle
+	colored led 
+	usb charge
+b) one child one laptop
+
+c) ergonimcal lamp desing
+
+4) nvcr_lec09
+
+a) ergnomical lamp desing continuation 
+
+b) solid modelling  
+
+c) design thinking start with user experience
+
+d) audio level indicator
+	coloured led for level
+	
+5) nvr_lec10
+
+a) fabrication
+
+b) liquidfied pertoleum gas 
+	pressure is constant
+	level of liquid drops
+c) electronic balance
+	transfers the weight to the display unit on request or always
+	beam with load cell
+
+	
+
+
+
+ 
+
+
+ 

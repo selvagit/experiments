@@ -34,3 +34,56 @@ d) get the known partial derivaion equatio
 dervie equation and check
 
 
+2) mod02lec0.webm
+
+a) Decision Tree ( a tree structure classifier )
+	two types of nodes 
+		Decision Nodes
+		leaf nodes
+	used for 
+		classification (popular)
+		regression
+
+b) generate a decision tree
+	perference on the decision tree hypothesis 
+		prefer with smaller tree
+			low depth
+			small no of nodes
+	grow the tree or stop at where the probality of a event is very high
+
+
+
+3) mod02lec03.webm
+
+a) when to stop
+	for multi values, same arrtirbute can be used in multiple level
+b) which attribute to split 
+	information gain
+		equal distribution has no information
+		use attribute which has maximum gain or distribution is uneven
+	entropy
+		assing -logP bits
+		average optimal number of bits to encode information about certainity/uncertainity about s
+
+		revisit the calculation in the presentation 
+		check the ID3 algorithm and GINI algorithm
+		for continous attribute the classification is possible
+
+4)mod02lec08.webm 
+
+a) overfitting
+	A hypotheis h is said to overfit the training data if there is another hypothesis h' 
+	such that h' has more error than h on training data but h' has less error than h on 
+	test data
+	Avoid overfitting
+		preprunning
+			stop early when gain is statistically insignificant
+		postprunning
+			create a full tree and them remove the node
+			use cross validation 
+				min(error(T) - error(T-st)
+				where
+					T -> complete tree
+					st -> subtree
+			use MDL, minimum description length
+		
