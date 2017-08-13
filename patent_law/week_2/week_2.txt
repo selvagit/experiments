@@ -1,0 +1,85 @@
+1) mod02lec07(patentability of inventions)
+	not all invention can be patent
+	inventions s.2(1)(j)
+		new product or process
+		inventive step
+		capable of industrial application
+	improvements as invetion
+	statutory exceptions [SS.3 & 4]
+		policy
+		domain
+		eg. does not provide patent on nuclear	
+		
+	
+	
+2) mod02lec08(inventions not patentable)
+	ss 3&4 provides for exception to patentability
+	s.3 provides for an exhaustive list of items that cannot be classified as inventions	
+	section s.3(a): 
+		Contrary to natural law
+			Perpetual motion machine
+	section s.3(b)
+		Contrary to public order or morality
+			harvard Onco-mouse (genie to be susceptable cancer)
+	section s.3(c)
+		discovery not an invention
+		scientific principle
+		aritifcally synthesized substances
+	section s.3(d)
+		mere discovery of new form of known susbtance, no enhanced efficacy
+		mere discovery of any new property or new use for a known systance (s.48, existing patent cannot be reused )
+		mere use of a known process, machine or apparatus unless
+			to avoid evergreen by pharamacetical company
+	section s.3.e
+		Aggregation os properties of the component , mixing of component not an invention
+	section s.3.f
+		rearrangement of parts is not invention
+	section s.3.h
+		method of agriculture
+	section s.3.i
+		medical benefit plants , animal
+	section s.3.j
+		plant & animal varieties
+			micro-organism excluded
+	sectin s.3.k
+		mathematical method, software program, algorithm not invention
+		3.l
+		literary , dramatic , musical or artisitc , copyrigth work
+		3.m
+		scheme or rule , method of playing a game
+		3.n
+		topography, presentation of information
+		3.p
+		traditional knowledge
+		4.
+		Invention relating to atomic engergy, can be revoked under s.65
+			will be allowed to modify the patent
+		
+	
+3) mod02lec09(novelty)
+	invention  is defined in s.2.1.l
+		not anticipated
+		anticipation, publication, use in any country
+			publication should be in verifiable manner
+			testimony is also accepted
+	anticiapation discussed in chap 6
+	New invention	s.2(1)l
+		subject matter
+		Manner of disclosure
+	Determine Novelty
+		Look at documents/use before filing patent application with complete
+		specification
+		prequsitie there should be claim
+	Diclosure
+		Made available to public
+	Anticipation
+	when,what,how disclosure 
+ 	without NDA disclosure to even single person is disclosure	
+	pior must be completly mapped to novelty
+		***
+4) mmod02lec10
+	Anticipation by use no document are required
+	anticipation by traditional knowledge 
+	by prior publication
+	by prior claim, previous patent application
+

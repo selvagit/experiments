@@ -1,0 +1,117 @@
+
+1) (ncr-lec11) how to create a routine object
+	orange juice
+		handle
+		seed catcher 
+		spout
+		made of glass
+		improvementi made steel
+			proper strainer	
+		improvement made of plastic
+			not athestically pleasant	
+		made of ceramic
+			not affected by acid
+		desing 
+			silicone based squeezer 
+			poking desing
+			lever based desing
+			power desing
+		emotional design (book)
+		pratice design, sketching, line weight, card board model
+			sketch a multimeter
+		take a look around, improve all your things
+
+2) (ncr-lec12) simple mechanical enclosure 
+		easy and available		
+		any size provided it is within CEDT capabilities
+			30mm to 300mm 3d envelope	
+		quick, last minute, can be painted and graphics added
+		can be repaired 
+		why not
+			short circuit
+			finish depends on the detailed design
+			a little bit brain work required to explain 
+		where not to start
+			laying out of pcb
+		have an overall from factor
+		get familiar with kressey approach
+			mit course ware 
+		this form will help you
+	 		maintain overall propotions and aid in appropriate semantics of your product
+			an acceptable start is to have competing solution for your product on hand	
+		have an estimate of area required for your circuit
+		gross black schematic divided logically into managable elements
+			detailed schematic of where and how your system can be split
+			decide on the interface details 
+			decide on the electrical i/o interface details 
+			wires, connectors? wireless ,ir, rf?
+			decide on the human interface details 
+			display, keys/microphones, loud speakers jacks, ir receiver etc
+		get details of each and everything
+			without details there are no product 
+			gather all details of each component, 
+				especially the large volume items starting from psu components, display connectors keys, battery holders, all the way to small wires
+				(bunched wire harness cable stays and grommets are still a nuiisance)
+		
+		start a layout
+			arrange all the component in relation to each other
+			look at what is likely to be visible outside 	
+			arrange all the important features like the display items where they should be on the enclsoure
+		keep going inside , put together all the internal electronic hardware
+			make space for cable and wiring inside the equipment
+			ensure that all the elements are connected as per the schematic
+			make a best fir guess as to how to well things are likely to stay together	
+		Add mechanical hardware that can hold and fix the elements
+			how is a pcb held?
+			is the connector fixed on the shell or the pcb
+			what is the size of the fastener?
+			replacable component should be isolated	
+		
+3) nvr-lev13
+	Rearrange the layout in case the parts seems to fall out
+		this process is iterative and repeatative
+		at least three attempts are needed, donot release ip early
+		eventually some stage will be reached, where compromise has to be made 
+			design is compromise, trade off
+			designer should decide what is the most important part that is retained
+		optimization of the space, layout or cost is what it is all about
+		have a look at the other aspects thermal, EMI, effect on aesthetics, effect on usability, and manufacturing aspects
+	Freeze one of the alternatives as good solutions
+		start working on the external features
+		does the look and feel is as per the original concept 
+		make a best-fit attempt
+		start making form detailing on the external appearances
+			does it look bulky? unbalanced? make corrections
+			if cannot be hidden, highligth it
+		make a full assembly corrections		
+	now is the time for all goof men to come to the aid of the party
+		make the outline of pcb, remember all the pcb hardware, where to hold, screw down		
+		extract and take the outline to the eda tools
+		make the pcb layout, if there is any change in the overall size, do it now
+	put together a structure diagram
+		a network of all the parts in relation to each other	
+	start extracting part drawing from your original assembly drawing
+		in the final design the parts will have to be assembled in a sequential manner
+		each assembly will be tested and snapped together
+		after the final product is put together, it will have to work with minimum interventions
+		
+	start fabrication
+		fits and tolerance
+		dissemble the enclosure
+		start putting all the electronic sub assemblies in place
+		wire up the whole equipment
+		power up 
+		try the electrical functions, usually in the case open condition
+		load all the necessary software 
+		disasemble , paint
+
+4) nvr-lev14
+	acrylic	
+		optical index is same of water
+	steel metal 
+	       for thin shape
+		
+
+			
+			
+		

@@ -1,0 +1,71 @@
+
+
+1) range()
+	range(i,j,k) increment by k
+	range(i,j,-1)
+	make it easier to process list, range(0,len(l)) 
+	list(range(0,5)) == [0,1,2,3,4]	
+	other conversion function
+		str
+		int
+	in python-3 range does not return a list	
+
+2) list
+	list are mutable
+	slicing creates a new list
+	concatenation produces a new list 		
+	append , list.append()	
+	extend , list.extend(list1) extend list by list1
+	remove , lis.remove(12), remove first occurence of 12
+	slice , can create a bigger list or smaller list
+	a name cannot be used before it is assinged a value
+	
+3)loops
+	for:
+		break
+	else:
+
+4) Arrays & List
+	Array 
+		single type of element, contiguos
+		fixed size
+		offset can be easily calculated, for fixed time to access	
+		inserting and contracting is expensive
+	List	
+		linked list	
+		flexible size
+		access cost is propotional to i position
+		inserting and deleting is easy		
+		after finding the position, deletion and insetion is of constant time	
+		
+	binary search is better in array
+
+5) Efficiency
+	worst case behaviour	 
+	worst case is rare, average case is ok
+	revisit the algorithn
+	
+6) sorting
+	selection sort
+		select the next element in the sorted order
+		move it into its correct place in the final sorted list	
+		avoid using a second list
+	T(n)
+		Time taken for n items
+		pow(n,2) 
+	in python operation should be limited to Pow(10,7) operations
+
+7) sorting 
+	insetion sort
+		create a new stack with one value , by defult sorted
+		take a new element , place it in proper location
+	        each element inserted into a sorted array	
+	 	sorted array will be validated in sorted time 
+			because it has to check the left most value	
+8) inductive definition
+	define f(n) smaller values of itself		
+	isertion sort in recursive
+	recurisve limit is 997
+	import sys
+	sys.setrecursionlimit(100000)
+	

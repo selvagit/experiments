@@ -3,7 +3,7 @@
 
 a) lamp desing
 
-b) http://creativeminds.org/tools/tools_all.htm
+b) http://creatingminds.org/tools/tools_all.htm
 
 c) battery charger 
 	usb, micro usb cable for charging
@@ -17,6 +17,10 @@ d) sketching
 		detailed view
 		isometric drawing
 		cut view
+
+Both are 3D view of an object. With perspective view, the far end of the object looks smaller (think "vanishing eye point"). With isometric view, the near and far end of the object looks the same. 
+
+foreshortening : to reduce or distort (parts of a represented object that are not parallel to the picture plane) in order to convey the illusion of three-dimensional space as perceived by the human eye: often done according to the rules of perspective. 
 
 2) nvcr_lec07
 

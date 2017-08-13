@@ -1,0 +1,139 @@
+
+mpd03lec10
+
+1) instance based learning
+	lazy algorithm
+		immediatly model will not be built ,  but when required
+		
+2) k-nearest algorithm	
+	tranining phase 
+		save the examples
+	prediction time
+		get the test instance xt
+		find the training (xi,yi)
+		that is closure to xt
+	classfication
+		predict the majority class from {y1,y2,...y}
+	Regression
+		find the avarage 
+	euclidean distance
+		treats all attributes as equal
+		scale attribute to equal range and variance is similar
+		
+	average
+		noise in attributes
+		noise in class labels
+		classes may partially overlap
+	small k
+		captures fine strucute of pollen space between
+		may be necessaryy for small training set
+	large k
+		classifier is less sensitive noise particularly in output
+	        better probability estimated for discrete classes	
+	 	larget training set	
+ 	different weigth function can be used e.g. gaussian function	
+
+	
+mod03lec11
+
+1) issues with dimensional reduction 
+
+2) feature reduction
+	more features
+		more information ?
+		better descrimination power?
+		irrelevant features introduced noise
+		redundant features 
+	for 
+		improve or maitain accruracy
+		simplify classifier complexity
+		find subset of features
+	method
+		feature extraction
+		feature selection
+	Nfeatures
+		has pow(2,N) subset 
+	feature selection
+		optimium
+		heuristic
+		randmonize		
+	evaluation method
+		filter method, unsupervised 
+		wrapper method, supervised	
+	forward selection algor
+		start with empty feature set	
+		try each remaining feature
+		estimate classification/regeression error for adding each feature
+		select error which has maximum improvement
+	reverser selecction algorithm
+		start with full feature set 
+		try removing features
+		estimate classification/regression  for dropping each feature
+		select error which has maximum improvement
+	univariate method 
+		select one feature at a time
+		pearson method
+		chi-square method
+		signal to noise ratio
+	mulitvariate method
+		select a set of feature at a time
+		take all features at a time
+		
+mod03lec12
+
+1) feature extraction
+	n-dimensinal feature
+	dimenosality reduction, mapping to lower dimensions
+	find a projection matrix 'w'
+	new features are 
+		uncorrelated, 
+		cannot be reduced further
+		large variance 
+	principal components
+		find covariance matrix
+		take the top eigen vectors 	
+		not good with classification
+	class information
+		between class distance should be high
+		withing class distance should be low
+		LDA
+			Fisher Linear Discriminant
+			need to study the projection , lost it somewhere
+	
+mod03lec13
+
+1) recommender system ,collabrating filter
+	e.g.
+		item recommenation	
+		rating prediction
+	push system
+	learn from data
+	types
+		content based
+		collabrative filtering system
+	content based
+		based on content similarity
+	collabrative filtering
+		find similar users
+		types
+		pearson correlation coefficient
+		user based collbrating filter 
+			scaling is problem, million of users
+		item based collabrative filtering
+	
+mod03lec16 lecture 14
+1) tutorial k nearest neigbour  
+
+
+mod03lec17
+
+1) pc(x,y) = covariance (x,y) / std(x).std(y)
+	covariance (x,y) = E[(x-mux)(y-muy)]
+	std(x) = squareoot(variance(x)A) = squareroot(E(x-max))
+	
+	study for exam
+	
+	study pca for exam with numerical exam
+	
+
+
