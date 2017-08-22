@@ -1,0 +1,90 @@
+
+1) Lecture 1
+
+	selection sort and insertion sort is O(n)^2
+ 	divide and conquer
+		merge sort
+		first implement the sort algorithm and then implement the merge sort
+		goes to 100000
+
+2) lecture 2
+	m+n <= 28max(m,n)
+	where 
+		m in the len of the array on left 
+		n is the len of the array on rigth
+		e.g. 
+			m = 10 n = 5
+			15 <= 2*10	
+	T(n) = 2*T(n/2) + n
+	where
+		two subproblems of size n/2
+		merging solution required time O( n/2 + n/2 ) = O(n)	
+	     	
+		= 2*[ 2*T(n/4) + n/2 ] + n
+		= 4*T(n/4) + 2n
+		= 4*[2*T(n/8) + n/4] + 2n 		
+		= 8*T(n/8) + 3n
+		= 2^3*T(n/2^3)) + 3n
+
+		= 2^j * T(n/(2^j)) + jn
+		when j = log n
+			then n/(2^j) = 1
+				T (n/(2^j)) = 1
+		=2^logn + (logn)n 
+		= n + n*logn 
+	find union, intersection of the set		
+	find the difference of the set a,b find the elementst that are present in a but not in b
+	limitation
+		inherently recursice 
+		return are expensive
+	
+3) lecture 3
+	quick sort, 
+		choose a pivot element	
+		have two pointer / index 
+			yellow index for lesser than pivot element
+			green index is greator than pivot element
+			both the index until the first element greator than pivot
+			if lesser element is meet swap the element move the yellow index
+			continue till the end
+			move the pivot to the middle and then swap the element
+4) lecture 4
+	worst case 
+		pivot is either maximum or minimum	
+		one partition is empty
+		other has size n-1
+		T(n) = T(n-1) + n = T(n-2) + (n-1) + n
+			= 1 + 2+ ... + n = O(n)^2
+		Already sorted array is worst case input
+
+5) lectures 5
+	tuples
+	dictionary = associate array		
+		all keys must be immutable
+		nested dict is possible
+		the keys are not maintained in order 
+			used the sorted()
+
+6) lectture 6
+	pass values to function
+		arugment need not be in order
+		implicit default assingment is possible		
+		default must be availble at definition time	
+		defintion of function can be conditional	
+		can assign a function to a new name (function pointer)
+
+7) list operation
+	map (f,l)
+		applies f to each element of l
+	filter(f,l)
+		create a sub set for the property 'f'		
+	set comprehension
+		build a new set from exisiting set	
+	list comprehension
+		squares of even numbers below 100
+			[ squares(x) for i in range(100) if iseven(i)]
+		 	    map 	generator	    filter
+		
+	
+
+ 

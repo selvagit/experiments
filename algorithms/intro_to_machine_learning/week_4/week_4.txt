@@ -1,0 +1,13 @@
+
+1) mod04lec16 - Bayesian learning
+	Bayesian probability partial belief
+	Bayesian estimaation caclulates the validity of ta proposition
+		prior estimate 
+		new relevant information
+	Bayes Theorem
+		P(h/D) = P(D/h)P(h)/P(D)
+			where 
+			h -> hypothesis
+			D -> data
+			P(h) -> prior probability
+			P(D) -> likely hood	
