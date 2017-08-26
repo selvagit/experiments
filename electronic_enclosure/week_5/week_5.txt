@@ -1,0 +1,72 @@
+1) lec20
+	45 degree bends	
+	all operation should be done in flat condition
+		before forming, bending
+	telephone
+		ergonomic and aesthic	
+	studio 
+	job shop
+	reusable
+		polycarbonate material cannot be recycled
+	development drawing
+	repeatable structure
+
+2) lec 21
+	user vernier to mark the dimensions, height gauge 
+	
+	folding machine, with fingers
+		use square for alignment
+	
+	after folding remeasure the dimension
+	door lock 
+		embossing 
+		fold over
+		shear formed
+		no notch
+	alumiunium welding
+		argon gas welding
+		wire feed inside
+		tungsten sheild arc
+	horizontal machining 
+	vertical machining tool
+
+	bending & detection allowance + internal dimension
+	hat section
+
+	make reference from a datum, horizontal 
+	hole of higher dimension is better punched, drilling for smaller dimension
+
+	mark the clamp line 	
+	51:00 notching of corner
+	punch for hole
+	what ever is inside the finger dimension will not change
+	check the spring back option
+	v punch machine
+
+3) lec 22
+	top portion has bend has a problem	
+	E-I lamination, transformer
+	made using stamping die
+	tension ratio depends mostly on geomentry
+	neutral axis is 1/3 for tight corner, 1/2 for other
+	inner and outer rings are not concentric
+
+4) lec 23
+	set
+	benchworks
+	sheetmetalworks 	 
+
+5) lec 24
+	bend allowance 
+	bend deduction	
+	v bend
+	u bend
+	wiping die bending
+	double die bending
+	rotary bending	
+	deep drawing
+	perfect bend can be done by welding
+	edge rounding is required
+	
+
+	

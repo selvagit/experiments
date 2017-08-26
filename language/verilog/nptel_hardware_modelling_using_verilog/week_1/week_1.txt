@@ -1,0 +1,73 @@
+1) lecture 1: Introduction
+	archeitect
+		cmos (up to 22nm)
+		finfet (14nm)	
+	steps
+		specification
+		synthesis
+		simulation
+		layout
+		testability analysis
+
+	conversion, 
+		hdl provide formats for representing the outputs of varios desing steps
+		behaviour to register transfer level
+		register transfer level to gate level
+		gate level to transistor level
+		transistor level to layout	
+
+	design level
+		behavioural design
+		data path design
+		logic design
+		physical design
+		manufacturing
+
+2) lecture 2 : Design representation
+	4:29 y diagram
+        11:36 full adder
+	18:00 strutural representation			
+		use equation, behaviour
+		use function for representation each operation, structural
+		use function in net
+			but contains details about wire like alumium, poly silicon
+
+3) lecture 3 : getting started with verilog
+	3:50 instantion create a copy of the module	
+	26:50 Desing under test 
+	34:40 simulation result
+		vcd -> value change dump
+
+4) lecture 4 : vlsi design styles -1 	
+	2:42 vlsi design cycle	
+	7:05 fpga
+		i/o cells
+		LUT 
+		SRAM
+		ANTI FUSE
+	10:10 XC4000 Architecture
+		programmable interconnect
+		configuratble logic block
+		I/O blocks
+5) lecture 5: vlsi desing styles -2 
+	0:00 gate array	
+		design implementation is done with metal mask design and processing
+		create a standard mask based wafer
+		then create a custom mask for the given design	
+			total cost gets distrubute across the milliosn of chip
+	7:53 standard cell
+		ASIC
+			standard cell (semi cost)
+			full custom cell	
+		most prevalent
+		required developing full custom mask set
+	14:00 standard cell example
+		study the colouring of the stick diagram
+		cell jump through through cells
+		cell are standard
+	22:45 	memory chip always are full custom chip
+		layout is very regular
+	25:51	comparison between different design styles
+		
+	
+			

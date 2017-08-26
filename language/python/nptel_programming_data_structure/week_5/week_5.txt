@@ -1,0 +1,59 @@
+1) when things go wrong
+
+	exception handle is to handle known error	
+	if exception not handled the programming is aborted
+	excetpion is run time error
+	some errors
+		Name Error
+		ZeroDivision error 
+		IndexError
+		
+	if more than one type of error exception is raised then the first exception which matches is considere
+	
+
+2) interactive with user
+	input from keyboard input()	
+	for output use print()
+		print("values are x:", x, "y:", y) 
+	print() 
+		appends end of line to the every print
+		we can specify end with end="..."
+			print("continue on the", end="..")
+		items are seperate by default
+		specify separator with sep="..."
+
+3) Dealing with files
+	fh = open("gcd.py","r")	
+	contents = fh.read() entire file into a single string
+		read(n) read n len of string
+	contents = fh.readline(), a line 
+	contents = fh.readlines() , list of string
+	end of file returns a null character
+	write line explicit addition of \n
+	fh.close() , fh.flush()
+	rstrip() to remove trailing whitespace
+		strip() both side , lstrip left side
+	
+4) string processing
+	s.find(pattern,start,end)
+	s.index() ...???
+	s.replace(fromstr,tostr,n)		
+		n at most times
+		otherwise all the match are replaced
+		return a string , not a inplace replacement	
+	s.split(",",n)	
+		n at most times
+	joinstring =","
+	csvline = joinstring.join(columns)
+
+5) formatted printing
+	placement printing
+		"  {0} {1} ".format(4,5)
+		"  {s} {f} ".format(s=4, f=5)
+		" value : {0:6.2f}".format(47.523)	
+
+6) doing nothing
+	pass
+	del(l[4])	
+	None equivalent to NULL
+
