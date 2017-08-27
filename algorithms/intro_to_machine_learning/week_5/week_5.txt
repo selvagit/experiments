@@ -1,0 +1,51 @@
+
+1) Logistic regression
+	1:10 linear regression
+		h(x) = sum(bi,xi)
+	use a sigmoid function 
+		g(z) = 1/(1+e^(-z))
+		g(z) -> 1 as Z-> infitity
+		g(z) -> 0 as Z -> -infinity
+		
+		g'(z) = e^(-z) /(1+e^(-z))^2
+		      = g(z)(1-g(z))
+		
+		p(y/x) = h(x)^y/(1-h(x))^(1-y)
+		
+		must study the how the euation is derived
+
+2)Intrduction to support vector machines 
+	higher confidence when further from decision surface	
+	bayesian learning is computationally intensive
+	distance of the closest point to the decision surface is the margin	
+	choose a marging surface width is highest
+	support vector are points are closest to decision surface 
+	functional margin
+		w1x1 + w2x2 + b = 0
+		distance of the (xi,yi) from (w,b)
+		find min of the marging of all the points
+	15:00 geomentrical margin
+		find the norm of the vector	
+
+3) dual formulation
+	lagrangian function
+	primial function, primial problem
+	dual function, dual problem
+	discriminant function
+
+4) SVM : margin with max noise 
+	constraints has error coponent included
+
+5) SVM : Nonlinear SVM and kernel function 
+	transform to new feature space which is of higher dimension
+	computational cost increase with increase in dimension
+	kernel is a function of (xa,xb) instead of dot product xa.xb which is computational less intensive
+	mercer condition
+
+6) SVM : solution of the dual problem 
+	what is alpha? 	
+	change two parameter at a time instead of one
+	linear function
+
+	
+	
