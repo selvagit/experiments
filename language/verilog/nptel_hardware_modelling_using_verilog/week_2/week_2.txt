@@ -1,0 +1,49 @@
+1) mod02lec06
+	in cmos nand , nor , nand are easy
+	assign statement is used for mostlyt combinational circuit
+	21:21 instaneous and continuos assingment
+ 	23:32 net data type	
+		default high impedance state
+	28:15 how is output and wand be name as same variable
+	29:40 data value and signsl strength
+		x -> unknown logic state
+		z -> high impedance
+	30:45 signal strength
+		8 level , effective in mos
+
+
+2) mod02lec07A verilog (part-2)
+	0:30 register data type, it not similar to hardware register 	
+	2:40 may be mapping on hardware register
+	3:00 register data type
+		time is a simulation variable
+	6:30 reg data type
+	8:45 example
+		a single variable being output and register 
+	10:30 rst 
+		a synchronize reset
+	11:50 interger data type
+        14:00 C is 17 bit register
+	14:35 real data type
+	16:15 time data type
+	17:50 vectors
+		use [MSB:LSB]
+		reg data[1:10] is also valid	
+		reg data2[10:1] is common
+	22:00 section of vector, slicing of vector	
+		slice and assign
+	26:00 multi dimensional array and memories
+		reg [31:0] register_bank[15:0] // 16 32 bit registers
+			accessing register_bank[5]
+		interger matrix[0:5][0:5] // matrix od 2 dim each element iof 32
+		reg mem_bit[0:2047] // 2k 1-bit words 
+		reg [15:0] mem_word [0:1023] // 1k 16 bit words
+	28:50	constants	
+			size or unsized
+			<size>'<base><number>
+	30:25 parameter
+		similar to #define 
+			
+	
+	
+	
