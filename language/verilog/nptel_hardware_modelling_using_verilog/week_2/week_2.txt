@@ -44,6 +44,72 @@
 	30:25 parameter
 		similar to #define 
 			
+3) mod02lec08 A	verilog (part-3)
+	1:00 predefined logic gates
+	4:40 and,not,nand
+		for normal gates number of inputs are arbitary
+	7:00 buffer symbol diagram and explanation	
+	10:00 example of xor 
+	13:00 timescale 
+	14:30 specifying the connectivity
+		positional association
+		explicit association
+	17:20 positional association
+	18:39 explicit association
+	20:00 modelling issues
+		flip-flop edge-triggered storage cell
+		latch level-triggered storage cell
+		register can map to wire or storage cell
+	21:10 reg_maps_to_wire
+	24:00 a_problem_case reg maps to register
+	25:37 incomplete statement generates a latch
+	
+4) mod02lec09 verilog operator
+	1:40 verilog operators
+	2:00 arthematic operators
+		unary, binary 
+		-, +, *, /, **
+	5:20 logic operators
+		! , &&, ||	
+	10:23 relational operators
+		>, <, <=, >=, ==, !=
+	12:00 bitwise operators
+		~, &, |, ^, ~^
+	14:40 reduction operators
+		&, |, ~&, ~|, ^, ~^
+		~& bitwise NAND
+		~| bitwise NOR
+		operators on group of bits
+		all operator are unary operator
+	22:50 shift operator
+		>>, <<, >>>	
+		>>> two complement number system
+			same sign bit will be inserted
+	28:20 concatenation operator
+		{..., ..., ...}
+	29:10 replication operator
+		{n{m}}
+	32:30 8-bit address description
+        32:31 operator precedence	
+	35:00 === , !==
+		exact equal
+
+5) mod02lec10 verilog module example-1 
+	3:22 	behavioural modelling
+ 	7:30 	16to1 mux	
+	11:10	pure behaviourial model
+	23:30 version 2
+		behavioural modelling of 4 to 1 mux
+	       	structural modelling of 16 to 1 mux
+	26:50 version 3
+		behavioural modelling of 2-to-1 mux
+		structural modelling of 4-to-1 mux	
+	25:55 version 4
+		strutural modelling of 2-to-1 mux
+
+6) mod02lec11 verilog module example-2
+	01:30 ALU	
+	
 	
 	
 	
