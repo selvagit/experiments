@@ -1,0 +1,16 @@
+1) 2:00 abstract data type 
+   5:00 black box view
+	6:30 built in datatypes
+	9:30 classes and objects
+	i
+2) classes and objects
+	 1:00 self
+	14:40 __init__ , constrtuctor
+		__str__, what does a object contain
+		__add__, invoked implicitly by +
+
+3) list
+	10:00 list swap	
+
+4) dynamic sorted data
+	revisit this video	

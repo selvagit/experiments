@@ -1,0 +1,87 @@
+1) mod03 lec12 verilog description style
+	1:39 data flow 
+		continous assignment using assign statement	
+		assingment without clock
+	      behavioural flow
+		procedural assingment
+		assingment with clock					
+			blocking 
+			non blocking
+	8:00 example code , generate_mux()
+		index is a variable in RHS, then mux will be generated
+	11:30 explation of how the mux is generated		
+	12:45 example code , generate_set_of_mux()
+		based on the select signal output bit will be determined
+	15:25 mux diagram for above example
+	16:10 assign f = (a==0) ? (c+d) : (c-d)
+	19:10 example code generate_decoder()
+		index is present in the LHS, decoder ( one to many , complement of mux) will be generator
+	21:00 example prog level_sensitive_latch()
+		sequential logic element using "assign" statement
+	23:00 s-r latch
+		truth table, 0-0 indeterminate state
+	25:40 s-r code
+
+2) mod0s lec13 proceudral assignment
+	1:00 initial block, always block	
+		always block can be used inside in initial block
+	3:17 initial block
+	7:04 multiple statement are present, begin and end is required
+	8:00 $finish is called for stopping the simulatoin
+		all the  initial start at time 0 , because of #25 the function is excecuted at 25 time slot
+	9:20 short cuts in declaration
+	10:28 always block 
+	14:40 module generating_clock
+	18:20 only reg type variable can be assigned within an initial or always block
+	20:08 reg type can mapped to hardware registers(when to maintian memory) or combinational circuit
+	23:30 sequential statement
+	24:30 if..else
+	25:10 case (<expression>)
+ 	27:27 casez and casex		
+		z -> high impedance state
+		x -> donot care state
+
+3) mod03 lec14 procedural assignment 
+	1:00 while expression
+	4:00 for loop
+	5:00 for loop example
+	7:30 repeat
+		excecute fixed number of times
+		if the repeat expression is changes by external assingment,the loop will continue with the old value until the next repeat statement is reached
+	10:00 repeat example
+	13:05 forever 
+		will be terminated by $finish statement
+	17:00 other construct 
+		#(time_value)
+		@(event_expressio)
+	20:44 pos edge 
+		0,x,z -> 1
+		0 -> z,x
+	21:27 negedge
+		1,x,z -> 0
+		1 -> z,x
+	22:50 @ examples
+	25:49 d flip-clop synchronize set, reset
+	29:29 asynchronous set and reset
+		the value changes based on other than clock signal
+	30:00 latch with enable
+		level trigger
+
+4) mod03 lec15 procedural assingment 	
+	1:00 mux	
+		in sequential desing vector is used  
+		in combinational clock signal is used for returning the value 
+	4:40 @(*)
+	7:00 counter asynch
+	10:00 another seqeuntial logic example
+	17:00 case statement is incompletely decoded the synthesis tools will infer the need for a latch to hold the residual ouput when the select bits take the unscpecified values
+	25:00 a 4 function ALU
+	26:30 piority encoder
+	30:11 bcd_to_7seg		
+	32:15 n-bit comparator
+	34:00 2-bit  comparator
+	35:20 alu example
+	
+	
+	
+		
