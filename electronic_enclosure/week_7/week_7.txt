@@ -1,0 +1,35 @@
+1) nvcr lec30
+1:30 as inexpensive as we want it to be 	
+	okw inclosure
+1:51 wearable bio-medical, energy harvesting
+4:34 hospital environment, overlapped panel
+10:00 grooming
+12:00 catalogue 
+13:00 enclosure pre desing
+15:20 copyrigth
+20:31 gland, opening to take wire in & out of enclosure
+21:48 lubricate, pack, swell and water tight
+23:30 wall mount, battery holder
+27:33 rat nest pcb layout
+
+2) nvcr lec31
+0:25 ip classification
+1:30 mouting holes, gasket
+3:00 indoor enclosure for mouting hardware 
+4:00 outdoor enclosure 
+	inclined hat
+	gasket 
+	in botton gormets(holes) 
+5:44 hammondmfg.com	
+6:10 NEMA, national electrical manufacturers association
+6:42 underwriter labs, who gives safety ceritifcate
+8:40 iron clad switch fallen off
+10:48 elctrical shock because of open connection
+12:08 earthing does not exist
+12:58 glass cloth shelves
+15:50 metallic shroud for socket is earth
+18:11 electronics enclosure
+19:25 terminal strip is covered, to prevent the shock
+21:20 covered , warning are avialable on the shell
+
+
