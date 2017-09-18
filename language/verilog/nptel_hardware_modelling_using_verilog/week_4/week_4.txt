@@ -1,0 +1,50 @@
+1) mod04lec16.webm
+1:17 blocking and non blocking statement
+	procedural block is code inside initial and always block
+	net type variable cannot be on LHS
+5:20 {a[5],b[5:2],c} = x+ y ; is a valid expression
+16:30 non blocking assingment
+	used for creating sequential statement
+18:42 assignment to the target gets scheduled for the end of the simulation cycle (at the end of the procedural block)
+22:49 swapping values
+25:10 blocking statement work across modules for the same trigger event on the same variable
+27:46 no invocation of the module is happening , how the clock information is passed 
+
+2) mod04lec17.webm
+0:20 example of blocking and non blocking statement
+6:00 default case will be used when the sel is not properly set
+6:45 up/down counter
+9:40 parameterized design 
+11:10 multiple clk
+13:00 multiple edgek clk
+18:00 c is defined as input but it is also assingned, 
+	small mistake, or i have to write program to verify
+18:30 ring counter explanation
+	shift register containing several d-flipflop, the bits are looped
+25:42 excellent example of concatentaton in ring counter
+	count = {count[6:0], count[7]}
+
+3) mod04lec18.webm
+8:00 smart enough to know that in blocking statement the previous statement RHS will be directly assigned to the LHS 
+	d-flip will be generating
+10:50 shift register in non blocking assingment
+15:29 because of race condition the q2 value will be indeterminate
+
+
+4) mod04lec19.webm
+00:23 mixing blocking and non-blocking assignment
+	generate statement
+
+5) mod04lec20.webm
+user defined primitives
+15:45 mux are sutable for udp
+18:00 sequential circuit
+21:50 "-" retains the previous state
+25: 30 6 bit ripple counter
+	check the diagram for better understanding
+28:00 jk flipflop
+	study the basic functionality
+29:30 sr flipflop
+	study the basic functionality
+
+

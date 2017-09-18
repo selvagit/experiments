@@ -1,0 +1,28 @@
+
+1) introduction
+	1:50 massive parallel
+	23:50 sigmoid function is used since it differntiable and non linear 	
+
+2) feed forward multilayer network
+	0:49 non linear funciton 
+	1:20 monotocity property	
+		input interaction can cancell each other
+	2:53 cannot represent the xor function
+		not linear seperable
+	6:15 can present any boolean function
+		continous function within a tolerance with correct activation hidden layer
+	6:52 all function can be reprsented by three layer 
+	8:30 feed forward network , no feed back
+	10:21 need to know the error in hidden layer
+	11:23 computation signal flow forward and error signal flow backward
+	12:18 give small forward random valuei as weigth
+	17:00 derivation
+	19:45 chain rule
+	28:00 netj 
+
+3) back propagation algorithm
+	10:00 two layer represent two nand function , nand is universal loogic
+	13:30 two layer 
+	16:39 divide the error propotional to the weigth	
+	
+	

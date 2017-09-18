@@ -1,0 +1,31 @@
+1) Memoization and dynamic programming
+1:50 subproblem
+3:30 fibonacci number
+8:08 memoization, write your self a memo, 
+	store the generated value in table
+12:03 sample code of fibonacci
+13:47 dynamic programmic, strategy to optimize memoize table
+17:30 dynamic programming, sample program for fibonacci
+
+2) grid paths
+3:43 explanation for combinatorial solution
+	why combinatorial not permutation ? because order matters
+15:55 memoization vs dynamic programming 
+	it is always better to use dynamic programming
+
+3) longest common subsequence 
+	subword -> continuous sequence of character
+			secret, secretary -> secret
+	subseq  -> jump in the mactching sequence is allowed
+			secret, rect -> ret
+	must revisit the video to understand better
+
+
+4) matrix multiplication
+	i4:05 sequence in which associative matric multiplication can change compuation
+
+5) Wrap
+
+	
+
+
