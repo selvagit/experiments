@@ -32,4 +32,25 @@
 19:25 terminal strip is covered, to prevent the shock
 21:20 covered , warning are avialable on the shell
 
+3) nvcr lec32
+0:43 vertical machining
+0:52 horizontal machining, everything is visible 
+    coolant, machine 
+    nema 250-2003 non hazardous material free areas
+    gas, lpg, cng, petrol
+    starch, flour explosive
+3:42 non ventilated cabinet
+    different types of enclosure
+8:44 iec 529, old standard
+11:48 access probe greater than 2.5 mm shall not penetrate
+12:50 disc to protect the hand from flash
+13:40 50mm shall not fully penetrate ip55, ip56
+14:25 liquid protection
+15:23 aircondition , caset airconditioner, coolant is directly in the box
+17:13 indoor device can be affected, because of water conditional
+19:40 15degree , 60degree
+22:15 alukkom, plastic elctronics 
+24:55 cap is available for socket 
+26:36 testing jig 
+28:20 check youtube for lockdown ip65 videos
 
