@@ -1,0 +1,72 @@
+1) nvcr lec35
+1:20 environmental test methods
+	JSS-55555 (defence)
+2:59 environmental specification
+4:30 gasket, natural taper, wire seal 
+5:48 camera, camera enclosure clamped on to the support pole 
+	ip55, ip42, ip43, cover is hidden, 
+8:18 ip66 box , get denrenched or fall down, water will not enter
+	strain relief is given by input and output cable
+	separate gantry wire should be provide to share the load 
+9:49 remote switch, not a fully sealed equipmenti because of raise condition flooding will not affect, earthing is present, gland gun should be sealed, commercial plumbing 
+14:45 open wire, there is not enough gap between the wire, 
+17:20 street ligth contrller with timer, 4 pole contractor, safety fuse is not
+available, tubular casketi, bypass switch
+20:56 ip55 box case open
+21:25 a guide to gasketing principle and best partices o
+22:13 electrical toothbrush
+23:00 electrical shaver
+	flush which has the cover the protusion pins
+26:35 gillette shavers
+	electrical shaver, can be used with shaving foam which may have higher 
+conductivity
+28:30 cofee maker 
+
+2) nvcr lec36
+01:01 a guide to gasketing principle and best partices o
+03:50 clamping force are present
+	bloat load should be thougth
+	chemically resist the fluid being sealed
+	resist the pressure
+8:56 lip is not good enough for sealing
+13:30 calibrated torque, brush for cleaning 
+14:38 ip68 enclosure
+	industrial equipment
+
+3)nvcr lec37
+3:52 dimension taking as per document will create problem
+7:02 samsung marine phone
+7:36 ordinary phone ip45, ip56
+7:50 emi sheilding theory and gasket design guide
+9:16 emi interference from mobile phone is picked by microphone
+	gprs
+13:59 50hz,60hz, 120hz(harmonic) low frequency
+16:30 equation for measuring the sheilding effectiveness  
+18:24 shielding effective of metal enclosure
+20:00 different antenna, different freq, errror correction code
+	bluetooth, nfc, wireless charging
+24:24 refrigerator compressor is hermitcally sealed & welded together
+	poisonous, expensive, corrosive
+27:00 evaporator 
+	callit
+
+4)nvcr lec38
+0:45 conductive elastomer
+4:45 gold does not oxidies, silver oxidies but still conductivity
+7:00 strain for elastomer 200,300
+8:00 grove design should be proper to avoid compression set or over compression
+12:00 grove diagram
+	shaped sheet metal container
+	z-retainer forms gasket cavity
+15:23 various type of formation of the gasket
+18:51 controller env, low temperature can lead to condensation on cooler surface
+20:00 fridge wasll is warm, ship cabinet
+	battery nickel coated
+	normally tin coated every object
+
+get the document
+
+
+
+
+
