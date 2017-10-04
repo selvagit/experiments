@@ -1,0 +1,38 @@
+1) mod05lec21 : verilog test bench
+1:11 procedural block that exist only once
+2:25 only for simulation
+5:45 example
+11:50 $display, similar to printf c
+15:15 $monitor, similar to printf c, only on change, event driven
+18:00 $finish terminate the excecution
+18:50 $dumpfile <filename> 
+	$dumpoff
+	$dumpon
+21:30 $dumpvars
+
+2) mod05lev22 writing verilog test benches
+2:09 full adder testbench
+8:08 for loop test bench
+10:30 dumpfile & dumpvars
+15:56 four bit shift register
+20:45 explanation of the clock in timing
+26:08 7 bit binary counter
+28:00 full adder self checking test bench
+30:40 generating random test vector
+	$random <seed>
+
+3) mod05lec23 modelling finite state machines 
+4:48 finite state machine, can be represented using the state transition diagram or table
+	algorithm state machine
+7:02 state transition diagram
+11:13 Mealy and moore fsm 
+14:39	pi -> primary input
+	ps -> primary state
+	NS -> next state
+	po -> primary output
+16:43 lamp state machine
+ 
+
+
+
+
