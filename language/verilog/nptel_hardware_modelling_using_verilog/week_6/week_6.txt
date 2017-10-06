@@ -1,0 +1,10 @@
+1) mod06lec25 Datapath and controller design - 1
+1:25 datapath
+	where all the computation are carried out 
+	controller 
+		finit-state machine provides control signals to the data path 
+7:00 multiplication by repeat addition
+	clrp -> clear p 
+	ldp -> load p
+11:50 data path and control path signal map
+	problem is how to define the state for a problem

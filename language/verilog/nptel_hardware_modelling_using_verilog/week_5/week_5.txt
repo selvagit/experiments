@@ -26,13 +26,24 @@
 	algorithm state machine
 7:02 state transition diagram
 11:13 Mealy and moore fsm 
+	mealy based on both input and state
+	moore only based on state
 14:39	pi -> primary input
 	ps -> primary state
 	NS -> next state
 	po -> primary output
 16:43 lamp state machine
- 
+	because of non-blocking statement assingment flip-flop are generated  
+	can be avoided by the creation of non-blocking statement without depending on clock 
 
-
+4) mod05lec24
+0:30 serial parity detector
+4:30 program for serial parity detector
+13:00 parity_gen program without the generation of the latch for the output
+15:00 mealy machine
+	overlapping sequence is also detected
+22:00 next state logic
+30:19 serial adder
+	need to study how the state diagram are made
 
 
