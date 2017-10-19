@@ -1,0 +1,93 @@
+1) nvcr lec40:: off the shelf aluminum enclosures
+2:00 extrution are available in various lenght
+3:15 ip65 cases 
+	temperorary immersion is possible
+	visible fasterner is available
+	protect corner to prevent shattering
+	using elastomer/rubber
+7:07 labelling is below can not be seen on insertion of the cable 
+8:30 explanation of the container
+13:10 aluminum grade a6063s-T5
+	T5 refers to the anealing capability
+15:40 anodized layer is non conductive, aluminum oxide is non conductive
+	anodized finish
+	earthing does not happen automatically
+17:33 notes for installing the kit
+	small portion of the cover gasket protrudes for maintaining with the panel gasket for ip65 protection
+27:07 multiple combination are provide with gasket details
+	1.7 mm grove run through length extrution
+	3.5 mm pitch run through extrution
+		what is pitch and grove
+			pcb can slide along the grove
+			emering the grove
+33:12 other hardware can be mounted other than pcb
+	loading bearing member (nuts) can be used using the nut grooves
+
+2) nvcr lec 41 :: understanding boxes documentation
+0:30 metric thread , in us unc (unified national, unf, unc ) is used 
+	thread pitch is standard
+	hight of the nut is standard
+	tapped nuts are usefull for easy position in the case
+3:30 in aero space 0.6 - 0.8 mm distance in length and height of the pcb screw are put 
+4:26  totall amount of bending is minimize
+	military grade testing 
+		quater sine wave shock
+		search out for resonance for strobe
+8:39  giving half section
+	top portion 
+	bottom portion 
+	test procedure for checking the leakage 
+		fill the enclosure with cold air
+		dip the enclosure in hot(80-90 deg) distilled water 
+		check for bubble
+12:00 emc shielding rubber gasket
+	2.5 mm diameter 
+18:00 engraving operation, paint filling in the engrave
+24:14 cnc machining, supplier will help in generating the G-code which will help in cutting
+27:00 eda file are understood by the software
+
+
+3) nvcr lec 42 :: heat sink enclosures 
+1:15 desk phone 
+	chance of misuse by bending
+	section are made of plastics, strength is limited
+	cradle is available
+	yellow knob for increasing volume
+	power on/off 
+5:35 heat-sink alumium enclosure
+6:58 heat transfer 
+	radiator is not in a car, heat exchanger 
+	heat transfer via sheet metal spreader, metal fitting bracket 
+13:18 effectiveness of heat sink
+14:45 rf amplifier
+	top is heat extrution
+	bottom does not have it
+18:50 power bank in a aluminum casing
+20:00 different types of sink
+	pin type heat-sink for better cooling performance
+	heat sink plate can be customized as ventilation slit for better cooling
+	black does not help
+	radiation is not color sensitivity at the temp we are discussing
+	protection class ip40 
+
+4) nvcr lec 43 :: detailing of built in heat sink boxes 
+0:15 a,b mouting dimensions, c is width 
+2:11 as length and width changes the thermal reistance rate
+	as dimension increase the resistance decreases
+6:00 grooves width in panel is related to the pcb copper tracing
+12:21 standard alumium for heat sink
+14:20 special heat sink
+15:00 heat sink problem
+	how to transfer the heat to the wall
+	how to keep the enclosure sealed
+20:00 import the pdf file into the cad tool
+	placement of the heat source, load can be added, which can be supplied for pcb layout
+	
+
+5) nvcr lec 44 :: connector basics 
+02:40 remove part for servicing
+max kilowatt wiring in the house, sum all the power consumption of all the devices in the house
+		
+	
+
+

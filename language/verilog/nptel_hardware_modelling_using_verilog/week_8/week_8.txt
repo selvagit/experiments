@@ -1,0 +1,44 @@
+1) mod08lec37 pipeline implementation of a processor - 1
+2:39 reduce instruction set architecture mip32
+4:53 32 bit general purpose register R0 to R31
+10:00 r type encoding 
+	ADD r1,r2,r3
+14:35 6 bit opcode -> pow(2,6) 64 instructure 
+	rs -> 5 bit , 32 registers
+	rt -> 5  bit , 32 register
+16:00 opcode per instruction
+17:40 i-type instruction encoding
+	ADDI r1,r2, 50 -> 50 immediate data 
+	lw r20,84(r9)
+21:30 j-type instruction
+25:07 addressing modes of mips-32
+
+2) mod08lec38 pipleline implementation of a processor - 2 
+1:32 instruction cycle
+	time period for the excecution of a single instruction
+4:01 load instruction example
+6:00 instruction fetch
+7:50 instruction decode
+12:04 execution / effective address computation
+15:15 memory access / branch completion
+17:18 register write back
+
+3) mod08lec39 pipeline implementation of a processor - 3
+7:30 latch between the stages
+10:00 micro instruction
+25:31 hazards
+	a) structural -> memory access
+	b) data -> dependency on previous data
+	c) control -> branch 
+
+4) mod08lec40 verilog modelling of the processor - 1 
+2:30 sample code
+
+5) mod08lec40 verilog modelling of the processor - 2 
+4:00 sample code for adding 3 numbers
+i16:00 sample code add and store
+22:13 factorial of a number
+ 
+
+
+

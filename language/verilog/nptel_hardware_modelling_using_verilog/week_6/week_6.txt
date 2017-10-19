@@ -8,3 +8,40 @@
 	ldp -> load p
 11:50 data path and control path signal map
 	problem is how to define the state for a problem
+
+
+2) mod06lec26 Data path and controllee design -2
+5:00 gcd algorithm explanation
+	mux for swapping the values
+11:00 state diagram for gcd
+	pipo -> parallel in parallel out
+23:12 alternATE approach
+
+
+3) mod06lec27 Datapath and controller design -3 
+0:49 booth multiplication
+6:45 basic idea
+10:00 algorithm explanation
+14:00 block digram of booth
+20:00 shiftreg
+simulation may be correct but syntheis may fail 
+equally probable are synthesis is correction but simulation
+
+4) mod06lec28 syntheziable verilog
+6:30 feedback will convert a combinational circuit to sequential circuit 
+	feedback must be avoided
+9:00 if state are not defined then verilog will generate a latch
+	becoming a sequenctial
+10:40 udp -> user defined p
+12:00 netlist is provided, 
+	synthesis tools can change the primitive gate based on its library
+14:28 continuous assingment
+15:45 procedural blocking assignment
+17:00 functions 
+	can return a single output
+20:30 task
+	can return more than one output
+
+5) mod06lec29 some recommended practices
+_b -> below
+

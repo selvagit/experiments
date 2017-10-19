@@ -1,0 +1,32 @@
+1) nvcr lec55.webm
+1:54 cell 
+3:25 showing the ear aid battery  
+8:45 space constrain is not a problem
+	but space will be a constrain
+11:09 constrain the width
+12:40 display does not go inside
+17:00 layer design
+	came from movie making from cartoon
+24:00 phleting command
+	for adding the curve at the edge
+28:00 solid representation of the device
+32:00 boolean difference
+
+
+2) nvcr lec56.webm
+19:33 split surface
+
+3) nvcr lec57.webm
+0:30 bevel for smooth curve
+3:10 sheet metal streching to plane sheet
+5:18 bending allowance
+	random assignment of bending allowance of 1mm
+	mark the gap or increase the dimension
+13:54 sheet metal software will take care of internal bending radius and external bending radius
+
+
+3) nvcr lec58.webm
+9:05 bending allowance depends on
+	material used
+	fabrication method followed
+10:11 internal angle is not regular angle for .e.g. 90 deg

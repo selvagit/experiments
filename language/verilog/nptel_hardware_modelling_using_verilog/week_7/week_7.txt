@@ -1,0 +1,48 @@
+1) mod07lec30.webm modelling memory
+1:17 two dimensional element is memory
+3:30 available as pre defined library
+	memory layout is different from cpu
+8:00 readmemb (read memory binary) readmemh (read memory hex)  used for filling the memory from a file
+10:00 memory module has chip select, clk, read & write signal  
+11:00 avoid inout data type because there is not consistent data type definition across simulator and systhesis tool
+	inout is type of wire
+14:50 example eprom
+18:22 data_in and data_out lines are separate
+20:00 use tristate bus to create a bi directional bus 
+	why we canot use the tri state inside a memory module itself
+23:43 ram_3 example
+
+
+2) mod07lec31.webm modelling register bank
+i6:00 same register will not be read and written simultaneously
+	2 reg read and one write is allowed per clock
+8:21 sr1 -> source register 1
+	sr2 -> source register 2
+	dr -> destination register
+13:22 example code using a array
+22:00 confused with the delay time variable 
+	#10 inisde the for loop and #7 outside the for loop
+
+
+3) mod07lec32.webm Basic pipelining concept
+	stages are combinational circuit
+	latches are flipflop , intermediatery stage
+16:43 linear pipeline, non-linear pipeline
+	non-linear pipeline multiple path can be taken
+18:00 reservation table
+	x-axis show the time steps
+	y-axis shows the stages
+21:00 speedup and efficiency
+	
+4) mod07lec33.webm pipeline modelling 
+
+5) mod07lec34.webm 
+9.50  sela -> select A
+	NEGA -> ~A 
+	SRA -> shift right A by 1 position
+	SLA -> shift left A by 1 position
+11:48 pipeline diagram
+13:30 clocking issue in pipeline
+
+5) mod07lec35.webm switch modelling 
+	check the psuedo nor implementation
