@@ -1,0 +1,133 @@
+1) ncr lec 49
+1:30) mouse
+4:11 constraints are known, multiple solutions are possible 
+5:44 cad should be used through out the design
+	but sketch are used for pliminary purpose
+7:30 was introduce in 1960
+	original was done for drawing
+	used in injection moulding
+12:08 orginally inhouse development was done  was by automobile and aeroplane manufacture
+13:20 3d isometric perspectives
+	intoduced by IBM-dassaults
+14:00 product lifecycle management 
+	solidedge, solidworks, unigraphics nx
+14:47 wire-frame models
+	cube is difficult to intepretate
+16:44 surface models
+	since nothing is the background is visible, it is realistic
+19:26 solid model , they are the most usefull 
+	they appear to be same as surface models
+	in addition they have weight, volume and density 
+
+2) nvr lec 50
+0:40 constructive solid modelling
+	difficult to rework
+3d boundary represenation solid modeeling
+3d hybrod solid modelling
+	csg and brep solid modelling
+3d feature based solid modelling
+	preferred modelling method
+3d feature base parametric solid modelling
+	parameter are available for each arch, line 
+	parameter can be changed, they control location of the entities within the model
+	history-base method for keep a record of how the model was built
+	constrains can be added
+	allow other method of relating entitied as well
+	is efficient for dimensional changes then features changes`	
+12:00 3d feature based, dynamic solid modelling
+	uses flexible model creation and refinement concepts to allow designers to capture ideas and details models quickly
+22:02 autodesk inventor -3d 
+	creo parametric parametric pro -e
+26:15 ds caita dassault systemes
+	rich surface modelling is required
+26:30 nx unigraphics  siemens 
+solidworks has list a of mechnical library
+
+3) nvr lec 51
+1:00 ac design
+5:00 make things easy
+	build accurate representation
+	sizes, opening, radii
+	scaling is easy
+	duplicating is the core
+	library can be built up
+	online availability
+14:42 down stream producability
+	perfect match
+	input from nebulous concepts in the mind
+	output to the usable data specs, dimensions
+	other desing stages
+	normalisation , standardisation value engineering
+	prototyping
+21:13 what gets my attention
+	primitive intuitive
+	buildup frame basic lines , surfaces, curves, solids
+	unexplored features
+	easy select objects
+	layers, dimensioning
+	attributes of entities
+	export and import
+
+4) nvr lec 52
+what can be done with it
+	fabrication of sheet metal
+	machine shop work
+	model making
+		archeitecture 
+		water piping
+		fire hazard 
+		architecture
+	rapid prototyping
+		fused filament depositing, liquid
+		laser cutting	
+no rules, think it, do it
+	patience, play, practice, plan for the next time
+	try all online tutorials, blogs, groups
+	get trained
+
+9:52) 555 timer
+	veroboard, 
+	wish board, breadboard
+
+13:10) stop clock
+
+15:09) timmer for watering the garden
+
+17:50) example of kit for lab
+	plan view for correct dimension
+	layer with different color, red color for pcb, it can be enabled and disabled
+
+21:26) rhinocero, health care system
+	step motor, pulley, guide
+	cover part of it
+
+23:39) dual mode with wifi and gsm 
+
+
+5) nvr lec 53
+0:00 water analysing device
+	not pure hydraulic, pneumatic
+2:17 micro well device
+	depending of the placement of various feature, layout can be optimized
+4:15 torch given as simple excercise
+	reajustment of the reflector affect the battery placement
+	a single object from the composite diagram can be exported like battery in the torch
+	get the student version try to create a single battery holder
+
+6) nvr lec 54
+2:38 dimension are specific to domain
+4:44 enclosure 
+	3 different parts
+	wireframe shows numerous thing related to constructed lines
+8:30 prototype board
+		power supply
+		on/off connector
+		connector
+9:00 hoppy circuit
+11:26 off the self small enclosure 
+14:39 rapid prototyping machine
+19:00 deviation from the regular norm for labelling of the button 
+	but the device is meant for professional who will read the manual
+21:00 steel metal enclosure
+	
+
