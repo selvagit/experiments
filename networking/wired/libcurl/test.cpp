@@ -15,7 +15,7 @@ void download_pbc2(void)
     std::string url;
     remove("./irrh-pbc2.swa");
 
-    url.assign("scp://").append("10.21.3.33/").append("/home/selva/irrh-pbc2.swa");
+    url.assign("scp://").append("10.21.3.33/").append("~/irrh-pbc2.swa");
 
     std::cout << url << std::endl;
 
@@ -33,15 +33,15 @@ void download_pbc2(void)
             // If set to 0secs, then the timeout is defaulted to 300secs.
             curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 0L);
 
-            curl_easy_setopt(curl,CURLOPT_SSL_VERIFYHOST,0);
-            curl_easy_setopt(curl,CURLOPT_SSL_VERIFYPEER,0);
+            //curl_easy_setopt(curl,CURLOPT_LOCALPORT,8080);
+            //curl_easy_setopt(curl,CURLOPT_PORT,22);
 
             //Rate limit to 5Mbps, the below is in bytes
             curl_easy_setopt(curl, CURLOPT_MAX_RECV_SPEED_LARGE, (curl_off_t)625000LL);
             curl_easy_setopt(curl, CURLOPT_SSH_AUTH_TYPES, CURLSSH_AUTH_ANY);
-            curl_easy_setopt(curl, CURLOPT_SSH_PUBLIC_KEYFILE, "~/.ssh/id_rsa.pub");
-            curl_easy_setopt(curl, CURLOPT_SSH_PRIVATE_KEYFILE, "~/.ssh/id_rsa");
-            curl_easy_setopt(curl, CURLOPT_USERNAME, "root");
+            curl_easy_setopt(curl, CURLOPT_SSH_PUBLIC_KEYFILE, "/home/selva/.ssh/id_rsa.pub");
+            curl_easy_setopt(curl, CURLOPT_SSH_PRIVATE_KEYFILE, "/home/selva/.ssh/id_rsa");
+            curl_easy_setopt(curl, CURLOPT_USERNAME, "selva");
 
             curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
             curl_easy_setopt(curl, CURLOPT_WRITEDATA, fd);
