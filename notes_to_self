@@ -17,3 +17,9 @@ deb-src http://deb.debian.org/debian/ stable-updates main contrib non-free
 #####add the user to the sudo group:
 
 sudo adduser <username> sudo
+
+
+#### To generate a pair of public and private keys execute the following command:
+#### https://www.guyrutenberg.com/2007/10/05/ssh-keygen-tutorial-generating-rsa-and-dsa-keys/
+ssh-keygen -t rsa -b 2048
+You can use “dsa” instead of the “rsa” after the -t to generate a DSA key. The number after the -b specifies the key length in bits.
