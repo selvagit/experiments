@@ -1,0 +1,91 @@
+
+**** Build of configuration Debug for project optimization ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../copy.asm'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --display_error_number --diag_warning=225 --diag_wrap=off -k --preproc_with_compile --preproc_dependency="copy.pp"  "../copy.asm"
+"../copy.asm", ERROR!   at line 106: [E0002] Illegal mnemonic specified
+1 Assembly Error, No Assembly Warnings
+
+>> Compilation failure
+	.def _asm_copy_optimized_k
+
+
+Errors in Source - Assembler Aborted
+gmake: *** [copy.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project optimization ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../copy.asm'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --display_error_number --diag_warning=225 --diag_wrap=off -k --preproc_with_compile --preproc_dependency="copy.pp"  "../copy.asm"
+'Finished building: ../copy.asm'
+' '
+'Building target: optimization.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --display_error_number --diag_warning=225 --diag_wrap=off -k -z -m"optimization.map" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="optimization_linkInfo.xml" --rom_model -o "optimization.out"  "./simple_copy.obj" "./hello.obj" "./copy.obj" -l"libc.a" 
+<Linking>
+warning #10210-D: creating ".stack" section with default size of 0x400; use the -stack option to change the default size
+warning #10210-D: creating ".sysmem" section with default size of 0x400; use the -heap option to change the default size
+'Finished building target: optimization.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project optimization ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../simple_copy.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --display_error_number --diag_warning=225 --diag_wrap=off -k --preproc_with_compile --preproc_dependency="simple_copy.pp"  "../simple_copy.c"
+"../simple_copy.c", line 30: warning #225-D: function declared implicitly
+"../simple_copy.c", line 32: warning #225-D: function declared implicitly
+"../simple_copy.c", line 38: warning #225-D: function declared implicitly
+"../simple_copy.c", line 21: warning #552-D: variable "y" was set but never used
+'Finished building: ../simple_copy.c'
+' '
+'Building target: optimization.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --display_error_number --diag_warning=225 --diag_wrap=off -k -z -m"optimization.map" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="optimization_linkInfo.xml" --rom_model -o "optimization.out"  "./simple_copy.obj" "./hello.obj" "./copy.obj" -l"libc.a" 
+<Linking>
+warning #10210-D: creating ".stack" section with default size of 0x400; use the -stack option to change the default size
+warning #10210-D: creating ".sysmem" section with default size of 0x400; use the -heap option to change the default size
+'Finished building target: optimization.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project optimization ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../simple_copy.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --display_error_number --diag_warning=225 --diag_wrap=off -k --preproc_with_compile --preproc_dependency="simple_copy.pp"  "../simple_copy.c"
+"../simple_copy.c", line 30: warning #225-D: function declared implicitly
+"../simple_copy.c", line 32: warning #225-D: function declared implicitly
+"../simple_copy.c", line 38: warning #225-D: function declared implicitly
+"../simple_copy.c", line 21: warning #552-D: variable "y" was set but never used
+'Finished building: ../simple_copy.c'
+' '
+'Building target: optimization.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6400 --abi=coffabi -g --display_error_number --diag_warning=225 --diag_wrap=off -k -z -m"optimization.map" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="optimization_linkInfo.xml" --rom_model -o "optimization.out"  "./simple_copy.obj" "./hello.obj" "./copy.obj" -l"libc.a" 
+<Linking>
+warning #10210-D: creating ".stack" section with default size of 0x400; use the -stack option to change the default size
+warning #10210-D: creating ".sysmem" section with default size of 0x400; use the -heap option to change the default size
+'Finished building target: optimization.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project optimization ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****

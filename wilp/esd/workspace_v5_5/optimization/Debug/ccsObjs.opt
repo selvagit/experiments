@@ -1,0 +1,1 @@
+"./simple_copy.obj" "./hello.obj" "./copy.obj" -l"libc.a" 

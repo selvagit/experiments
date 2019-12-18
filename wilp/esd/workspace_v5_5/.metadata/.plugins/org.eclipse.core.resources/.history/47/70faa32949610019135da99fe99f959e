@@ -1,0 +1,22 @@
+/*
+ * simple_copy.c
+ *
+ *  Created on: 18-Apr-2019
+ *      Author: sveeramani
+ */
+
+void Copy()
+{
+  int i;
+  short x[64] = 0;
+
+  short y[64] ;
+
+  for (i=0;i<128;i++)
+  {
+	  Y[i]= x[i]];
+  }
+}
+
+
+

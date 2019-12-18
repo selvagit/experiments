@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+<configuration XML_version="1.2" id="Data Snapshot Viewer_0">
+        <instance XML_version="1.2" desc="Data Snapshot Viewer_0" href="connections/DataSnapshotViewer.xml" id="Data Snapshot Viewer_0" xml="DataSnapshotViewer.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Data Snapshot Viewer_0">
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_icepick_c.xml" id="drivers" xml="DataSnapshotDecoder_icepick_c.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_c64xp.xml" id="drivers" xml="DataSnapshotDecoder_c64xp.xml" xmlpath="drivers"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="TMS320C6474_0" href="devices/c6474.xml" id="TMS320C6474_0" xml="c6474.xml" xmlpath="devices"/>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

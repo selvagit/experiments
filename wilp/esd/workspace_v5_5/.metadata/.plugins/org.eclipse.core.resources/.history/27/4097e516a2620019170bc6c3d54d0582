@@ -1,0 +1,50 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+ASM_SRCS += \
+../copy.asm \
+../dotp.asm 
+
+C_SRCS += \
+../hello.c \
+../simple_copy.c 
+
+OBJS += \
+./copy.obj \
+./dotp.obj \
+./hello.obj \
+./simple_copy.obj 
+
+ASM_DEPS += \
+./copy.pp \
+./dotp.pp 
+
+C_DEPS += \
+./hello.pp \
+./simple_copy.pp 
+
+C_DEPS__QUOTED += \
+"hello.pp" \
+"simple_copy.pp" 
+
+OBJS__QUOTED += \
+"copy.obj" \
+"dotp.obj" \
+"hello.obj" \
+"simple_copy.obj" 
+
+ASM_DEPS__QUOTED += \
+"copy.pp" \
+"dotp.pp" 
+
+ASM_SRCS__QUOTED += \
+"../copy.asm" \
+"../dotp.asm" 
+
+C_SRCS__QUOTED += \
+"../hello.c" \
+"../simple_copy.c" 
+
+

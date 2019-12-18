@@ -1,0 +1,40 @@
+;asm_copy
+
+		.def _asm_copy
+
+
+;a4 = &a, B4= &x, A6= 40 , b3 return address
+
+_asm_copy 	mv  A6, B0
+		zero A2
+loop 	ldh .d1 *a4++,a5
+		nop 	4
+		add .l2 a5,b5,b5
+		sth .d2 b5,*b4
+		nop
+	[b0]sub  .l2 b0,1,b0
+	[b0]b    .s1 loop
+		nop   5
+		b     .s2 b3
+		nop   5
+
+
+		.def _asm_copy_optimized
+
+
+;a4 = &a, B4= &x, A6= 40 , b3 return address
+
+_asm_copy_optimized
+	 	mv  A6, B0
+		zero A2
+loop1 	ldh .d1 *a4++,a5
+		nop 	4
+		add .l2 a5,b5,b5
+		sth .d2 b5,*b4
+		nop
+	[b0]sub  .l2 b0,1,b0
+	[b0]b    .s1 loop1
+		nop   5
+		b     .s2 b3
+		nop   5
+

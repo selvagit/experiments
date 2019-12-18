@@ -1,0 +1,36 @@
+/*
+ * simple_copy.c
+ *
+ *  Created on: 18-Apr-2019
+ *      Author: sveeramani
+ */
+
+extern void asm_copy(short *x , short *y, int len);
+extern void temp_copy(short *x , short *y, int len);
+
+void Copy()
+{
+  int i;
+  short x[64] = {0};
+
+  for (i=0;i<64;i++)
+  {
+	  x[i] = i;
+  }
+
+  short y[64] = {0};
+
+  for (i=0;i<64;i++)
+  {
+	  y[i]= x[i];
+  }
+
+  short z[64] = {0};
+
+  temp_copy
+  asm_copy(x, z, 64);
+
+}
+
+
+

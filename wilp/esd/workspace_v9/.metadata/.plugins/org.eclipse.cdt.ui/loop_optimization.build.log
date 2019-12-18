@@ -1,0 +1,40 @@
+
+**** Build of configuration Debug for project loop_optimization ****
+
+"C:\\ti\\ccs900\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: C6000 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/bin/cl6x" -mv64+ --include_path="C:/Users/sveeramani/workspace_v9/loop_optimization" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/include" -g --diag_warning=225 --diag_wrap=off --display_error_number -k --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../copy.c"
+Invoking: C6000 Compiler
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/bin/cl6x" -mv64+ --include_path="C:/Users/sveeramani/workspace_v9/loop_optimization" --include_path="C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/include" -g --diag_warning=225 --diag_wrap=off --display_error_number -k --preproc_with_compile --preproc_dependency="copy.d_raw"  "../copy.c"
+"../copy.c", line 15: warning #552-D: variable "y" was set but never used
+Finished building: "../copy.c"
+ 
+Building target: "loop_optimization.out"
+Invoking: C6000 Linker
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/bin/cl6x" -mv64+ -g --diag_warning=225 --diag_wrap=off --display_error_number -k -z -m"loop_optimization.map" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/lib" -i"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="loop_optimization_linkInfo.xml" --rom_model -o "loop_optimization.out" "./copy.obj" "./main.obj"  -llibc.a 
+<Linking>
+warning #10247-D: creating output section ".text" without a SECTIONS specification
+warning #10247-D: creating output section ".fardata" without a SECTIONS specification
+warning #10247-D: creating output section ".cinit" without a SECTIONS specification
+warning #10247-D: creating output section ".stack" without a SECTIONS specification
+warning #10210-D: creating ".stack" section with default size of 0x400; use the -stack option to change the default size
+Finished building target: "loop_optimization.out"
+ 
+Building files: "loop_optimization.out"
+Invoking: C6000 Hex Utility
+"C:/ti/ccs900/ccs/tools/compiler/ti-cgt-c6000_8.3.2/bin/hex6x"  -o "loop_optimization.hex"  "loop_optimization.out" 
+Translating to Extended Tektronix format...
+   "loop_optimization.out" .text ==> .text
+   "loop_optimization.out" .cinit ==> .cinit
+warning: Data is being written to auto-generated file loop_optimization.x1
+warning: Data is being written to auto-generated file loop_optimization.x2
+warning: Data is being written to auto-generated file loop_optimization.x3
+Finished building: "loop_optimization.out"
+ 
+
+**** Build Finished ****

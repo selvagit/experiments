@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+<configuration XML_version="1.2" id="Data Snapshot Viewer_0">
+        <instance XML_version="1.2" desc="Data Snapshot Viewer_0" href="connections/DataSnapshotViewer.xml" id="Data Snapshot Viewer_0" xml="DataSnapshotViewer.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Data Snapshot Viewer_0">
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_icepick_d.xml" id="drivers" xml="DataSnapshotDecoder_icepick_d.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_c66xx.xml" id="drivers" xml="DataSnapshotDecoder_c66xx.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_cs_dap.xml" id="drivers" xml="DataSnapshotDecoder_cs_dap.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_cortexA15.xml" id="drivers" xml="DataSnapshotDecoder_cortexA15.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_cs_child.xml" id="drivers" xml="DataSnapshotDecoder_cs_child.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_csstm.xml" id="drivers" xml="DataSnapshotDecoder_csstm.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/DataSnapshotDecoder_etbcs.xml" id="drivers" xml="DataSnapshotDecoder_etbcs.xml" xmlpath="drivers"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="66AK2E05_0" href="devices/66AK2E05.xml" id="66AK2E05_0" xml="66AK2E05.xml" xmlpath="devices"/>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

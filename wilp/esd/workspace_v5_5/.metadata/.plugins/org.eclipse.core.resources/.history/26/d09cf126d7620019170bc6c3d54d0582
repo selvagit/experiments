@@ -1,0 +1,24 @@
+;dotp
+
+		.def dotp
+
+
+;a4 = &a, B4= &x, A6= 40 , b3 return address
+
+dotp 	mv  A6, B0
+		zero A2
+loop 	ldh .d1 *a4++,a5
+		ldh .d2 *b4++,b5
+		nop 	 4
+		mpy .m1x a5,b5,a5
+		nop
+		add  .l1 a2,a5,a2
+	[b0]sub  .l2 b0,1,b0
+	[b0]b    .s1 loop
+		nop   5
+		mv 	  	  a2,a4
+		b     .s2 b3
+		nop   5
+
+
+

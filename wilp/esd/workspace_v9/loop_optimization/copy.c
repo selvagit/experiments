@@ -1,0 +1,27 @@
+/*
+ * copy.c
+ *
+ *  Created on: 09-Apr-2019
+ *      Author: sveeramani
+ */
+
+
+void Copy()
+{
+  int i;
+
+  short x[64] ={0};
+
+  short y[64] ;
+
+  for  ( i =0 ; i < 64 ; i ++)
+  {
+      x[i] = i;
+  }
+
+  for (i=0;i<128;i++)
+  {
+      y[i]= x[i];
+  }
+}
+

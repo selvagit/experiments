@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+void Copy()
+/*
+ * hello.c
+ */
+int main(void) {
+	printf("Hello World!\n");
+	void Copy();
+	return 0;
+}
