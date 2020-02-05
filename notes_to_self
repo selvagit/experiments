@@ -1,3 +1,7 @@
+# to get the json object 
+$ grep -i getRadioInfo -A 5 ./messages{.2,.1,.0,} | grep -oh "{.*}" > dump
+$ tail -n 1 ./dump  | python -m json.tool 
+
 ####debian chrome installation
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
