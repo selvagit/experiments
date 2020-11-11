@@ -3,9 +3,68 @@ currRealMem(VmRss) = 584 peakRealMemi(VmHWM) = 0 currVirtMem(VmSize) = 10392 pea
 size(vmSize) = 2598 resident(VmRSS) 164 
 Memory usage(maxrss): 660 kilobytes
 Mem analysis : end 
-{"arr1": [[1, 2, 3], [4, 5, 6]], "arr2": [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], "state": "success", "cards": [{"fpgaTemp": 1.51, "systemTemp": 3.5}, {"fpgaTemp": 1.51, "systemTemp": 3.5}]}
+Json recieved alloation request = 72
+Json recieved alloation request = 128
+Json recieved alloation request = 8
+Json recieved alloation request = 32
+Json recieved alloation request = 54
+Json recieved alloation request = 40
+Json recieved alloation request = 64
+Json recieved alloation request = 54
+Json recieved alloation request = 72
+Json recieved alloation request = 128
+Json recieved alloation request = 24
+Json recieved alloation request = 57
+Json recieved alloation request = 24
+Json recieved alloation request = 59
+Json recieved alloation request = 72
+Json recieved alloation request = 128
+Json recieved alloation request = 24
+Json recieved alloation request = 57
+Json recieved alloation request = 24
+Json recieved alloation request = 59
+Json recieved alloation request = 16
+Json recieved alloation request = 128
+Json recieved alloation request = 63
+Json recieved alloation request = 32
+Json recieved free request = 0x7fffbf168a50 
+Json recieved alloation request = 63
+Json recieved alloation request = 63
+Json recieved alloation request = 64
+Json recieved free request = 0x7fffbf168b50 
+Json recieved alloation request = 128
+Json recieved free request = 0x7fffbf168c20 
+Json recieved free request = 0x7fffbf168bd0 
+Json recieved alloation request = 63
+Json recieved free request = 0x7fffbf168bd0 
+Json recieved free request = 0x7fffbf168b80 
+Json recieved free request = 0x7fffbf168b00 
+Json recieved free request = 0x7fffbf168a70 
+Json recieved alloation request = 110
+Json recieved free request = 0x7fffbf168c70 
+{"state": "success", "cards": [{"fpgaTemp": 1.51, "systemTemp": 3.5}, {"fpgaTemp": 1.51, "systemTemp": 3.5}]}
 Mem analysis : start 
-currRealMem(VmRss) = 732 peakRealMemi(VmHWM) = 0 currVirtMem(VmSize) = 10392 peakVirtMem(VmPeak) = 0 
-size(vmSize) = 2598 resident(VmRSS) 183 
-Memory usage(maxrss): 736 kilobytes
+currRealMem(VmRss) = 724 peakRealMemi(VmHWM) = 0 currVirtMem(VmSize) = 10392 peakVirtMem(VmPeak) = 0 
+size(vmSize) = 2598 resident(VmRSS) 181 
+Memory usage(maxrss): 728 kilobytes
 Mem analysis : end 
+Json recieved free request = 0x7fffbf168580 
+Json recieved free request = 0x7fffbf1685a0 
+Json recieved free request = 0x7fffbf1685d0 
+Json recieved free request = 0x7fffbf1687b0 
+Json recieved free request = 0x7fffbf1687d0 
+Json recieved free request = 0x7fffbf168820 
+Json recieved free request = 0x7fffbf168840 
+Json recieved free request = 0x7fffbf168720 
+Json recieved free request = 0x7fffbf1686d0 
+Json recieved free request = 0x7fffbf168970 
+Json recieved free request = 0x7fffbf168990 
+Json recieved free request = 0x7fffbf1689e0 
+Json recieved free request = 0x7fffbf168a00 
+Json recieved free request = 0x7fffbf1688e0 
+Json recieved free request = 0x7fffbf168890 
+Json recieved free request = 0x7fffbf168640 
+Json recieved free request = 0x7fffbf168610 
+Json recieved free request = 0x7fffbf168690 
+Json recieved free request = 0x7fffbf1684f0 
+Json recieved free request = 0x7fffbf1684a0 

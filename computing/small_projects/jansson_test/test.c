@@ -112,6 +112,17 @@ void mem_analysis (void ) {
     printf("Mem analysis : end \n");
 }
 
+void * my_alloc(long unsigned int i){
+    printf("Json recieved alloation request = %d\n", i);
+    return malloc (i);
+}
+
+void my_free(void *ptr){
+    printf("Json recieved free request = %p \n", ptr);
+    free(ptr);
+}
+
+
 int main()
 {
 	json_t* jdata;
@@ -119,11 +130,13 @@ int main()
 	int arr1[2][3] = { {1,2,3}, {4,5,6} };
 	int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
 
+    json_set_alloc_funcs(my_alloc, my_free);
+
     mem_analysis () ;
 
 	jdata = json_object();
-	add_2array_to_json( jdata, "arr1", &arr1[0][0], 2, 3 );
-	add_2array_to_json( jdata, "arr2", &arr2[0][0], 4, 4 );
+	//add_2array_to_json( jdata, "arr1", &arr1[0][0], 2, 3 );
+	//add_2array_to_json( jdata, "arr2", &arr2[0][0], 4, 4 );
 
 	json_object_set_new(jdata, "state", json_string("success")); 
 
