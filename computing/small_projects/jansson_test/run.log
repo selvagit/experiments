@@ -1,57 +1,7 @@
-currRealMem = 576 peakRealMemi = 0 currVirtMem = 10392 peakVirtMem  = 0 
-Memory usage: 652 kilobytes
+currRealMem(VmRss) = 576 peakRealMemi(VmHWM) = 0 currVirtMem(VmSize) = 10392 peakVirtMem(VmPeak) = 0 
+Memory usage(maxrss): 652 kilobytes
  size = 2598 , resident 163 
-{
-  "arr1":[
-    [
-      1,
-      2,
-      3
-    ],
-    [
-      4,
-      5,
-      6
-    ]
-  ],
-  "arr2":[
-    [
-      1,
-      2,
-      3,
-      4
-    ],
-    [
-      5,
-      6,
-      7,
-      8
-    ],
-    [
-      9,
-      10,
-      11,
-      12
-    ],
-    [
-      13,
-      14,
-      15,
-      16
-    ]
-  ],
-  "state":"success",
-  "cards":[
-    {
-      "fpgaTemp":1.51,
-      "systemTemp":3.5
-    },
-    {
-      "fpgaTemp":1.51,
-      "systemTemp":3.5
-    }
-  ]
-}
-currRealMem = 736 peakRealMemi = 0 currVirtMem = 10392 peakVirtMem  = 0 
-Memory usage: 740 kilobytes
- size = 2598 , resident 184 
+{"arr1": [[1, 2, 3], [4, 5, 6]], "arr2": [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], "state": "success", "cards": [{"fpgaTemp": 1.51, "systemTemp": 3.5}, {"fpgaTemp": 1.51, "systemTemp": 3.5}]}
+currRealMem(VmRss) = 732 peakRealMemi(VmHWM) = 0 currVirtMem(VmSize) = 10392 peakVirtMem(VmPeak) = 0 
+Memory usage(maxrss): 736 kilobytes
+ size = 2598 , resident 183 

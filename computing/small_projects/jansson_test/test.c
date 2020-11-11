@@ -69,7 +69,7 @@ int rs() {
 	struct rusage r_usage;
 	getrusage(RUSAGE_SELF,&r_usage);
 	// Print the maximum resident set size used (in kilobytes).
-	printf("Memory usage: %ld kilobytes\n",r_usage.ru_maxrss);
+	printf("Memory usage(maxrss): %ld kilobytes\n",r_usage.ru_maxrss);
 	return 0;
 }
 typedef struct {
@@ -95,26 +95,27 @@ void read_off_memory_status(statm_t *result)
 	fclose(f);
 }
 
-int main()
-{
+void mem_analysis (void ) {
 	int currRealMem; int peakRealMem; int currVirtMem; int peakVirtMem;
 	statm_t result;
 
+    getMemory(&currRealMem, &peakRealMem, &currVirtMem, &peakVirtMem); 
+    printf ("currRealMem(VmRss) = %d peakRealMemi(VmHWM) = %d currVirtMem(VmSize) = %d peakVirtMem(VmPeak) = %d \n",
+            currRealMem, peakRealMem, currVirtMem, peakVirtMem);
+    rs();
+
+	read_off_memory_status(&result);
+	printf (" size = %d , resident %d \n", result.size, result.resident);
+}
+
+int main()
+{
 	json_t* jdata;
 	char* s;
 	int arr1[2][3] = { {1,2,3}, {4,5,6} };
 	int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
 
-    {
-	getMemory(&currRealMem, &peakRealMem, &currVirtMem, &peakVirtMem); 
-	printf ("currRealMem = %d peakRealMemi = %d currVirtMem = %d peakVirtMem  = %d \n",
-            currRealMem, peakRealMem, currVirtMem, peakVirtMem);
-	rs();
-    }
-
-	read_off_memory_status(&result);
-	printf (" size = %d , resident %d \n", result.size, result.resident);
-
+    mem_analysis () ;
 
 	jdata = json_object();
 	add_2array_to_json( jdata, "arr1", &arr1[0][0], 2, 3 );
@@ -134,19 +135,11 @@ int main()
 		json_object_set_new(jf, "systemTemp", json_real(3.5));
 	}
 
-	s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
+	//s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
+	s = json_dumps( jdata, 0 );
 	puts( s );
 
-    {
-	getMemory(&currRealMem, &peakRealMem, &currVirtMem, &peakVirtMem); 
-	printf ("currRealMem = %d peakRealMemi = %d currVirtMem = %d peakVirtMem  = %d \n",
-            currRealMem, peakRealMem, currVirtMem, peakVirtMem);
-	rs();
-    }
-
-
-	read_off_memory_status(&result);
-	printf (" size = %d , resident %d \n", result.size, result.resident);
+    mem_analysis () ;
 
 	free( s );
 	json_decref( jdata );
