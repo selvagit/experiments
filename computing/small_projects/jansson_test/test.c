@@ -99,13 +99,17 @@ void mem_analysis (void ) {
 	int currRealMem; int peakRealMem; int currVirtMem; int peakVirtMem;
 	statm_t result;
 
+    printf("Mem analysis : start \n");
     getMemory(&currRealMem, &peakRealMem, &currVirtMem, &peakVirtMem); 
     printf ("currRealMem(VmRss) = %d peakRealMemi(VmHWM) = %d currVirtMem(VmSize) = %d peakVirtMem(VmPeak) = %d \n",
             currRealMem, peakRealMem, currVirtMem, peakVirtMem);
-    rs();
 
 	read_off_memory_status(&result);
-	printf (" size = %d , resident %d \n", result.size, result.resident);
+	printf ("size(vmSize) = %d resident(VmRSS) %d \n", result.size, result.resident);
+
+    rs();
+
+    printf("Mem analysis : end \n");
 }
 
 int main()
