@@ -4,6 +4,8 @@
 
 #include <jansson.h>
 
+#define NUMBER_CARDS (2)
+
 void add_2array_to_json( json_t* obj, const char* name, const int*
 marr, size_t dim1, size_t dim2 )
 {
@@ -37,7 +39,19 @@ int main()
 
     json_object_set_new(jdata, "state", json_string("success")); 
 
-    s = json_dumps( jdata, 0 );
+    json_t * jcards = json_array();
+    json_object_set_new(jdata, "cards", jcards);
+
+    int card;
+    for (card = 0; card < NUMBER_CARDS; card++) {
+        json_t * jf = json_object();
+        json_array_append_new(jcards, jf);
+
+        json_object_set_new(jf, "fpgaTemp", json_real(1.51));
+        json_object_set_new(jf, "systemTemp", json_real(3.5));
+    }
+
+    s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
     puts( s );
     free( s );
     json_decref( jdata );
