@@ -1,9 +1,9 @@
 
 all:
-	gcc -o test.a ./test.c -ljansson
+	gcc -g -Wall -o test.a ./test.c -ljansson
 
 run:
-	./test.a
+	./test.a | tee run.log
 
 valgrind:
 	#valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./test
