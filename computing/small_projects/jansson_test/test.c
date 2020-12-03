@@ -105,21 +105,31 @@ void mem_analysis (void ) {
             currRealMem, peakRealMem, currVirtMem, peakVirtMem);
 
 	read_off_memory_status(&result);
-	printf ("size(vmSize) = %d resident(VmRSS) %d \n", result.size, result.resident);
+	printf ("size(vmSize) = %ld resident(VmRSS) %ld \n", result.size, result.resident);
 
     rs();
 
     printf("Mem analysis : end \n");
 }
 
-void * my_alloc(long unsigned int i){
-    printf("Json recieved alloation request = %d\n", i);
-    return malloc (i);
+#define size_t int
+
+static size_t memPool = 0, allocs = 0, frees = 0;
+
+void * my_alloc(long unsigned int size){
+    int *ptr = (size_t*)malloc(size + sizeof(size_t));
+    *ptr = size;
+    memPool += size;
+    allocs++;
+    return ptr + 1;
 }
 
 void my_free(void *ptr){
-    printf("Json recieved free request = %p \n", ptr);
-    free(ptr);
+    int *sptr = (size_t*)ptr;
+    sptr--;
+    memPool -= *sptr;
+    frees++;
+    free((void *)sptr);
 }
 
 
@@ -127,12 +137,12 @@ int main()
 {
 	json_t* jdata;
 	char* s;
-	int arr1[2][3] = { {1,2,3}, {4,5,6} };
-	int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
+	//int arr1[2][3] = { {1,2,3}, {4,5,6} };
+	//int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
 
-    json_set_alloc_funcs(my_alloc, my_free);
+    //json_set_alloc_funcs(my_alloc, my_free);
 
-    mem_analysis () ;
+    //mem_analysis () ;
 
 	jdata = json_object();
 	//add_2array_to_json( jdata, "arr1", &arr1[0][0], 2, 3 );
@@ -152,14 +162,18 @@ int main()
 		json_object_set_new(jf, "systemTemp", json_real(3.5));
 	}
 
+    printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
+
 	//s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
 	s = json_dumps( jdata, 0 );
 	puts( s );
 
-    mem_analysis () ;
+    //mem_analysis () ;
 
 	free( s );
 	json_decref( jdata );
+
+    printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
 
 	return 0;
 }
