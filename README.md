@@ -1,4 +1,4 @@
 experiments
 ===========
 
-My private experiments to understand different algorithms and language. This repo will be continuously updated 
+My private experiments to understand different algorithms, language, etc. This repo will be continuously updated 
