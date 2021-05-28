@@ -27,3 +27,11 @@ sudo adduser <username> sudo
 #### https://www.guyrutenberg.com/2007/10/05/ssh-keygen-tutorial-generating-rsa-and-dsa-keys/
 ssh-keygen -t rsa -b 2048
 You can use “dsa” instead of the “rsa” after the -t to generate a DSA key. The number after the -b specifies the key length in bits.
+
+
+### link to generate the ssh key for the github account 
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+id_ed25519  id_ed25519.pub --> are the private and public key generated
+
