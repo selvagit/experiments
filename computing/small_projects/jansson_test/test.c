@@ -112,12 +112,11 @@ void mem_analysis (void ) {
     printf("Mem analysis : end \n");
 }
 
-#define size_t int
 
-static size_t memPool = 0, allocs = 0, frees = 0;
+static int memPool = 0, allocs = 0, frees = 0;
 
 void * my_alloc(long unsigned int size){
-    int *ptr = (size_t*)malloc(size + sizeof(size_t));
+    int *ptr = (int*)malloc(size + sizeof(int));
     *ptr = size;
     memPool += size;
     allocs++;
@@ -125,7 +124,7 @@ void * my_alloc(long unsigned int size){
 }
 
 void my_free(void *ptr){
-    int *sptr = (size_t*)ptr;
+    int *sptr = (int*)ptr;
     sptr--;
     memPool -= *sptr;
     frees++;
@@ -140,7 +139,7 @@ int main()
 	//int arr1[2][3] = { {1,2,3}, {4,5,6} };
 	//int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
 
-    //json_set_alloc_funcs(my_alloc, my_free);
+    json_set_alloc_funcs(my_alloc, my_free);
 
     //mem_analysis () ;
 
@@ -165,12 +164,12 @@ int main()
     printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
 
 	//s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
-	s = json_dumps( jdata, 0 );
-	puts( s );
+	//s = json_dumps( jdata, 0 );
+	//puts( s );
 
     //mem_analysis () ;
 
-	free( s );
+	//free( s );
 	json_decref( jdata );
 
     printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
