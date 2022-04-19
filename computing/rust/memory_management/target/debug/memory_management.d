@@ -1,0 +1,1 @@
+/mnt/d/mine/personal/coding/selvagit/experiment/computing/rust/memory_management/target/debug/memory_management: /mnt/d/mine/personal/coding/selvagit/experiment/computing/rust/memory_management/src/main.rs
