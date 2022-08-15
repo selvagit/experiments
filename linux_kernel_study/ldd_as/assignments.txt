@@ -55,8 +55,14 @@ Synchronization
 ./Exercises/Slides/KernelProcessManagement.pdf:    – The notifier chain is executed in interrupt or atomic context
 https://github.com/Embetronicx/Tutorials/blob/master/Linux/Device_Driver/Atomic_variable/driver.c
 
-
 2. Modify rwsem to use the read write spinlock
+./as_training_session/Exercises/ProcessMngmt/Synchronization/rwsem.c:static struct rw_semaphore rwsem;
+./as_training_session/Exercises/ProcessMngmt/Synchronization/rwsem.c:   down_read(&rwsem);
+./as_training_session/Exercises/ProcessMngmt/Synchronization/rwsem.c:   up_read(&rwsem);
+./as_training_session/Exercises/ProcessMngmt/Synchronization/rwsem.c:   down_write(&rwsem);
+./as_training_session/Exercises/ProcessMngmt/Synchronization/rwsem.c:   up_write(&rwsem);
+./as_training_session/Exercises/ProcessMngmt/Synchronization/rwsem.c:   init_rwsem(&rwsem);
+
 3. Write a driver to protect the global variable using seqlock. The example should hit the scenario where reader sees the
 inconsitencies and had to retry.
 4. Write a driver which uses list apis to add and delete the list items.
