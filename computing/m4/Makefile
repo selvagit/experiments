@@ -1,4 +1,4 @@
 
 all:
-	m4 -P basic.m4 > ./test.h
-	cat ./test.h
+	m4 -P basic.m4 > ./test.log
+	cat ./test.log
