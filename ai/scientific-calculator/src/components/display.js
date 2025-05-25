@@ -9,8 +9,7 @@ const Display = ({ expression, result }) => {
 
     return (
         <div className="calculator-display">
-            <div className="expression">{expression}</div>
-            <div className="result">{result}</div>
+            <div className="display-value">{displayValue}</div>
         </div>
     );
 };

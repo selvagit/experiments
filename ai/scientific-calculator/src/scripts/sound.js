@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         volumeControl.addEventListener('input', (event) => {
             setVolume(event.target.value);
         });
-    });
+    };
 });
 
 export { playClickSound, playErrorSound, setVolume };

@@ -35,6 +35,32 @@ This project is a comprehensive scientific calculator built with HTML5, CSS3, an
 - Access the calculation history to review past entries.
 - Utilize memory functions to store and recall values.
 
+## Running Calculator Test Cases
+
+To run the automated test cases for your scientific calculator UI, open the following URL in your browser (assuming you're using a local development environment like VS Code's "Live Server" or similar):
+
+```
+http://localhost:5500/workspaces/experiments/ai/scientific-calculator/src/index.html
+```
+
+- Make sure `calculator.test.js` is included in your `index.html` (add `<script src="calculator.test.js"></script>` at the end of the `<body>` if not already present).
+
+---
+
+## Calculator Logic: Multiplication and Division
+
+The calculator supports multiplication and division using the following logic:
+
+- **Multiplication**: Use the `*` button or key to multiply two numbers.  
+  Example: `6 * 7 = 42`
+
+- **Division**: Use the `/` button or key to divide one number by another.  
+  Example: `8 / 2 = 4`
+
+Internally, when you press the multiplication (`×`) or division (`÷`) buttons, the calculator converts these symbols to `*` and `/` for evaluation in JavaScript. This ensures correct calculation results for all multiplication and division operations.
+
+---
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
