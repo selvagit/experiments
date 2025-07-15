@@ -134,46 +134,128 @@ void my_free(void *ptr){
 
 int main()
 {
-	json_t* jdata;
-	char* s;
-	//int arr1[2][3] = { {1,2,3}, {4,5,6} };
-	//int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
+    json_t* jdata;
+    //int arr1[2][3] = { {1,2,3}, {4,5,6} };
+    //int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
 
     json_set_alloc_funcs(my_alloc, my_free);
 
     //mem_analysis () ;
 
-	jdata = json_object();
-	//add_2array_to_json( jdata, "arr1", &arr1[0][0], 2, 3 );
-	//add_2array_to_json( jdata, "arr2", &arr2[0][0], 4, 4 );
+    jdata = json_object();
+    //add_2array_to_json( jdata, "arr1", &arr1[0][0], 2, 3 );
+    //add_2array_to_json( jdata, "arr2", &arr2[0][0], 4, 4 );
 
-	json_object_set_new(jdata, "state", json_string("success")); 
+    json_object_set_new(jdata, "state", json_string("success")); 
 
-	json_t * jcards = json_array();
-	json_object_set_new(jdata, "cards", jcards);
+    json_t * jcards = json_array();
+    json_object_set_new(jdata, "cards", jcards);
 
-	int card;
-	for (card = 0; card < NUMBER_CARDS; card++) {
-		json_t * jf = json_object();
-		json_array_append_new(jcards, jf);
+    int card;
+    for (card = 0; card < NUMBER_CARDS; card++) {
+        json_t * jf = json_object();
+        json_array_append_new(jcards, jf);
 
-		json_object_set_new(jf, "fpgaTemp", json_real(1.51));
-		json_object_set_new(jf, "systemTemp", json_real(3.5));
-	}
+        json_object_set_new(jf, "fpgaTemp", json_real(1.51));
+        json_object_set_new(jf, "systemTemp", json_real(3.5));
+    }
 
     printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
 
-	//s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
-	//s = json_dumps( jdata, 0 );
-	//puts( s );
+    //char* s;
+    //s = json_dumps( jdata, JSON_COMPACT | JSON_INDENT(2) );
+    //s = json_dumps( jdata, 0 );
+    //puts( s );
 
     //mem_analysis () ;
 
-	//free( s );
-	json_decref( jdata );
+    //free( s );
+    json_decref( jdata );
 
     printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
 
-	return 0;
+
+    /*read the json file and search for elements */
+    json_t *root;
+    json_error_t error;
+    root = json_load_file("test.json", 0, &error);
+    if (!root) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
+        return 1;
+    }
+
+    {
+        char *dump = json_dumps(root,0);
+        if (dump) {
+            printf("Dump1: %s \n", dump);
+            //free(dump);
+        }
+    }
+
+    json_t *obj;
+    const char *tst_string = "req";
+    obj = json_object_get(root, tst_string);
+    if (!obj) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: could not find object %s \n", tst_string);
+    }
+    else {
+        char *dump = json_dumps(obj,0);
+        if (dump) {
+            printf("Dump2: %s \n", dump);
+            //free(dump);
+        }
+    }
+
+    // checking for error condition, search for child object in the 
+    // root objects
+    json_t *cc_err;
+    const char *tst_strerr = "cc";
+    cc_err = json_object_get(root, tst_strerr);
+    if (!cc_err) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: could not find object %s \n", tst_strerr);
+    }
+    else {
+        char *dump = json_dumps(cc_err,0);
+        if (dump) {
+            printf("Dump3: %s \n", dump);
+            //free(dump);
+        }
+    }
+
+    json_t *cc_arr;
+    const char *tst_string2 = "cc";
+    cc_arr = json_object_get(obj, tst_string2);
+    if (!cc_arr) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: could not find object %s \n", tst_string2);
+    }
+    else {
+        char *dump = json_dumps(cc_arr,0);
+        if (dump) {
+            printf("Dump3: %s \n", dump);
+            //free(dump);
+        }
+    }
+
+    json_t *cc_obj;
+    int index =0;
+    cc_obj = json_array_get(cc_arr, index);
+    if (!cc_obj) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: could not find object %s \n", tst_string2);
+    }
+    else {
+        char *dump = json_dumps(cc_obj,0);
+        if (dump) {
+            printf("Dump4: %s \n", dump);
+            //free(dump);
+        }
+    }
+
+    json_decref(root);
+    return 0;
 }
 
