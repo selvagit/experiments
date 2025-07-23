@@ -294,12 +294,10 @@ void test_array(void) {
 }
 
 void test3(void) {
-    /*read the json file and search for elements */
     json_t *root;
     json_error_t error;
     root = json_load_file("test3.json", 0, &error);
     if (!root) {
-        // Handle JSON parsing error
         fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
     }
 
@@ -314,17 +312,55 @@ void test3(void) {
     json_t *cc_obj;
     cc_obj = json_object_get(root, "cc");
     if (!cc_obj) {
-        // Handle JSON parsing error
         fprintf(stderr, "error: could not find array object \n");
-    }
-    else {
+    } else {
         char *dump = json_dumps(cc_obj,0);
         if (dump) {
             printf("Dump4: %s \n", dump);
             free(dump);
         }
     }
+}
 
+void test4(void) {
+    json_t *root;
+    json_error_t error;
+    root = json_load_file("test4.json", 0, &error);
+    if (!root) {
+        fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
+    }
+
+    {
+        char *dump = json_dumps(root,0);
+        if (dump) {
+            printf("[%s]:%d %s \n",__func__,__LINE__, dump);
+            free(dump);
+        }
+    }
+
+    json_t *cc_obj;
+    cc_obj = json_object_get(root, "cc");
+    if (!cc_obj) {
+        fprintf(stderr, "error: could not find array object \n");
+    } else {
+        char *dump = json_dumps(cc_obj,0);
+        if (dump) {
+            printf("[%s]:%d:  %s \n",__func__,__LINE__, dump);
+            free(dump);
+        }
+    }
+
+    json_t *obj;
+    obj = json_array_get(cc_obj, 0);
+    if (!obj) {
+        fprintf(stderr, "error: could not find array object \n");
+    } else {
+        char *dump = json_dumps(obj,0);
+        if (dump) {
+            printf("[%s]:%d:  %s \n",__func__,__LINE__, dump);
+            free(dump);
+        }
+    }
 }
 
 int main()
@@ -332,7 +368,8 @@ int main()
     //test1(); 
     //test2(); 
     //test_array();
-    test3();
+    //test3();
+    test4();
 
     return 0;
 }
