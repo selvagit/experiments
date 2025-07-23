@@ -131,9 +131,7 @@ void my_free(void *ptr){
     free((void *)sptr);
 }
 
-
-int main()
-{
+void test1(void) {
     json_t* jdata;
     //int arr1[2][3] = { {1,2,3}, {4,5,6} };
     //int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
@@ -173,8 +171,9 @@ int main()
     json_decref( jdata );
 
     printf("json: %p, memPool: %u bytes, allocs: %u, frees: %u\n", jdata, memPool, allocs, frees);
+}
 
-
+int test2 (void) {
     /*read the json file and search for elements */
     json_t *root;
     json_error_t error;
@@ -256,6 +255,85 @@ int main()
     }
 
     json_decref(root);
+
+    return 0;
+}
+
+void test_array(void) {
+    /*read the json file and search for elements */
+    json_t *root;
+    json_error_t error;
+    root = json_load_file("test2.json", 0, &error);
+    if (!root) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
+    }
+
+    {
+        char *dump = json_dumps(root,0);
+        if (dump) {
+            printf("Dump1: %s \n", dump);
+            //free(dump);
+        }
+    }
+
+    json_t *cc_obj;
+    int index =0;
+    cc_obj = json_array_get(root, index);
+    if (!cc_obj) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: could not find array object \n");
+    }
+    else {
+        char *dump = json_dumps(cc_obj,0);
+        if (dump) {
+            printf("Dump4: %s \n", dump);
+            //free(dump);
+        }
+    }
+}
+
+void test3(void) {
+    /*read the json file and search for elements */
+    json_t *root;
+    json_error_t error;
+    root = json_load_file("test3.json", 0, &error);
+    if (!root) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
+    }
+
+    {
+        char *dump = json_dumps(root,0);
+        if (dump) {
+            printf("Dump1: %s \n", dump);
+            free(dump);
+        }
+    }
+
+    json_t *cc_obj;
+    cc_obj = json_object_get(root, "cc");
+    if (!cc_obj) {
+        // Handle JSON parsing error
+        fprintf(stderr, "error: could not find array object \n");
+    }
+    else {
+        char *dump = json_dumps(cc_obj,0);
+        if (dump) {
+            printf("Dump4: %s \n", dump);
+            free(dump);
+        }
+    }
+
+}
+
+int main()
+{
+    //test1(); 
+    //test2(); 
+    //test_array();
+    test3();
+
     return 0;
 }
 
