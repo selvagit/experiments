@@ -1,0 +1,31 @@
+name: C Lint & Build
+
+on:
+  push:
+    branches: [ master, feature/* ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install build tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make clang-format
+
+    - name: Check code formatting (clang-format)
+      run: |
+        find computing -name "*.c" -o -name "*.h" | xargs clang-format -i --dry-run -Werror
+
+    - name: Build C projects
+      run: |
+        cd computing/makefile && make clean && make
+
+    - name: Run executable
+      run: |
+        ./computing/makefile/test
