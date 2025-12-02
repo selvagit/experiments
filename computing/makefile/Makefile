@@ -12,6 +12,8 @@ all: $(TARGET)
 
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+	CC_ARM="$(CC)"; echo Debug: CCC=$$CC_ARM; echo Debug: CCCC=$(CC_ARM) 
+	echo Debug: CC=$$CC_ARM
 
 clean:
 	rm -f $(TARGET)
