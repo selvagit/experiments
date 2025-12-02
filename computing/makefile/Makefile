@@ -1,4 +1,5 @@
 
+SHELL := /bin/bash
 CC := gcc
 CFLAGS := -Wall -Wextra -O2
 
@@ -17,4 +18,5 @@ clean:
 
 list:
 	ls -la
+	@echo "$(shell ls -la)"
 	
