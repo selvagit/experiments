@@ -19,13 +19,17 @@ This project is a comprehensive scientific calculator built with HTML5, CSS3, an
 ## Installation
 
 1. Clone the repository:
-   ```
+   
+   ```bash
    git clone https://github.com/yourusername/scientific-calculator.git
    ```
+
 2. Navigate to the project directory:
-   ```
+
+   ```bash
    cd scientific-calculator
    ```
+
 3. Open `src/index.html` in your web browser to use the calculator.
 
 ## Usage
