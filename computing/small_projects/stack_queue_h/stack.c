@@ -1,72 +1,68 @@
 #include <stddef.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/queue.h>
 
-
 struct entry {
+  LIST_ENTRY(entry) entries;
 
-LIST_ENTRY(entry) entries;
+  int i;
 
-int i;
+} *n1, *n2, *np;
 
-} *n1, *n2 , *np;
+void list(void) {
+  printf("list example\n");
+  LIST_HEAD(listhead, entry) head;
 
-void list (void) {
+  LIST_INIT(&head);
 
-    printf("list example\n");
-    LIST_HEAD(listhead, entry) head;
+  n1 = malloc(sizeof(struct entry));
+  LIST_INSERT_HEAD(&head, n1, entries);
+  n1->i = 1;
 
-    LIST_INIT(&head); 
+  n2 = malloc(sizeof(struct entry));
+  LIST_INSERT_AFTER(n1, n2, entries);
+  n2->i = 0xff;
 
-    n1 = malloc(sizeof(struct entry));
-    LIST_INSERT_HEAD(&head,n1,entries);
-    n1->i = 1;
+  for (np = head.lh_first; np != NULL; np = np->entries.le_next)
+    printf("%d\n", np->i);
 
-    n2 = malloc(sizeof(struct entry));
-    LIST_INSERT_AFTER(n1,n2,entries);
-    n2->i = 0xff;
+  while (head.lh_first != NULL) {
+    LIST_REMOVE(head.lh_first, entries);
+  }
 
-    for (np = head.lh_first; np != NULL; np = np->entries.le_next)
-        printf("%d\n", np->i);
+  free(n2);
+  free(n1);
 
-    while(head.lh_first != NULL){
-        LIST_REMOVE(head.lh_first,entries);
-    }
-
-    free(n2);
-    free(n1);
-
-    return;
+  return;
 }
 
-void stack (void) {
-    printf("stack example\n");
+void stack(void) {
+  printf("stack example\n");
 
-    LIST_HEAD(listhead, entry) head;
+  LIST_HEAD(listhead, entry) head;
 
-    LIST_INIT(&head); 
+  LIST_INIT(&head);
 
-    n1 = malloc(sizeof(struct entry));
-    LIST_INSERT_HEAD(&head,n1,entries);
-    n1->i = 1;
+  n1 = malloc(sizeof(struct entry));
+  LIST_INSERT_HEAD(&head, n1, entries);
+  n1->i = 1;
 
-    n2 = malloc(sizeof(struct entry));
-    LIST_INSERT_HEAD(&head,n2,entries);
-    n2->i = 0xff;
+  n2 = malloc(sizeof(struct entry));
+  LIST_INSERT_HEAD(&head, n2, entries);
+  n2->i = 0xff;
 
-    for (np = head.lh_first; np != NULL; np = np->entries.le_next)
-        printf("%d\n", np->i);
+  for (np = head.lh_first; np != NULL; np = np->entries.le_next)
+    printf("%d\n", np->i);
 
-    while(head.lh_first != NULL){
-        struct entry *temp = head.lh_first;
-        LIST_REMOVE(head.lh_first,entries);
-        free(temp);
-    }
-
+  while (head.lh_first != NULL) {
+    struct entry *temp = head.lh_first;
+    LIST_REMOVE(head.lh_first, entries);
+    free(temp);
+  }
 }
 
 int main(void) {
-    list();
-    stack();
+  list();
+  stack();
 }
