@@ -1,4 +1,16 @@
----
+BasedOnStyle: Google
+IndentWidth: 2
+ColumnLimit: 80
+AllowShortFunctionsOnASingleLine: Never
+AlignConsecutiveAssignments: true
+SortIncludes: true
+PointerAlignment: Left
+DerivePointerAlignment: false
+SpacesBeforeTrailingComments: 1
+BreakBeforeBinaryOperators: NonAssignment
+PenaltyBreakBeforeFirstCallParameter: 19
+AlwaysBreakAfterReturnType: None
+ReflowComments: false---
 Language: C
 IndentWidth: 2
 UseTab: Never
