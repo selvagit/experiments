@@ -36,6 +36,11 @@ modules.builtin
 *.mod
 
 #
+# Python virtual environments
+#
+.venv/
+
+#
 # Top-level generic files
 #
 /tags
