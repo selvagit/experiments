@@ -5,23 +5,21 @@
  *      Author: sveeramani
  */
 
-
 void Copy()
 {
   int i;
 
-  short x[64] ={0};
+  short x[64] = {0};
 
-  short y[64] ;
+  short y[64];
 
-  for  ( i =0 ; i < 64 ; i ++)
+  for (i = 0; i < 64; i++)
   {
-      x[i] = i;
+    x[i] = i;
   }
 
-  for (i=0;i<128;i++)
+  for (i = 0; i < 128; i++)
   {
-      y[i]= x[i];
+    y[i] = x[i];
   }
 }
-

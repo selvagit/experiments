@@ -15,9 +15,11 @@ class RMAMinMaxData_old;
   RMAMinMaxData(const RMAMinMaxData& temp);
   RMAMinMaxData& operator=(const RMAMinMaxData& temp);
 
-  float cal_avg() {
+  float cal_avg()
+  {
     float temp = 0;
-    for (int i = 0; i < _frame_size; i++) {
+    for (int i = 0; i < _frame_size; i++)
+    {
       temp += _data[i];
     }
 
@@ -27,33 +29,39 @@ class RMAMinMaxData_old;
   }
 
  public:
-  RMAMinMaxData()
-      : _max(0), _min(100), _avg(0), _frame_size(8), _curr_index(0) {
+  RMAMinMaxData() : _max(0), _min(100), _avg(0), _frame_size(8), _curr_index(0)
+  {
     _data = new float[_frame_size]();
-    if (_data == NULL) {
+    if (_data == NULL)
+    {
       throw " Null pointer allocated ";
     }
   }
 
   ~RMAMinMaxData() { delete _data; }
 
-  void insert(float curr_sample) {
-    if (_curr_index > _frame_size) {
+  void insert(float curr_sample)
+  {
+    if (_curr_index > _frame_size)
+    {
       _curr_index = 0;
     }
 
     _data[_curr_index] = curr_sample;
     _curr_index++;
 
-    if (_max <= curr_sample) {
+    if (_max <= curr_sample)
+    {
       _max = curr_sample;
     }
 
-    if (_min > curr_sample) {
+    if (_min > curr_sample)
+    {
       _min = curr_sample;
     }
 
-    if (_curr_index > _frame_size) {
+    if (_curr_index > _frame_size)
+    {
       _avg = cal_avg();
       std::memset(_data, 0, sizeof(float) * _frame_size);
     }

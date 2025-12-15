@@ -3,14 +3,17 @@
 #include <iostream>
 #include <sstream>
 
-struct __attribute__((__packed__)) ContainerTest {
+struct __attribute__((__packed__)) ContainerTest
+{
   RMAMinMaxData _data;
   RMAMinMaxData _data_array[10];
-  RMAMinMaxData *_data_list[10];
-  RMAMinMaxData *_data_one;
+  RMAMinMaxData* _data_list[10];
+  RMAMinMaxData* _data_one;
 
-  ContainerTest() : _data() {
-    for (int i = 0; i < 10; i++) {
+  ContainerTest() : _data()
+  {
+    for (int i = 0; i < 10; i++)
+    {
       _data_array[i] = RMAMinMaxData();
     }
     std::cout << "Complted the building of the array element " << std::endl;
@@ -18,7 +21,7 @@ struct __attribute__((__packed__)) ContainerTest {
     {
       uint16_t size = sizeof(RMAMinMaxData) * 10;
 
-      uint8_t *temp = new uint8_t[size];
+      uint8_t* temp = new uint8_t[size];
 
       _data_list[0] = new (temp) RMAMinMaxData;
 
@@ -29,7 +32,7 @@ struct __attribute__((__packed__)) ContainerTest {
     {
       uint16_t size = sizeof(RMAMinMaxData) * 10;
 
-      uint8_t *temp = new uint8_t[size];
+      uint8_t* temp = new uint8_t[size];
 
       _data_one = new (temp) RMAMinMaxData[10];
     }

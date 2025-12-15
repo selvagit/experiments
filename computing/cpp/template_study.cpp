@@ -1,211 +1,194 @@
 
 
-#include <iostream> 
+#include <iostream>
 
-template<typename TYPE>
+template <typename TYPE>
 TYPE Twice(TYPE data)
 {
-    return data * 2;
+  return data * 2;
 }
 
-int sample_1 (void)
+int sample_1(void)
 {
-    std::cout << "sample_1" <<std::endl;
-    std::cout << Twice(10) << std::endl;
-    std::cout << Twice(3.14) << std::endl;
-    std::cout << Twice( Twice(55) ) << std::endl;
+  std::cout << "sample_1" << std::endl;
+  std::cout << Twice(10) << std::endl;
+  std::cout << Twice(3.14) << std::endl;
+  std::cout << Twice(Twice(55)) << std::endl;
 
-    std::cout <<std::endl;
-    return 0;
+  std::cout << std::endl;
+  return 0;
 }
-
 
 template <class T>
-double add_all_element_of_array(T n1[] , int array_sz ) 
+double add_all_element_of_array(T n1[], int array_sz)
 {
-    T temp = T();
+  T temp = T();
 
-    for ( int i = 0 ; i< array_sz ; i++) 
-    {
-        temp += n1[i];
-    }
+  for (int i = 0; i < array_sz; i++)
+  {
+    temp += n1[i];
+  }
 
-    return double (temp);
+  return double(temp);
 }
 
 void sample_2(void)
 {
-    int array[3] ={1,2,3};
-    double darray[3] ={1.5,2.5,3.5};
+  int array[3]     = {1, 2, 3};
+  double darray[3] = {1.5, 2.5, 3.5};
 
-    std::cout << "sample_2" <<std::endl;
+  std::cout << "sample_2" << std::endl;
 
-    std::cout << add_all_element_of_array(array,3) << std::endl;
-    std::cout << add_all_element_of_array(darray,3) << std::endl;
-    std::cout << std::endl;
+  std::cout << add_all_element_of_array(array, 3) << std::endl;
+  std::cout << add_all_element_of_array(darray, 3) << std::endl;
+  std::cout << std::endl;
 }
 
-
-int sample_3 (void)
+int sample_3(void)
 {
-    int StudentAge;
+  int StudentAge;
 
-    std::cout << "Enter Student Age: ";
-    std::cin >> StudentAge;
+  std::cout << "Enter Student Age: ";
+  std::cin >> StudentAge;
 
-    try 
-    {
-        if(StudentAge < 0)
-            throw " error " ;
-        std::cout << "\nStudent Age: " << StudentAge << "\n\n";
-    }
+  try
+  {
+    if (StudentAge < 0)
+      throw " error ";
+    std::cout << "\nStudent Age: " << StudentAge << "\n\n";
+  }
 
-    catch(char * arg  )
-    {
-        std::cout <<  arg << std::endl;
-    }
+  catch (char* arg)
+  {
+    std::cout << arg << std::endl;
+  }
 
-    std::cout << "\n";
+  std::cout << "\n";
 
-    return 0;
+  return 0;
 }
 
-class node 
+class node
 {
-    private: 
-        int _info;
+ private:
+  int _info;
 
-    public:
-        node():_info(0){}
-        ~node(){}
+ public:
+  node() : _info(0) {}
+  ~node() {}
 
-        node* next;
+  node* next;
 
-        int get_info()
-        {
-            return _info;
-        }
+  int get_info() { return _info; }
 
-        void put_info(int input )
-        {
-            _info = input;
-        }
+  void put_info(int input) { _info = input; }
 };
 
-
-class sllist // single linked list  
+class sllist // single linked list
 {
-    private:
-        node* head;
-        node* tail;
-        node* curr_node;
+ private:
+  node* head;
+  node* tail;
+  node* curr_node;
 
-    public:
-        sllist( ): head(0),tail(0){}
-        ~sllist(){}
+ public:
+  sllist() : head(0), tail(0) {}
+  ~sllist() {}
 
-        void add_node_to_head(int info);
-        void add_node_to_tail(int info);
-        void del_node(int info);
-        node * get_head_node();
-        node * get_tail_node();
-        void list_all_nodes();
+  void add_node_to_head(int info);
+  void add_node_to_tail(int info);
+  void del_node(int info);
+  node* get_head_node();
+  node* get_tail_node();
+  void list_all_nodes();
 };
 
-
-void sllist::add_node_to_head(int info )
+void sllist::add_node_to_head(int info)
 {
-    if ( head == 0)
-    {
-        head = new node ;
-        head->put_info(info);
-        tail = head;
-        head->next = 0;
-        //std::cout << "head node add = " << head->next << std::endl ;
-    }else
-    {
-        node* temp = head ;
-        head = new node ;
-        head->put_info(info);
-        head->next = temp;
-    }
+  if (head == 0)
+  {
+    head = new node;
+    head->put_info(info);
+    tail       = head;
+    head->next = 0;
+    //std::cout << "head node add = " << head->next << std::endl ;
+  }
+  else
+  {
+    node* temp = head;
+    head       = new node;
+    head->put_info(info);
+    head->next = temp;
+  }
 }
 
 void sllist::add_node_to_tail(int info)
 {
-    tail->next = new node ;
-    tail = tail->next ;
-    tail->put_info(info);
-    tail->next = 0;
+  tail->next = new node;
+  tail       = tail->next;
+  tail->put_info(info);
+  tail->next = 0;
 }
 
-node * sllist::get_head_node()
+node* sllist::get_head_node() { return head; }
+
+node* sllist::get_tail_node() { return tail; }
+
+void sllist::del_node(int info)
 {
-    return head;
-}
+  node* temp = get_head_node();
+  node* prev = 0;
 
-node * sllist::get_tail_node()
-{
-    return tail;
-}
+  while ((temp->get_info() != info) && (temp != 0))
+  {
+    prev = temp;
+    temp = temp->next;
+  }
 
-void sllist::del_node ( int info)
-{
-    node * temp = get_head_node();
-    node * prev = 0;
+  if (temp != 0)
+  {
+    node* temp_next = temp->next;
 
-    while((temp->get_info()!= info) && (temp != 0))
-    {
-        prev = temp;
-        temp = temp->next;
-    }
+    std::cout << "Del node is = " << temp->get_info() << std::endl;
 
-    if ( temp != 0 ) 
-    {
-        node *temp_next = temp->next;
-    
-        std::cout << "Del node is = " << temp->get_info() << std::endl; 
+    delete temp;
 
-        delete temp;
-
-        prev->next = temp_next;
-    }    
+    prev->next = temp_next;
+  }
 }
 
 void sllist::list_all_nodes()
 {
-    node * temp = head;
+  node* temp = head;
 
-    std::cout << "listing all the nodes "  << std::endl;
-    while (temp != 0)
-    {
-        std::cout << temp->get_info() << std::endl;
-        temp = temp->next;
-    }
+  std::cout << "listing all the nodes " << std::endl;
+  while (temp != 0)
+  {
+    std::cout << temp->get_info() << std::endl;
+    temp = temp->next;
+  }
 }
 
 void sample_4()
 {
+  sllist list;
 
-    sllist list;
+  list.add_node_to_head(1);
+  list.add_node_to_head(2);
+  list.add_node_to_tail(3);
+  list.list_all_nodes();
 
-    list.add_node_to_head(1);
-    list.add_node_to_head(2);
-    list.add_node_to_tail(3);
-    list.list_all_nodes();
-
-    list.del_node(1);
-    list.list_all_nodes();
+  list.del_node(1);
+  list.list_all_nodes();
 }
 
-int main (void)
+int main(void)
 {
-    //sample_1();
+  //sample_1();
 
-    //sample_2();
+  //sample_2();
 
-    //sample_3();
+  //sample_3();
 
-    sample_4();
+  sample_4();
 }
-

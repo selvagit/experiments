@@ -40,10 +40,10 @@ to be reentrant.
  * @member:     the name of the member within the struct.
  *
  */
-#define container_of(ptr, type, member)                \
-  ({                                                   \
-    const typeof(((type *)0)->member) *__mptr = (ptr); \
-    (type *)((char *)__mptr - offsetof(type, member)); \
+#define container_of(ptr, type, member)               \
+  ({                                                  \
+    const typeof(((type*)0)->member)* __mptr = (ptr); \
+    (type*)((char*)__mptr - offsetof(type, member));  \
   })
 
 /**
@@ -54,45 +54,60 @@ to be reentrant.
  */
 #define list_entry(ptr, type, member) container_of(ptr, type, member)
 
-struct link {
-  struct link *pA;
-  struct link *pB;
+struct link
+{
+  struct link* pA;
+  struct link* pB;
 };
 
-struct item {
+struct item
+{
   struct link link;
   uint8_t c;
 };
 
-void INIT_LIST_NODE(struct link *list) {
-  if (list == NULL) return;
+void INIT_LIST_NODE(struct link* list)
+{
+  if (list == NULL)
+    return;
 
   list->pA = list;
   list->pB = list;
 }
 
-void node_add(struct link *new, struct link *curr) {
-  if ((new == NULL) || (curr == NULL)) {
+void node_add(struct link* new, struct link* curr)
+{
+  if ((new == NULL) || (curr == NULL))
+  {
     return;
   }
 
-  struct item *tmp_curr_item = NULL;
-  struct item *tmp_new_item = NULL;
+  struct item* tmp_curr_item = NULL;
+  struct item* tmp_new_item  = NULL;
 
   tmp_curr_item = list_entry(curr, struct item, link);
 
   tmp_new_item = list_entry(new, struct item, link);
 
-  if (tmp_curr_item->c > tmp_new_item->c) {
-    if (tmp_curr_item->link.pA == &tmp_curr_item->link) {
+  if (tmp_curr_item->c > tmp_new_item->c)
+  {
+    if (tmp_curr_item->link.pA == &tmp_curr_item->link)
+    {
       tmp_curr_item->link.pA = &tmp_new_item->link;
-    } else {
+    }
+    else
+    {
       node_add(new, curr->pA);
     }
-  } else {
-    if (tmp_curr_item->link.pB == &tmp_curr_item->link) {
+  }
+  else
+  {
+    if (tmp_curr_item->link.pB == &tmp_curr_item->link)
+    {
       tmp_curr_item->link.pB = &tmp_new_item->link;
-    } else {
+    }
+    else
+    {
       node_add(new, curr->pB);
     }
   }
@@ -100,82 +115,106 @@ void node_add(struct link *new, struct link *curr) {
   return;
 }
 
-void print(int c, int *output) {
+void print(int c, int* output)
+{
   printf("c =%d\n", c);
   return;
 }
 
-void sum(int c, int *output) {
-  if (output == NULL) return;
+void sum(int c, int* output)
+{
+  if (output == NULL)
+    return;
 
   *output = *output + c;
 
   return;
 }
 
-void walk_tree_pre_order(struct link *curr,
-                         void (*func_ptr)(int c, int *outout), int *output) {
-  if ((curr == NULL) || (func_ptr == NULL) || (output == NULL)) {
+void walk_tree_pre_order(struct link* curr,
+                         void (*func_ptr)(int c, int* outout), int* output)
+{
+  if ((curr == NULL) || (func_ptr == NULL) || (output == NULL))
+  {
     return;
   }
 
-  struct item *tmp_curr_item = list_entry(curr, struct item, link);
+  struct item* tmp_curr_item = list_entry(curr, struct item, link);
 
-  if (tmp_curr_item->link.pA == tmp_curr_item->link.pB) {
+  if (tmp_curr_item->link.pA == tmp_curr_item->link.pB)
+  {
     func_ptr(tmp_curr_item->c, output);
-  } else {
+  }
+  else
+  {
     func_ptr(tmp_curr_item->c, output);
-    if (&tmp_curr_item->link != tmp_curr_item->link.pA) {
+    if (&tmp_curr_item->link != tmp_curr_item->link.pA)
+    {
       walk_tree_pre_order(tmp_curr_item->link.pA, func_ptr, output);
     }
 
-    if (&tmp_curr_item->link != tmp_curr_item->link.pB) {
+    if (&tmp_curr_item->link != tmp_curr_item->link.pB)
+    {
       walk_tree_pre_order(tmp_curr_item->link.pB, func_ptr, output);
     }
   }
   return;
 }
 
-void walk_tree_in_order(struct link *curr, void (*func_ptr)(int c, int *outout),
-                        int *output) {
-  if ((curr == NULL) || (func_ptr == NULL) || (output == NULL)) {
+void walk_tree_in_order(struct link* curr, void (*func_ptr)(int c, int* outout),
+                        int* output)
+{
+  if ((curr == NULL) || (func_ptr == NULL) || (output == NULL))
+  {
     return;
   }
 
-  struct item *tmp_curr_item = list_entry(curr, struct item, link);
+  struct item* tmp_curr_item = list_entry(curr, struct item, link);
 
-  if (tmp_curr_item->link.pA == tmp_curr_item->link.pB) {
+  if (tmp_curr_item->link.pA == tmp_curr_item->link.pB)
+  {
     func_ptr(tmp_curr_item->c, output);
-  } else {
-    if (&tmp_curr_item->link != tmp_curr_item->link.pA) {
+  }
+  else
+  {
+    if (&tmp_curr_item->link != tmp_curr_item->link.pA)
+    {
       walk_tree_in_order(tmp_curr_item->link.pA, func_ptr, output);
     }
 
     func_ptr(tmp_curr_item->c, output);
 
-    if (&tmp_curr_item->link != tmp_curr_item->link.pB) {
+    if (&tmp_curr_item->link != tmp_curr_item->link.pB)
+    {
       walk_tree_in_order(tmp_curr_item->link.pB, func_ptr, output);
     }
   }
   return;
 }
 
-void walk_tree_post_order(struct link *curr,
-                          void (*func_ptr)(int c, int *outout), int *output) {
-  if ((curr == NULL) || (func_ptr == NULL) || (output == NULL)) {
+void walk_tree_post_order(struct link* curr,
+                          void (*func_ptr)(int c, int* outout), int* output)
+{
+  if ((curr == NULL) || (func_ptr == NULL) || (output == NULL))
+  {
     return;
   }
 
-  struct item *tmp_curr_item = list_entry(curr, struct item, link);
+  struct item* tmp_curr_item = list_entry(curr, struct item, link);
 
-  if (tmp_curr_item->link.pA == tmp_curr_item->link.pB) {
+  if (tmp_curr_item->link.pA == tmp_curr_item->link.pB)
+  {
     func_ptr(tmp_curr_item->c, output);
-  } else {
-    if (&tmp_curr_item->link != tmp_curr_item->link.pA) {
+  }
+  else
+  {
+    if (&tmp_curr_item->link != tmp_curr_item->link.pA)
+    {
       walk_tree_post_order(tmp_curr_item->link.pA, func_ptr, output);
     }
 
-    if (&tmp_curr_item->link != tmp_curr_item->link.pB) {
+    if (&tmp_curr_item->link != tmp_curr_item->link.pB)
+    {
       walk_tree_post_order(tmp_curr_item->link.pB, func_ptr, output);
     }
 
@@ -184,9 +223,10 @@ void walk_tree_post_order(struct link *curr,
   return;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[])
+{
   struct item head;
-  struct item *temp;
+  struct item* temp;
 
 #define NO_OF_NODES (11)
 
@@ -195,9 +235,11 @@ int main(int argc, char *argv[]) {
   INIT_LIST_NODE(&head.link);
   head.c = inp_ary[0];
 
-  for (int i = 1; i < NO_OF_NODES; i++) {
-    temp = (struct item *)malloc(sizeof(struct item));
-    if (temp != NULL) {
+  for (int i = 1; i < NO_OF_NODES; i++)
+  {
+    temp = (struct item*)malloc(sizeof(struct item));
+    if (temp != NULL)
+    {
       INIT_LIST_NODE(&temp->link);
       temp->c = inp_ary[i];
       node_add(&temp->link, &head.link);

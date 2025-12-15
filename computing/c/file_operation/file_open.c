@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <strings.h>
 
-int main(void) {
-  FILE *fp = NULL;
+int main(void)
+{
+  FILE* fp = NULL;
 
   /* to test when a file containing some
    * text is opened and closed immediately */

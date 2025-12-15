@@ -9,7 +9,8 @@
 
 FILE* file;
 
-void* threadA(void* argv) {
+void* threadA(void* argv)
+{
   fprintf(file, "%ld\n", pthread_self());
 
   sigset_t m;
@@ -26,12 +27,14 @@ void* threadA(void* argv) {
   fprintf(file, "1\n");
 
   err = sigwait(&m, &signo);
-  if (err != 0) {
+  if (err != 0)
+  {
     fprintf(file, "sigwait error\n");
     exit(1);
   }
 
-  switch (signo) {
+  switch (signo)
+  {
     case SIGUSR1:
       fprintf(file, "SIGUSR1 received\n");
       break;
@@ -46,12 +49,14 @@ void* threadA(void* argv) {
   return 0;
 }
 
-void hello(int signo) {
+void hello(int signo)
+{
   fprintf(file, "%ld\n", pthread_self());
   fprintf(file, "hello\n");
 }
 
-int main() {
+int main()
+{
   file = fopen("daemon", "wb");
 
   setbuf(file, NULL);
@@ -74,7 +79,8 @@ int main() {
   int err;
   err = pthread_create(&pid, NULL, threadA, NULL);
 
-  if (err != 0) {
+  if (err != 0)
+  {
     fprintf(file, "create thread error\n");
     exit(1);
   }

@@ -6,17 +6,20 @@
 
 #define NUMBER_CARDS (2)
 
-void add_2array_to_json(json_t *obj, const char *name, const int *marr,
-                        size_t dim1, size_t dim2) {
+void add_2array_to_json(json_t* obj, const char* name, const int* marr,
+                        size_t dim1, size_t dim2)
+{
   size_t i, j;
-  json_t *jarr1 = json_array();
+  json_t* jarr1 = json_array();
 
-  for (i = 0; i < dim1; ++i) {
-    json_t *jarr2 = json_array();
+  for (i = 0; i < dim1; ++i)
+  {
+    json_t* jarr2 = json_array();
 
-    for (j = 0; j < dim2; ++j) {
-      int val = marr[i * dim2 + j];
-      json_t *jval = json_integer(val);
+    for (j = 0; j < dim2; ++j)
+    {
+      int val      = marr[i * dim2 + j];
+      json_t* jval = json_integer(val);
       json_array_append_new(jarr2, jval);
     }
     json_array_append_new(jarr1, jarr2);
@@ -29,59 +32,74 @@ void add_2array_to_json(json_t *obj, const char *name, const int *marr,
  * Measures the current (and peak) resident and virtual memories
  * usage of your linux C process, in kB
  */
-void getMemory(int *currRealMem, int *peakRealMem, int *currVirtMem,
-               int *peakVirtMem) {
+void getMemory(int* currRealMem, int* peakRealMem, int* currVirtMem,
+               int* peakVirtMem)
+{
   // stores each word in status file
   char buffer[1024] = "";
 
   // linux file contains this-process info
-  FILE *file = fopen("/proc/self/status", "r");
+  FILE* file = fopen("/proc/self/status", "r");
 
-  if (file != NULL) {
+  if (file != NULL)
+  {
     // read the entire file
-    while (fscanf(file, " %1023s", buffer) == 1) {
-      if (strcmp(buffer, "VmRSS:") == 0) {
+    while (fscanf(file, " %1023s", buffer) == 1)
+    {
+      if (strcmp(buffer, "VmRSS:") == 0)
+      {
         fscanf(file, " %d", currRealMem);
       }
-      if (strcmp(buffer, "VmHWM:") == 0) {
+      if (strcmp(buffer, "VmHWM:") == 0)
+      {
         fscanf(file, " %d", peakRealMem);
       }
-      if (strcmp(buffer, "VmSize:") == 0) {
+      if (strcmp(buffer, "VmSize:") == 0)
+      {
         fscanf(file, " %d", currVirtMem);
       }
-      if (strcmp(buffer, "VmPeak:") == 0) {
+      if (strcmp(buffer, "VmPeak:") == 0)
+      {
         fscanf(file, " %d", peakVirtMem);
       }
     }
     fclose(file);
-  } else {
+  }
+  else
+  {
     printf("The file ould not be opened \n");
   }
 }
 
-int rs() {
+int rs()
+{
   struct rusage r_usage;
   getrusage(RUSAGE_SELF, &r_usage);
   // Print the maximum resident set size used (in kilobytes).
   printf("Memory usage(maxrss): %ld kilobytes\n", r_usage.ru_maxrss);
   return 0;
 }
-typedef struct {
+typedef struct
+{
   unsigned long size, resident, share, text, lib, data, dt;
 } statm_t;
 
-void read_off_memory_status(statm_t *result) {
-  const char *statm_path = "/proc/self/statm";
+void read_off_memory_status(statm_t* result)
+{
+  const char* statm_path = "/proc/self/statm";
 
-  FILE *f = fopen(statm_path, "r");
-  if (!f) {
+  FILE* f = fopen(statm_path, "r");
+  if (!f)
+  {
     perror(statm_path);
     abort();
   }
 
-  if (7 != fscanf(f, "%ld %ld %ld %ld %ld %ld %ld", &result->size,
-                  &result->resident, &result->share, &result->text,
-                  &result->lib, &result->data, &result->dt)) {
+  if (7
+      != fscanf(f, "%ld %ld %ld %ld %ld %ld %ld", &result->size,
+                &result->resident, &result->share, &result->text, &result->lib,
+                &result->data, &result->dt))
+  {
     perror(statm_path);
     abort();
   }
@@ -89,7 +107,8 @@ void read_off_memory_status(statm_t *result) {
   fclose(f);
 }
 
-void mem_analysis(void) {
+void mem_analysis(void)
+{
   int currRealMem;
   int peakRealMem;
   int currVirtMem;
@@ -114,24 +133,27 @@ void mem_analysis(void) {
 
 static int memPool = 0, allocs = 0, frees = 0;
 
-void *my_alloc(long unsigned int size) {
-  int *ptr = (int *)malloc(size + sizeof(int));
-  *ptr = size;
+void* my_alloc(long unsigned int size)
+{
+  int* ptr = (int*)malloc(size + sizeof(int));
+  *ptr     = size;
   memPool += size;
   allocs++;
   return ptr + 1;
 }
 
-void my_free(void *ptr) {
-  int *sptr = (int *)ptr;
+void my_free(void* ptr)
+{
+  int* sptr = (int*)ptr;
   sptr--;
   memPool -= *sptr;
   frees++;
-  free((void *)sptr);
+  free((void*)sptr);
 }
 
-void test1(void) {
-  json_t *jdata;
+void test1(void)
+{
+  json_t* jdata;
   // int arr1[2][3] = { {1,2,3}, {4,5,6} };
   // int arr2[4][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
 
@@ -145,12 +167,13 @@ void test1(void) {
 
   json_object_set_new(jdata, "state", json_string("success"));
 
-  json_t *jcards = json_array();
+  json_t* jcards = json_array();
   json_object_set_new(jdata, "cards", jcards);
 
   int card;
-  for (card = 0; card < NUMBER_CARDS; card++) {
-    json_t *jf = json_object();
+  for (card = 0; card < NUMBER_CARDS; card++)
+  {
+    json_t* jf = json_object();
     json_array_append_new(jcards, jf);
 
     json_object_set_new(jf, "fpgaTemp", json_real(1.51));
@@ -174,34 +197,41 @@ void test1(void) {
          allocs, frees);
 }
 
-int test2(void) {
+int test2(void)
+{
   /*read the json file and search for elements */
-  json_t *root;
+  json_t* root;
   json_error_t error;
   root = json_load_file("test.json", 0, &error);
-  if (!root) {
+  if (!root)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
     return 1;
   }
 
   {
-    char *dump = json_dumps(root, 0);
-    if (dump) {
+    char* dump = json_dumps(root, 0);
+    if (dump)
+    {
       printf("Dump1: %s \n", dump);
       // free(dump);
     }
   }
 
-  json_t *obj;
-  const char *tst_string = "req";
-  obj = json_object_get(root, tst_string);
-  if (!obj) {
+  json_t* obj;
+  const char* tst_string = "req";
+  obj                    = json_object_get(root, tst_string);
+  if (!obj)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: could not find object %s \n", tst_string);
-  } else {
-    char *dump = json_dumps(obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(obj, 0);
+    if (dump)
+    {
       printf("Dump2: %s \n", dump);
       // free(dump);
     }
@@ -209,43 +239,55 @@ int test2(void) {
 
   // checking for error condition, search for child object in the
   // root objects
-  json_t *cc_err;
-  const char *tst_strerr = "cc";
-  cc_err = json_object_get(root, tst_strerr);
-  if (!cc_err) {
+  json_t* cc_err;
+  const char* tst_strerr = "cc";
+  cc_err                 = json_object_get(root, tst_strerr);
+  if (!cc_err)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: could not find object %s \n", tst_strerr);
-  } else {
-    char *dump = json_dumps(cc_err, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_err, 0);
+    if (dump)
+    {
       printf("Dump3: %s \n", dump);
       // free(dump);
     }
   }
 
-  json_t *cc_arr;
-  const char *tst_string2 = "cc";
-  cc_arr = json_object_get(obj, tst_string2);
-  if (!cc_arr) {
+  json_t* cc_arr;
+  const char* tst_string2 = "cc";
+  cc_arr                  = json_object_get(obj, tst_string2);
+  if (!cc_arr)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: could not find object %s \n", tst_string2);
-  } else {
-    char *dump = json_dumps(cc_arr, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_arr, 0);
+    if (dump)
+    {
       printf("Dump3: %s \n", dump);
       // free(dump);
     }
   }
 
-  json_t *cc_obj;
+  json_t* cc_obj;
   int index = 0;
-  cc_obj = json_array_get(cc_arr, index);
-  if (!cc_obj) {
+  cc_obj    = json_array_get(cc_arr, index);
+  if (!cc_obj)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: could not find object %s \n", tst_string2);
-  } else {
-    char *dump = json_dumps(cc_obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_obj, 0);
+    if (dump)
+    {
       printf("Dump4: %s \n", dump);
       // free(dump);
     }
@@ -256,152 +298,189 @@ int test2(void) {
   return 0;
 }
 
-void test_array(void) {
+void test_array(void)
+{
   /*read the json file and search for elements */
-  json_t *root;
+  json_t* root;
   json_error_t error;
   root = json_load_file("test2.json", 0, &error);
-  if (!root) {
+  if (!root)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
   }
 
   {
-    char *dump = json_dumps(root, 0);
-    if (dump) {
+    char* dump = json_dumps(root, 0);
+    if (dump)
+    {
       printf("Dump1: %s \n", dump);
       // free(dump);
     }
   }
 
-  json_t *cc_obj;
+  json_t* cc_obj;
   int index = 0;
-  cc_obj = json_array_get(root, index);
-  if (!cc_obj) {
+  cc_obj    = json_array_get(root, index);
+  if (!cc_obj)
+  {
     // Handle JSON parsing error
     fprintf(stderr, "error: could not find array object \n");
-  } else {
-    char *dump = json_dumps(cc_obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_obj, 0);
+    if (dump)
+    {
       printf("Dump4: %s \n", dump);
       // free(dump);
     }
   }
 }
 
-void test3(void) {
-  json_t *root;
+void test3(void)
+{
+  json_t* root;
   json_error_t error;
   root = json_load_file("test3.json", 0, &error);
-  if (!root) {
+  if (!root)
+  {
     fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
   }
 
   {
-    char *dump = json_dumps(root, 0);
-    if (dump) {
+    char* dump = json_dumps(root, 0);
+    if (dump)
+    {
       printf("Dump1: %s \n", dump);
       free(dump);
     }
   }
 
-  json_t *cc_obj;
+  json_t* cc_obj;
   cc_obj = json_object_get(root, "cc");
-  if (!cc_obj) {
+  if (!cc_obj)
+  {
     fprintf(stderr, "error: could not find array object \n");
-  } else {
-    char *dump = json_dumps(cc_obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_obj, 0);
+    if (dump)
+    {
       printf("Dump4: %s \n", dump);
       free(dump);
     }
   }
 }
 
-void test4(void) {
-  json_t *root;
+void test4(void)
+{
+  json_t* root;
   json_error_t error;
   root = json_load_file("test4.json", 0, &error);
-  if (!root) {
+  if (!root)
+  {
     fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
   }
 
   {
-    char *dump = json_dumps(root, 0);
-    if (dump) {
+    char* dump = json_dumps(root, 0);
+    if (dump)
+    {
       printf("[%s]:%d %s \n", __func__, __LINE__, dump);
       free(dump);
     }
   }
 
-  json_t *cc_obj;
+  json_t* cc_obj;
   cc_obj = json_object_get(root, "cc");
-  if (!cc_obj) {
+  if (!cc_obj)
+  {
     fprintf(stderr, "error: could not find array object \n");
-  } else {
-    char *dump = json_dumps(cc_obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_obj, 0);
+    if (dump)
+    {
       printf("[%s]:%d:  %s \n", __func__, __LINE__, dump);
       free(dump);
     }
   }
 
-  json_t *obj;
+  json_t* obj;
   obj = json_array_get(cc_obj, 0);
-  if (!obj) {
+  if (!obj)
+  {
     fprintf(stderr, "error: could not find array object \n");
-  } else {
-    char *dump = json_dumps(obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(obj, 0);
+    if (dump)
+    {
       printf("[%s]:%d:  %s \n", __func__, __LINE__, dump);
       free(dump);
     }
   }
 }
 
-void test5(void) {
-  json_t *root;
+void test5(void)
+{
+  json_t* root;
   json_error_t error;
   root = json_load_file("test5.json", 0, &error);
-  if (!root) {
+  if (!root)
+  {
     fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
   }
 
   {
-    char *dump = json_dumps(root, 0);
-    if (dump) {
+    char* dump = json_dumps(root, 0);
+    if (dump)
+    {
       printf("[%s]:%d %s \n", __func__, __LINE__, dump);
       free(dump);
     }
   }
 
-  json_t *cc_obj;
+  json_t* cc_obj;
   cc_obj = json_object_get(root, "iarray");
-  if (!cc_obj) {
+  if (!cc_obj)
+  {
     fprintf(stderr, "error: could not find object \n");
     return;
-  } else {
-    char *dump = json_dumps(cc_obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(cc_obj, 0);
+    if (dump)
+    {
       printf("[%s]:%d:  %s \n", __func__, __LINE__, dump);
       free(dump);
     }
   }
 
-  json_t *obj;
+  json_t* obj;
   obj = json_array_get(cc_obj, 0);
-  if (!obj) {
+  if (!obj)
+  {
     fprintf(stderr, "error: could not find array object \n");
-  } else {
-    char *dump = json_dumps(obj, 0);
-    if (dump) {
+  }
+  else
+  {
+    char* dump = json_dumps(obj, 0);
+    if (dump)
+    {
       printf("[%s]:%d:  %s \n", __func__, __LINE__, dump);
       free(dump);
     }
   }
 }
 
-int main() {
+int main()
+{
   // test1();
   // test2();
   // test_array();

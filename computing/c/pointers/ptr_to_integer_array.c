@@ -6,12 +6,14 @@
 
 #include <stdio.h>
 
-struct test {
+struct test
+{
   char i;
   char j;
 };
 
-int main() {
+int main()
+{
   printf("Hello, World!\n");
 
   struct test t1 = {0, 1};
