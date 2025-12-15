@@ -15,4 +15,3 @@ UseTab: Never
 AllowShortIfStatementsOnASingleLine: false
 AllowShortBlocksOnASingleLine: false
 BreakBeforeBraces: Allman
-AlignAfterOpenBracket: AlignAfterOpenBracket
