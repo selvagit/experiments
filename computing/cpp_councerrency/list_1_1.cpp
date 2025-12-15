@@ -1,15 +1,11 @@
 #include <iostream>
 #include <thread>
 
-void hello (void) 
-{
-	std::cout << "Hello World" << std::endl;
-}
+void hello(void) { std::cout << "Hello World" << std::endl; }
 
-
-int main ()
+int main()
 {
-	std::thread t(hello);
-	t.join();
-	while(1);
+  std::thread t(hello);
+  t.join();
+  while (1);
 }

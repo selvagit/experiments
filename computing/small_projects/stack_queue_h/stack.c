@@ -3,14 +3,16 @@
 #include <stdlib.h>
 #include <sys/queue.h>
 
-struct entry {
+struct entry
+{
   LIST_ENTRY(entry) entries;
 
   int i;
 
 } *n1, *n2, *np;
 
-void list(void) {
+void list(void)
+{
   printf("list example\n");
   LIST_HEAD(listhead, entry) head;
 
@@ -27,7 +29,8 @@ void list(void) {
   for (np = head.lh_first; np != NULL; np = np->entries.le_next)
     printf("%d\n", np->i);
 
-  while (head.lh_first != NULL) {
+  while (head.lh_first != NULL)
+  {
     LIST_REMOVE(head.lh_first, entries);
   }
 
@@ -37,7 +40,8 @@ void list(void) {
   return;
 }
 
-void stack(void) {
+void stack(void)
+{
   printf("stack example\n");
 
   LIST_HEAD(listhead, entry) head;
@@ -55,14 +59,16 @@ void stack(void) {
   for (np = head.lh_first; np != NULL; np = np->entries.le_next)
     printf("%d\n", np->i);
 
-  while (head.lh_first != NULL) {
-    struct entry *temp = head.lh_first;
+  while (head.lh_first != NULL)
+  {
+    struct entry* temp = head.lh_first;
     LIST_REMOVE(head.lh_first, entries);
     free(temp);
   }
 }
 
-int main(void) {
+int main(void)
+{
   list();
   stack();
 }

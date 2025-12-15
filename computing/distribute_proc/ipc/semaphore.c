@@ -7,12 +7,13 @@
 #include <sys/types.h> /* Primitive system data types */
 #include <unistd.h>    /* symbolic constansts*/
 
-void *handler(void *ptr);
+void* handler(void* ptr);
 
 sem_t mutex;
 int counter;
 
-int main(int argv, char *argc[]) {
+int main(int argv, char* argc[])
+{
   int thrd_a_arg = 1;
   int thrd_b_arg = 2;
 
@@ -22,8 +23,8 @@ int main(int argv, char *argc[]) {
   sem_init(&mutex, 0, 1); /* 0 - cannot be shared  across the process,
                             1 is binary semaphore */
 
-  pthread_create((void *)&thr_a, NULL, &handler, (void *)&thrd_a_arg);
-  pthread_create((void *)&thr_b, NULL, &handler, (void *)&thrd_b_arg);
+  pthread_create((void*)&thr_a, NULL, &handler, (void*)&thrd_a_arg);
+  pthread_create((void*)&thr_b, NULL, &handler, (void*)&thrd_b_arg);
 
   pthread_join(thr_a, NULL);
   pthread_join(thr_b, NULL);
@@ -33,8 +34,9 @@ int main(int argv, char *argc[]) {
   exit(0);
 }
 
-void *handler(void *ptr) {
-  int thread_arg = *((int *)ptr);
+void* handler(void* ptr)
+{
+  int thread_arg = *((int*)ptr);
   printf("waiting on the thread %d \n", thread_arg);
 
   sem_wait(&mutex);

@@ -2,12 +2,14 @@
 
 using namespace std;
 
-void func2(int *i) {
+void func2(int* i)
+{
   *i = 10;
   return;
 }
 
-void func1(void) {
+void func1(void)
+{
   static int i = 0;
 
   std::cout << " func1 : 1 : " << i << std::endl;
@@ -17,7 +19,8 @@ void func1(void) {
   return;
 }
 
-int main() {
+int main()
+{
   cout << "Hello World" << endl;
 
   func1();

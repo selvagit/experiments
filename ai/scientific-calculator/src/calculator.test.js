@@ -24,7 +24,8 @@ function clearMemory() {
 }
 
 function runCalculatorTests() {
-    let passed = 0, failed = 0;
+    let passed = 0;
+    let failed = 0;
 
     function assertEqual(actual, expected, msg) {
         if (actual === expected) {
