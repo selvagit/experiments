@@ -13,8 +13,6 @@ ReflowComments: false---
 Language: C
 IndentWidth: 2
 UseTab: Never
-ColumnLimit: 100
-AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: false
 AllowShortBlocksOnASingleLine: false
 BreakBeforeBraces: Allman
