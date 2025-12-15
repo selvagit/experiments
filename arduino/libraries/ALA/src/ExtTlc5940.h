@@ -23,30 +23,35 @@
     Tlc5940 library header file. */
 
 #include <stdint.h>
+
 #include "ExtTlc5940Config.h"
 
 #ifdef TLC_ATMEGA_8_H
 
 /** Enables the Timer1 Overflow interrupt, which will fire after an XLAT
     pulse */
-#define set_XLAT_interrupt()    TIFR |= _BV(TOV1); TIMSK = _BV(TOIE1)
+#define set_XLAT_interrupt() \
+  TIFR |= _BV(TOV1);         \
+  TIMSK = _BV(TOIE1)
 /** Disables any Timer1 interrupts */
-#define clear_XLAT_interrupt()  TIMSK = 0
+#define clear_XLAT_interrupt() TIMSK = 0
 
 #else
 
 /** Enables the Timer1 Overflow interrupt, which will fire after an XLAT
     pulse */
-#define set_XLAT_interrupt()    TIFR1 |= _BV(TOV1); TIMSK1 = _BV(TOIE1)
+#define set_XLAT_interrupt() \
+  TIFR1 |= _BV(TOV1);        \
+  TIMSK1 = _BV(TOIE1)
 /** Disables any Timer1 interrupts */
-#define clear_XLAT_interrupt()  TIMSK1 = 0
+#define clear_XLAT_interrupt() TIMSK1 = 0
 
 #endif
 
 /** Enables the output of XLAT pulses */
-#define enable_XLAT_pulses()    TCCR1A = _BV(COM1A1) | _BV(COM1B1)
+#define enable_XLAT_pulses() TCCR1A = _BV(COM1A1) | _BV(COM1B1)
 /** Disables the output of XLAT pulses */
-#define disable_XLAT_pulses()   TCCR1A = _BV(COM1B1)
+#define disable_XLAT_pulses() TCCR1A = _BV(COM1B1)
 
 extern volatile uint8_t tlc_needXLAT;
 extern volatile void (*tlc_onUpdateFinished)(void);
@@ -56,20 +61,19 @@ extern uint8_t tlc_GSData[NUM_TLCS * 24];
     will be preinstantiated as Tlc. */
 class Tlc5940
 {
-  public:
-    void init(uint16_t initialValue = 0);
-    void clear(void);
-    uint8_t update(void);
-    void set(TLC_CHANNEL_TYPE channel, uint16_t value);
-    uint16_t get(TLC_CHANNEL_TYPE channel);
-    void setAll(uint16_t value);
+ public:
+  void init(uint16_t initialValue = 0);
+  void clear(void);
+  uint8_t update(void);
+  void set(TLC_CHANNEL_TYPE channel, uint16_t value);
+  uint16_t get(TLC_CHANNEL_TYPE channel);
+  void setAll(uint16_t value);
 #if VPRG_ENABLED
-    void setAllDC(uint8_t value);
+  void setAllDC(uint8_t value);
 #endif
 #if XERR_ENABLED
-    uint8_t readXERR(void);
+  uint8_t readXERR(void);
 #endif
-
 };
 
 void tlc_shift8_init(void);
@@ -84,4 +88,3 @@ void tlc_dcModeStop(void);
 extern Tlc5940 Tlc;
 
 #endif
-

@@ -6,6 +6,6 @@ void Copy(void);
  */
 int main(void)
 {
-    Copy();
-	return 0;
+  Copy();
+  return 0;
 }

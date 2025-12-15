@@ -1,0 +1,16 @@
+BasedOnStyle: Google
+ColumnLimit: 80
+AlignConsecutiveAssignments: true
+SortIncludes: true
+PointerAlignment: Left
+DerivePointerAlignment: false
+SpacesBeforeTrailingComments: 1
+BreakBeforeBinaryOperators: NonAssignment
+PenaltyBreakBeforeFirstCallParameter: 19
+AlwaysBreakAfterReturnType: None
+ReflowComments: false
+IndentWidth: 2
+UseTab: Never
+AllowShortIfStatementsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+BreakBeforeBraces: Allman

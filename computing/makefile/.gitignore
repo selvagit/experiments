@@ -1,0 +1,11 @@
+# Build artifacts
+test
+test_exec
+*.o
+*.a
+
+# Editor/IDE
+.vscode/
+*.swp
+*.swo
+*~

@@ -1,0 +1,24 @@
+{
+  "name": "scientific-calculator",
+  "version": "1.0.0",
+  "description": "A comprehensive scientific calculator with advanced functions and responsive design.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined'",
+    "test": "echo 'No tests defined'"
+  },
+  "keywords": [
+    "calculator",
+    "scientific",
+    "javascript",
+    "html5",
+    "css3"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
