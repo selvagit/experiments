@@ -2,7 +2,6 @@
 #define AlaLedRgb_h
 
 #include "Ala.h"
-
 #include "ExtNeoPixel.h"
 
 /**
@@ -11,114 +10,107 @@
  */
 class AlaLedRgb
 {
+ public:
+  AlaLedRgb();
 
-public:
+  void initPWM(byte pinsRed, byte pinGreen, byte pinBlue);
+  void initPWM(int numLeds, byte* pins);
+  void initTLC5940(int numLeds, byte* pins);
 
-    AlaLedRgb();
-
-    void initPWM(byte pinsRed, byte pinGreen, byte pinBlue);
-    void initPWM(int numLeds, byte *pins);
-    void initTLC5940(int numLeds, byte *pins);
-
-    /**
+  /**
     * Initializes WS2812 LEDs. It be invoked in the setup() function of the main Arduino sketch.
     *
     * The type field can be used to set the RGB order and chipset frequency. Constants are ExtNeoPixel.h file.
     * It is set by default to NEO_GRB + NEO_KHZ800.
     */
-    void initWS2812(int numLeds, byte pin, byte type=NEO_GRB+NEO_KHZ800);
+  void initWS2812(int numLeds, byte pin, byte type = NEO_GRB + NEO_KHZ800);
 
-    /**
+  /**
     * Sets the maximum brightness level.
     */
-    void setBrightness(AlaColor maxOut);
+  void setBrightness(AlaColor maxOut);
 
-    /**
+  /**
     * Sets the maximum refresh rate in Hz (default value is 50 Hz).
     * May be useful to reduce flickering in some cases.
     */
-    void setRefreshRate(int refreshRate);
+  void setRefreshRate(int refreshRate);
 
-    int getCurrentRefreshRate();
+  int getCurrentRefreshRate();
 
+  void setAnimation(int animation, long speed, AlaColor color,
+                    bool isSeq = false);
+  void setAnimation(int animation, long speed, AlaPalette palette,
+                    bool isSeq = false);
+  void setAnimation(AlaSeq animSeq[]);
+  void setSpeed(long speed);
+  void setColor(AlaColor color);
+  int getAnimation();
 
-    void setAnimation(int animation, long speed, AlaColor color, bool isSeq=false);
-    void setAnimation(int animation, long speed, AlaPalette palette, bool isSeq=false);
-    void setAnimation(AlaSeq animSeq[]);
-    void setSpeed(long speed);
-    void setColor(AlaColor color);
-    int getAnimation();
+  bool runAnimation();
 
-    bool runAnimation();
+ private:
+  void setAnimationFunc(int animation);
+  void on();
+  void off();
+  void blink();
+  void blinkAlt();
+  void sparkle();
+  void sparkle2();
+  void strobo();
+  void cycleColors();
 
+  void pixelShiftRight();
+  void pixelShiftLeft();
+  void pixelBounce();
+  void pixelSmoothShiftRight();
+  void pixelSmoothShiftLeft();
+  void comet();
+  void cometCol();
+  void pixelSmoothBounce();
+  void larsonScanner();
+  void larsonScanner2();
 
+  void fadeIn();
+  void fadeOut();
+  void fadeInOut();
+  void glow();
+  void plasma();
+  void fadeColors();
+  void pixelsFadeColors();
+  void fadeColorsLoop();
 
-private:
+  void movingBars();
+  void movingGradient();
 
-    void setAnimationFunc(int animation);
-    void on();
-    void off();
-    void blink();
-    void blinkAlt();
-    void sparkle();
-    void sparkle2();
-    void strobo();
-    void cycleColors();
+  void fire();
+  void bouncingBalls();
+  void bubbles();
 
-    void pixelShiftRight();
-    void pixelShiftLeft();
-    void pixelBounce();
-    void pixelSmoothShiftRight();
-    void pixelSmoothShiftLeft();
-    void comet();
-    void cometCol();
-    void pixelSmoothBounce();
-    void larsonScanner();
-    void larsonScanner2();
+  byte driver;    // type of led driver: ALA_PWM, ALA_TLC5940
+  byte* pins;     // pins where the leds are attached to
+  AlaColor* leds; // array to store leds brightness values
+  int numLeds;    // number of leds
 
-    void fadeIn();
-    void fadeOut();
-    void fadeInOut();
-    void glow();
-    void plasma();
-    void fadeColors();
-    void pixelsFadeColors();
-    void fadeColorsLoop();
+  int animation;
+  long speed;
+  AlaPalette palette;
+  AlaSeq* animSeq;
+  int animSeqLen;
+  long animSeqDuration;
 
-    void movingBars();
-    void movingGradient();
+  void (AlaLedRgb::*animFunc)();
+  AlaColor maxOut;
+  int refreshMillis;
+  int refreshRate; // current refresh rate
+  unsigned long animStartTime;
+  unsigned long animSeqStartTime;
+  unsigned long lastRefreshTime;
 
-    void fire();
-    void bouncingBalls();
-    void bubbles();
+  float* pxPos;
+  float* pxSpeed;
 
-
-    byte driver;    // type of led driver: ALA_PWM, ALA_TLC5940
-    byte *pins;     // pins where the leds are attached to
-    AlaColor *leds; // array to store leds brightness values
-    int numLeds;    // number of leds
-
-    int animation;
-    long speed;
-    AlaPalette palette;
-    AlaSeq *animSeq;
-    int animSeqLen;
-    long animSeqDuration;
-
-    void (AlaLedRgb::*animFunc)();
-    AlaColor maxOut;
-    int refreshMillis;
-    int refreshRate;   // current refresh rate
-    unsigned long animStartTime;
-    unsigned long animSeqStartTime;
-    unsigned long lastRefreshTime;
-
-    float *pxPos;
-    float *pxSpeed;
-
-    Adafruit_NeoPixel *neopixels;
-
+  Adafruit_NeoPixel* neopixels;
 };
-
 
 #endif

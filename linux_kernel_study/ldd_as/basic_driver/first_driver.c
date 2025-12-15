@@ -1,16 +1,16 @@
+#include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/version.h>
-#include <linux/kernel.h>
 
 static int __init mfd_init(void) /* Constructor */
 {
-	printk(KERN_INFO "mfd registered");
-	return 0;
+  printk(KERN_INFO "mfd registered");
+  return 0;
 }
 
 static void __exit mfd_exit(void) /* Destructor */
 {
-	printk(KERN_INFO "mfd unregistered");
+  printk(KERN_INFO "mfd unregistered");
 }
 
 module_init(mfd_init);

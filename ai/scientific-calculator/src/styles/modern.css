@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2em;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.5em;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:active {
+    background-color: #004494;
+}
+
+.button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.memory-indicator {
+    font-size: 1.2em;
+    color: #ff0000;
+}
+
+.history {
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.history-item {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.theme-toggle {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.theme-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    background-color: #218838;
+}
+
+.sound-toggle {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.volume-control {
+    width: 100%;
+    margin-top: 5px;
+}

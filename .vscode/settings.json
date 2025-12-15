@@ -1,0 +1,23 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "xaver.clang-format",
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "C_Cpp.clangFormatStyle": "file",
+  "C_Cpp.formatting": "clangFormat",
+  "editor.rulers": [80, 100],
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/*.o": true,
+    "**/*.a": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/*.o": true,
+    "**/*.a": true
+  }
+}

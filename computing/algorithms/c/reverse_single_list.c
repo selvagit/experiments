@@ -1,93 +1,104 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node{
-    int a;
-    struct node* next;
+struct node
+{
+  int a;
+  struct node* next;
 };
 
-struct list{
-    struct node *head;
-    struct node *tail;
-    int totalnode;
+struct list
+{
+  struct node* head;
+  struct node* tail;
+  int totalnode;
 };
 
-void add_node(int a, struct list *lst)
+void add_node(int a, struct list* lst)
 {
-    struct node *temp = malloc(sizeof(struct node));
-    if (temp != NULL){
-        temp->a = a;
-        if (lst->head == NULL){
-            lst->head = temp;
-            lst->tail = temp;
-        }else{
-            lst->tail->next = temp;
-            lst->tail = lst->tail->next;
-        }
-    } else {
-        printf("Memory allocation failure \n");
+  struct node* temp = malloc(sizeof(struct node));
+  if (temp != NULL)
+  {
+    temp->a = a;
+    if (lst->head == NULL)
+    {
+      lst->head = temp;
+      lst->tail = temp;
     }
-}
-
-struct node *reverse_list(struct node *cur, struct node **head )
-{
-    struct node *temp = NULL;
-    if (cur->next != NULL){
-        temp = reverse_list(cur->next,head);
-        temp->next = cur;
-    }else{
-        *head = cur;
+    else
+    {
+      lst->tail->next = temp;
+      lst->tail       = lst->tail->next;
     }
-
-    return cur;
+  }
+  else
+  {
+    printf("Memory allocation failure \n");
+  }
 }
 
-void clean_list(struct node *cur)
+struct node* reverse_list(struct node* cur, struct node** head)
 {
-    struct node* temp ;
+  struct node* temp = NULL;
+  if (cur->next != NULL)
+  {
+    temp       = reverse_list(cur->next, head);
+    temp->next = cur;
+  }
+  else
+  {
+    *head = cur;
+  }
 
-    while(cur != NULL){
-       temp = cur->next;
-       free(cur);
-       cur = temp;
-    }
+  return cur;
 }
 
-void print_lst( struct list *lst)
+void clean_list(struct node* cur)
 {
-    struct node *temp = lst->head;
-    while(temp != NULL){
-        printf("Element = %d\n",temp->a);
-        temp = temp->next;
-    }
+  struct node* temp;
+
+  while (cur != NULL)
+  {
+    temp = cur->next;
+    free(cur);
+    cur = temp;
+  }
 }
 
-int main(int argv, char *argc[])
+void print_lst(struct list* lst)
 {
-    struct list sng_lst;
-
-    sng_lst.head = NULL;
-    sng_lst.tail = NULL;
-
-    add_node(1,&sng_lst);
-    add_node(2,&sng_lst);
-    add_node(3,&sng_lst);
-    add_node(4,&sng_lst);
-    add_node(5,&sng_lst);
-
-    printf("Before reversing the list\n");
-    print_lst(&sng_lst);
-
-    struct node *cur = NULL;
-    cur = reverse_list(sng_lst.head,&sng_lst.head);
-    cur->next = NULL;
-
-    printf("After reversing the list\n");
-    print_lst(&sng_lst);
-
-    clean_list(sng_lst.head);
-
-    return 0;
+  struct node* temp = lst->head;
+  while (temp != NULL)
+  {
+    printf("Element = %d\n", temp->a);
+    temp = temp->next;
+  }
 }
 
+int main(int argv, char* argc[])
+{
+  struct list sng_lst;
 
+  sng_lst.head = NULL;
+  sng_lst.tail = NULL;
+
+  add_node(1, &sng_lst);
+  add_node(2, &sng_lst);
+  add_node(3, &sng_lst);
+  add_node(4, &sng_lst);
+  add_node(5, &sng_lst);
+
+  printf("Before reversing the list\n");
+  print_lst(&sng_lst);
+
+  struct node* cur = NULL;
+  cur              = reverse_list(sng_lst.head, &sng_lst.head);
+  cur->next        = NULL;
+
+  printf("After reversing the list\n");
+  print_lst(&sng_lst);
+
+  clean_list(sng_lst.head);
+
+  return 0;
+}
