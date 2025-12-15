@@ -8,7 +8,7 @@ SpacesBeforeTrailingComments: 1
 BreakBeforeBinaryOperators: NonAssignment
 PenaltyBreakBeforeFirstCallParameter: 19
 AlwaysBreakAfterReturnType: None
-ReflowComments: false---
+ReflowComments: false
 IndentWidth: 2
 UseTab: Never
 AllowShortIfStatementsOnASingleLine: false
