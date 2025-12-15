@@ -3,7 +3,6 @@
 
 #include "Ala.h"
 
-
 /**
  *  AlaLed can be used to drive a single or multiple output channels to perform animations.
  *  Single leds can be attached to each channel or MOSFETS/relays can be used to drive
@@ -11,23 +10,20 @@
  */
 class AlaLed
 {
+ public:
+  AlaLed();
 
-public:
-
-    AlaLed();
-
-
-    /**
+  /**
     * Initializes a LED driven by Arduino PWM pin. It be invoked in the setup() function of the main Arduino sketch.
     */
-    void initPWM(byte pin);
+  void initPWM(byte pin);
 
-    /**
+  /**
     * Initializes LEDs driven by Arduino PWM pins. It be invoked in the setup() function of the main Arduino sketch.
     */
-    void initPWM(int numLeds, byte *pins);
+  void initPWM(int numLeds, byte* pins);
 
-    /**
+  /**
     * Initializes LEDs driven by a TLC5940 chip. It be invoked in the setup() function of the main Arduino sketch.
     * The TLC5940 must be wired as follows (http://XYXYXYXY)
     * pin  2 > GND
@@ -43,80 +39,75 @@ public:
     *
     * It can be used also to drive a single led.
     */
-    void initTLC5940(int numLeds, byte *pins);
+  void initTLC5940(int numLeds, byte* pins);
 
-
-    /**
+  /**
     * Sets the maximum brightness level (0-255).
     */
-    void setBrightness(byte maxOut);
+  void setBrightness(byte maxOut);
 
-    /**
+  /**
     * Sets the maximum refresh rate in Hz (default value is 50 Hz).
     * May be useful to reduce flickering in some cases.
     */
-    void setRefreshRate(int refreshRate);
+  void setRefreshRate(int refreshRate);
 
-    int getRefreshRate();
+  int getRefreshRate();
 
-    void setAnimation(int animation, long speed, bool isSeq=false);
-    void setAnimation(AlaSeq animSeq[]);
-	void setSpeed(long speed);
-    int getAnimation();
+  void setAnimation(int animation, long speed, bool isSeq = false);
+  void setAnimation(AlaSeq animSeq[]);
+  void setSpeed(long speed);
+  int getAnimation();
 
-    bool runAnimation();
+  bool runAnimation();
 
+ private:
+  void setAnimationFunc(int animation);
+  void on();
+  void off();
+  void blink();
+  void blinkAlt();
+  void sparkle();
+  void sparkle2();
+  void strobo();
 
-private:
+  void pixelShiftRight();
+  void pixelShiftLeft();
+  void pixelBounce();
+  void pixelSmoothShiftRight();
+  void pixelSmoothShiftLeft();
+  void pixelSmoothBounce();
+  void comet();
+  void barShiftRight();
+  void barShiftLeft();
+  void larsonScanner();
+  void larsonScanner2();
 
-    void setAnimationFunc(int animation);
-    void on();
-    void off();
-    void blink();
-    void blinkAlt();
-    void sparkle();
-    void sparkle2();
-    void strobo();
+  void fadeIn();
+  void fadeOut();
+  void fadeInOut();
+  void glow();
+  void flame();
 
-    void pixelShiftRight();
-    void pixelShiftLeft();
-    void pixelBounce();
-    void pixelSmoothShiftRight();
-    void pixelSmoothShiftLeft();
-    void pixelSmoothBounce();
-    void comet();
-    void barShiftRight();
-    void barShiftLeft();
-    void larsonScanner();
-    void larsonScanner2();
+  byte driver; // type of led driver: ALA_PWM, ALA_TLC5940
+  byte* pins;  // pins where the leds are attached to
+  byte* leds;  // array to store leds brightness values
+  int numLeds; // number of leds
 
-    void fadeIn();
-    void fadeOut();
-    void fadeInOut();
-    void glow();
-    void flame();
+  int maxOut;
+  int refreshMillis;
+  int refreshRate; // current refresh rate
 
+  int animation;
+  long speed;
+  AlaSeq* animSeq;
+  int animSeqLen;
+  long animSeqDuration;
 
-    byte driver; // type of led driver: ALA_PWM, ALA_TLC5940
-    byte *pins;  // pins where the leds are attached to
-    byte *leds;  // array to store leds brightness values
-    int numLeds; // number of leds
-
-    int maxOut;
-    int refreshMillis;
-    int refreshRate;   // current refresh rate
-
-    int animation;
-    long speed;
-    AlaSeq *animSeq;
-    int animSeqLen;
-    long animSeqDuration;
-
-    void (AlaLed::*animFunc)();
-    unsigned long animStartTime;
-    unsigned long animSeqStartTime;
-    unsigned long lastRefreshTime;
-
+  void (AlaLed::*animFunc)();
+  unsigned long animStartTime;
+  unsigned long animSeqStartTime;
+  unsigned long lastRefreshTime;
 };
 
 #endif
