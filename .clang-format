@@ -10,7 +10,6 @@ BreakBeforeBinaryOperators: NonAssignment
 PenaltyBreakBeforeFirstCallParameter: 19
 AlwaysBreakAfterReturnType: None
 ReflowComments: false---
-Language: C
 IndentWidth: 2
 UseTab: Never
 AllowShortIfStatementsOnASingleLine: false
